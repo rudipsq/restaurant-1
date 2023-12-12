@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 <body>
@@ -34,15 +35,15 @@
                     <img class="wiGridImg" src="/img/pic/f16.jpg" alt="">
                 </div>
                 <div class="wiGridItem" style="grid-column: span 2;">
-                    <img class="wiGridIcon" src="/img/icon/flame.png">
+                    <img class="wiGridIcon" src="/img/icon/flame2.png">
                     <div class="textContainer">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam amet quibusdam, nam veniam vitae neque molesti quod?</p>
+                        <p>Lorem ipsum dolor sadipisicing elit. Aliquam amet quibusdam, nam veniam vitae neque molesti quod?</p>
                     </div>
                 </div>
                 <div class="wiGridItem" id="wiGridItem3" style="grid-column: span 2;">
-                    <img class="wiGridIcon" src="/img/icon/flame.png">
+                    <img class="wiGridIcon" src="/img/icon/flame2.png">
                     <div class="textContainer">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam amet quibusdam, nam veniam vitae neque molestias.</p>
+                        <p>Lorem ipsum dolor amet quibusdam, nam veniam vitae neque molestias.</p>
                     </div>
                 </div>
                 <div class="wiGridItem" style="grid-column: span 3;">
@@ -53,30 +54,34 @@
 
         <section id="speisen">
             <h1>Speisekarte</h1>
-
+            <div id="spContainer">
+            </div>
         </section>
 
         <section id="standorte">
             <h1>Standorte</h1>
-            <div id="stGrid">
-                <div id="stGridItem1">
-                    <img src="/img/icon/stTraube.png" alt="Icon Traube">
+            <div class="swiper">
+            <div id="stGrid" class="swiper-wrapper">
+                <div class="stGridItem swiper-slide" id="stGridItem1">
+                    <img class="stGridIcon" src="/img/icon/stTraube.png" alt="Icon Traube">
                     <h2>Zur Traube</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati natus magnam doloremque accusantium explicabo eos
                     esse consequuntur totam dolores enim possimus aperiam, accusamus suscipit atque quae ipsa quam alias fugiat.</p>
                 </div>
-                <div id="stGridItem2">
-                    <img src="/img/icon/stEngele.png" alt="Icon Engele">
+                <div class="stGridItem swiper-slide" id="stGridItem2">
+                    <img class="stGridIcon" src="/img/icon/stEngele.png" alt="Icon Engele">
                     <h2>Zum Engele</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sint repudiandae neque tempore accusamus, soluta atque
                     fugit vitae eligendi laborum impedit, ipsum cumque excepturi exercitationem, recusandae nihil aperiam harum autem.</p>
                 </div>
-                <div id="stGridItem3">
-                    <img src="/img/icon/stRose.png" alt="Icon Rose">
+                <div class="stGridItem swiper-slide" id="stGridItem3">
+                    <img class="stGridIcon" src="/img/icon/stRose.png" alt="Icon Rose">
                     <h2>Zur Rose</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum fugit odit harum sunt dolorem ullam tempore corporis
                     aspernatur cumque, obcaecati fuga, dicta perspiciatis beatae sit repudiandae dignissimos ad quisquam possimus.</p>
                 </div>
+            </div>
+            <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -90,7 +95,8 @@
         <div>Impressum</div>
         <div></div>
     </footer>
-    
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/scripts/index.js"></script>
 </body>
 </html>

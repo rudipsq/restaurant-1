@@ -33,37 +33,6 @@ function removeStartScreen() {
 }
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//   const menuLinks = document.querySelectorAll("header nav a");
-//   const sections = document.querySelectorAll("section");
-
-//   function highlightMenu() {
-//     let currentSectionId = "";
-    
-//     sections.forEach(section => {
-//       const rect = section.getBoundingClientRect();
-//       if (rect.top <= 400 && rect.bottom >= 50) {
-//         currentSectionId = section.id;
-//       }
-//     });
-
-//     // TODO: when anchor clicked, move underline directly to it
-
-//     menuLinks.forEach(link => {
-//       link.classList.remove("active");
-//         if (link.getAttribute("href") === `#${currentSectionId}`) {
-//         link.classList.add("active");
-//         const rect = link.getBoundingClientRect();
-//         const underlinePosition = rect.left + (rect.width / 2) - (underline.offsetWidth / 2);
-//         underline.style.transform = `translateX(${underlinePosition}px)`;
-//         }
-//       });
-//     }
-
-//   window.addEventListener("scroll", highlightMenu);
-//   highlightMenu(); // Call it once on page load
-// });
-
 document.addEventListener("DOMContentLoaded", function() {
   const menuLinks = document.querySelectorAll("header nav a");
   const underline = document.getElementById("underline");
@@ -94,34 +63,111 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  function handleLinkClick(event) {
-    event.preventDefault();
-    clickedAtag = true;
-
-    const clickedLink = event.currentTarget;
-    const rect = clickedLink.getBoundingClientRect();
-    const underlinePosition = rect.left + (rect.width / 2) - (underline.offsetWidth / 2);
-    underline.style.transform = `translateX(${underlinePosition}px)`;
-
-    // You may want to add additional logic here based on the clicked link if needed
-
-    // Scroll to the corresponding section if necessary
-    const targetSectionId = clickedLink.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetSectionId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: "smooth" });
-    }
-
-    setTimeout(() => {
-      clickedAtag = false;
-    }, 1000);
-  }
-
-  menuLinks.forEach(link => {
-    link.addEventListener("click", handleLinkClick);
-  });
-
   window.addEventListener("scroll", highlightMenu);
   highlightMenu(); // Call it once on page load
 });
+
+
+
+addSpeisen()
+
+function addSpeisen() {
+  let speisen = ["banatella", "carmen_bert", "eithuns", "feuerapfel", "gratiniert", "himmel_ehre", "klassisch", "klebaer", "lachs", "papadopulus", "schwarzwaelder", "toskana", "kreuzberg4"]
+  let container = document.getElementById("spContainer")
+
+  speisen.forEach(item => {
+    // Create a new div for each item
+    let div = document.createElement("div");
+    div.className = "spProductContainer";
+    div.style.backgroundImage = `url('/img/pic/fl_${item}.jpg')`;
+
+    let textContainer = document.createElement("div");
+    textContainer.className = "spProductTextcontainer";
+    div.appendChild(textContainer);
+
+    let text = document.createElement("h2");
+    text.textContent = item;
+    text.className = "spProductText"
+    textContainer.appendChild(text);
+
+    // Append the div to the container
+    container.appendChild(div);
+  });
+}
+
+var swiper = null; // Initialize swiper variable
+
+function initializeSwiper() {
+  swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    mousewheel: {
+      forceToAxis: true,
+      thresholdDelta: 70,
+      eventsTarget: ".swiper",
+      passiveListeners: true
+    },
+    spaceBetween: 60,
+    loop: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+}
+
+function destroySwiper() {
+  if (swiper !== null) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
+}
+
+// Check window width initially and on resize
+function checkWindowWidth() {
+  if (window.innerWidth < 941) {
+    // If the window width is under 941, initialize Swiper
+    initializeSwiper();
+  } else {
+    // If the window width is not under 941, destroy Swiper if it exists
+    destroySwiper();
+  }
+}
+
+// Initial check
+checkWindowWidth();
+
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
+}
+
+// Use debounce for the resize event
+window.addEventListener("resize", debounce(function () {
+  checkWindowWidth();
+
+  // Ensure that Swiper is updated after resize
+  if (swiper !== null) {
+    swiper.update();
+  }
+}, 250));
 
