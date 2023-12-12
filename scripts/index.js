@@ -104,7 +104,7 @@ function initializeSwiper() {
     centeredSlides: true,
     slidesPerView: "auto",
     coverflowEffect: {
-      rotate: 0,
+      rotate: 10,
       stretch: 0,
       depth: 100,
       modifier: 2,
@@ -137,7 +137,7 @@ function destroySwiper() {
 
 // Check window width initially and on resize
 function checkWindowWidth() {
-  if (window.innerWidth < 941) {
+  if (window.innerWidth < 951) {
     // If the window width is under 941, initialize Swiper
     initializeSwiper();
   } else {
@@ -169,5 +169,5 @@ window.addEventListener("resize", debounce(function () {
   if (swiper !== null) {
     swiper.update();
   }
-}, 250));
+}, 200));
 

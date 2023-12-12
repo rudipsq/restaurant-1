@@ -144,14 +144,9 @@ section {
 
 
 
-/* #speisen {
-    width: 100%;
-} */
 
 #speisen #spContainer {
     padding: 10px;
-
-    /* width: calc(100% - 20px); */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 
@@ -166,15 +161,14 @@ section {
     background-position: center;
 
     padding-top: 120px;
-    outline-color: rgb(201, 201, 201);
+    outline-color: rgb(44, 44, 44);
     outline-style: solid;
-    outline-width: 2px;
+    outline-width: 3px;
 }
 
 #speisen .spProductTextcontainer {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
-    /* width: 100%; */
     height: 35px;
 
     border-radius: 0 0 12px 12px;
@@ -197,15 +191,15 @@ section {
     width: 100%;
 }
 
-@media (min-width: 941px) {
-    #standorte #stGrid {
-        text-align: center;
-        display: grid;
-        justify-items: center;
-    }
+.swiper-pagination-bullet {
+    background-color: white;
+}
 
-    #stGrid {
-        grid-template-columns: repeat(3, 1fr);
+@media (min-width: 951px) {
+    .swiper-wrapper{
+        display: flex;
+        justify-content: center;
+        gap: calc(5% - 10px);
     }
 }
 
