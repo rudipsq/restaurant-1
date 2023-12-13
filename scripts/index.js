@@ -4,7 +4,7 @@ document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
     const targetId = this.getAttribute("href").substring(1);
     const targetElement = document.getElementById(targetId);
 
-    const offset = 100; // Adjust this value to your desired offset
+    const offset = 120; // Adjust this value to your desired offset
 
     if (targetElement) {
       const targetOffsetTop = targetElement.getBoundingClientRect().top + window.scrollY;

@@ -68,9 +68,16 @@ header nav {
 section {
     min-height: 300px;
     width: 100%;
+
+    padding-top: 50px;
 }
 
 /* - - - - WILLKOMMEN - - - - */
+
+#willkommen{
+    padding-top: 0;
+}
+
 @media (min-width: 721px) {
     #willkommen {
         height: calc(100vh - 120px);
@@ -153,15 +160,16 @@ section {
 
 #spContainer div {
     width: 100%;
-    border-radius: 12px;
+    /* border-radius: 12px; */
 
     background-size: cover;
     background-position: center;
 
     padding-top: 120px;
-    outline-color: rgb(44, 44, 44);
+    /* outline-color: rgb(44, 44, 44);
     outline-style: solid;
-    outline-width: 3px;text-align: center;
+    outline-width: 3px; */
+    text-align: center;
 }
 
 #spContainer div div {
@@ -169,7 +177,7 @@ section {
     backdrop-filter: blur(8px);
     height: 35px;
 
-    border-radius: 0 0 12px 12px;
+    /* border-radius: 0 0 12px 12px; */
     outline-style: none;
     padding: 0;
     padding-top: 5px;
@@ -192,7 +200,7 @@ section {
 }
 
 #spContainer #spMehr div {
-    border-radius: 12px;
+    /* border-radius: 12px; */
     height: 100%;
     padding: 0;
 }
@@ -219,23 +227,43 @@ section {
     }
 }
 
-#standorte .stGridItem {
+#standorte .swiper-slide {
     padding: 20px;
     width: 240px;
     height: 320px;
 
     background-color: rgb(44, 44, 44);
-    border-radius: 12px;
+
+    outline-style: solid;
+    outline-color: lightgrey;
+    outline-width: 1px;
+    outline-offset: -8px;
 }
 
-#standorte .stGridIcon {
+#standorte .swiper-slide img {
     height: 75px;
     width: auto;
 }
 
 /* - - - - GUTSCHEINE - - - - */
 
+#gutscheine {
+    height: 900px;
+}
+
 
 footer {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+
+    padding: 20px;
+
     text-align: center;
+
+    background-color: rgb(27, 27, 27);
+}
+
+footer div {
+    min-width: 70px;
 }
