@@ -6,12 +6,9 @@ body {
     padding: 0;
 
     margin-top: 120px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
 
     font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url('/img/pic/f12.jpg'); */
 }
 
 header {
@@ -73,16 +70,16 @@ section {
     width: 100%;
 }
 
-
+/* - - - - WILLKOMMEN - - - - */
 @media (min-width: 721px) {
     #willkommen {
         height: calc(100vh - 120px);
     }
 }
 
-
 #willkommen #wiGrid {
     display: grid;
+    /* background-color: rgba(0, 0, 0, 0.5); */
 }
 @media (min-width: 721px) {
     #wiGrid {
@@ -145,6 +142,7 @@ section {
 
 
 
+/* - - - - SPEISEN - - - - */
 #speisen #spContainer {
     padding: 10px;
     display: grid;
@@ -153,7 +151,7 @@ section {
     gap: 12px;
 }
 
-#speisen .spProductContainer {
+#spContainer div {
     width: 100%;
     border-radius: 12px;
 
@@ -163,26 +161,44 @@ section {
     padding-top: 120px;
     outline-color: rgb(44, 44, 44);
     outline-style: solid;
-    outline-width: 3px;
+    outline-width: 3px;text-align: center;
 }
 
-#speisen .spProductTextcontainer {
+#spContainer div div {
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     height: 35px;
 
     border-radius: 0 0 12px 12px;
+    outline-style: none;
     padding: 0;
     padding-top: 5px;
 }
 
-#speisen .spProductText {
-    margin: 0 0 0 10px;
+#spContainer div div h2 {
+    margin: 0;
+}
+
+.spHidden {
+    display: none;
+}
+
+#spContainer #spMehr {
+    padding-top: 0;
+    height: 160px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#spContainer #spMehr div {
+    border-radius: 12px;
+    height: 100%;
+    padding: 0;
 }
 
 
-
-
+/* - - - - STANDORTE - - - - */
 #standorte {
     text-align: center;
 }
@@ -217,7 +233,7 @@ section {
     width: auto;
 }
 
-
+/* - - - - GUTSCHEINE - - - - */
 
 
 footer {

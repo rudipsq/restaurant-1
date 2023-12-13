@@ -69,31 +69,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-addSpeisen()
+document.addEventListener('DOMContentLoaded', function () {
+      // Get all elements with the class 'grid-item'
+      const gridContainer = document.getElementById("spContainer")
+      const gridItems = gridContainer.querySelectorAll('div');
 
-function addSpeisen() {
-  let speisen = ["banatella", "carmen_bert", "eithuns", "feuerapfel", "gratiniert", "himmel_ehre", "klassisch", "klebaer", "lachs", "papadopulus", "schwarzwaelder", "toskana", "kreuzberg4"]
-  let container = document.getElementById("spContainer")
+      // Function to toggle visibility based on data type
+      function toggleVisibility(dataType) {
+        gridItems.forEach(item => {
+          if (item.dataset.type === dataType) {
+            item.classList.toggle('spHidden');
+          }
+        });
+      }
 
-  speisen.forEach(item => {
-    // Create a new div for each item
-    let div = document.createElement("div");
-    div.className = "spProductContainer";
-    div.style.backgroundImage = `url('/img/pic/fl_${item}.jpg')`;
+      // Add click event listeners to the buttons
+      document.getElementById('buttonS').addEventListener('click', function () {
+        toggleVisibility('s');
+      });
 
-    let textContainer = document.createElement("div");
-    textContainer.className = "spProductTextcontainer";
-    div.appendChild(textContainer);
-
-    let text = document.createElement("h2");
-    text.textContent = item;
-    text.className = "spProductText"
-    textContainer.appendChild(text);
-
-    // Append the div to the container
-    container.appendChild(div);
-  });
-}
+      document.getElementById('buttonH').addEventListener('click', function () {
+        toggleVisibility('h');
+      });
+    });
 
 var swiper = null; // Initialize swiper variable
 
