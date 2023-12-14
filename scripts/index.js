@@ -69,29 +69,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-      // Get all elements with the class 'grid-item'
-      const gridContainer = document.getElementById("spContainer")
-      const gridItems = gridContainer.querySelectorAll('div');
+// document.addEventListener('DOMContentLoaded', function () {
+//       // Get all elements with the class 'grid-item'
+//       const gridContainer = document.getElementById("spContainer")
+//       const gridItems = gridContainer.querySelectorAll('div');
 
-      // Function to toggle visibility based on data type
-      function toggleVisibility(dataType) {
-        gridItems.forEach(item => {
-          if (item.dataset.type === dataType) {
-            item.classList.toggle('spHidden');
-          }
-        });
-      }
+//       // Function to toggle visibility based on data type
+//       function toggleVisibility(dataType) {
+//         gridItems.forEach(item => {
+//           if (item.dataset.type === dataType) {
+//             item.classList.toggle('spHidden');
+//           }
+//         });
+//       }
 
-      // Add click event listeners to the buttons
-      document.getElementById('buttonS').addEventListener('click', function () {
-        toggleVisibility('s');
-      });
+//       // Add click event listeners to the buttons
+//       document.getElementById('buttonS').addEventListener('click', function () {
+//         toggleVisibility('s');
+//       });
 
-      document.getElementById('buttonH').addEventListener('click', function () {
-        toggleVisibility('h');
-      });
-    });
+//       document.getElementById('buttonH').addEventListener('click', function () {
+//         toggleVisibility('h');
+//       });
+//     });
 
 var swiper = null; // Initialize swiper variable
 
