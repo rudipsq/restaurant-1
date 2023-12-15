@@ -70,13 +70,12 @@ section {
     min-height: 300px;
     width: 100%;
 
-    padding-top: 50px;
+    margin-bottom: 100px;
 }
 
 /* - - - - WILLKOMMEN - - - - */
 
 #willkommen{
-    padding-top: 0;
 }
 
 @media (min-width: 721px) {
@@ -205,6 +204,22 @@ section {
 
 #speisen {
     text-align: center;
+    /* height: 100vh; */
+}
+
+#spGrid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.spGridItem {
+    width: 400px;
+    height: 400px;
+
+    padding: 20px;
+
+    background-color: rebeccapurple;
 }
 
 
