@@ -169,3 +169,57 @@ window.addEventListener("resize", debounce(function () {
   }
 }, 200));
 
+
+
+spHswiper = new Swiper("#spHswiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 150,
+      modifier: 10,
+      slideShadows: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    mousewheel: {
+      forceToAxis: true,
+      thresholdDelta: 70,
+      eventsTarget: "#spHswiper",
+      passiveListeners: true
+    },
+    spaceBetween: -100,
+    loop: true
+  });
+
+
+  spSswiper = new Swiper("#spSswiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 150,
+      modifier: 10,
+      slideShadows: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    mousewheel: {
+      forceToAxis: true,
+      thresholdDelta: 70,
+      eventsTarget: "#spSswiper",
+      passiveListeners: true
+    },
+    spaceBetween: -100,
+    loop: true
+  });
+
+
