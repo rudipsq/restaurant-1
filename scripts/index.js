@@ -16,22 +16,24 @@ document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
   });
 });
 
-window.addEventListener("scroll", function() {
-  // Check if the user has scrolled, and if so, hide the start screen
-  if (window.scrollY > 0) {
-    removeStartScreen()
 
-    // Enable scrolling for the body content when the start screen is removed
-    document.body.style.overflow = "auto";
-  }
+
+// make header visible
+document.addEventListener("DOMContentLoaded", function () {
+  var header = document.querySelector('header');
+
+  window.addEventListener('scroll', function () {
+    var scrollDistance = window.scrollY;
+
+    var threshold = window.innerHeight - 180;
+
+    if (scrollDistance > threshold) {
+      header.style.opacity = '1';
+    } else {
+      header.style.opacity = '0';
+    }
+  });
 });
-
-function removeStartScreen() {
-    let startScreen = document.getElementById("startScreen")
-    startScreen.style.opacity = 0;
-    startScreen.style.pointerEvents = "none";
-}
-
 
 document.addEventListener("DOMContentLoaded", function() {
   const menuLinks = document.querySelectorAll("header nav a");
@@ -68,30 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-// document.addEventListener('DOMContentLoaded', function () {
-//       // Get all elements with the class 'grid-item'
-//       const gridContainer = document.getElementById("spContainer")
-//       const gridItems = gridContainer.querySelectorAll('div');
-
-//       // Function to toggle visibility based on data type
-//       function toggleVisibility(dataType) {
-//         gridItems.forEach(item => {
-//           if (item.dataset.type === dataType) {
-//             item.classList.toggle('spHidden');
-//           }
-//         });
-//       }
-
-//       // Add click event listeners to the buttons
-//       document.getElementById('buttonS').addEventListener('click', function () {
-//         toggleVisibility('s');
-//       });
-
-//       document.getElementById('buttonH').addEventListener('click', function () {
-//         toggleVisibility('h');
-//       });
-//     });
 
 var swiper = null; // Initialize swiper variable
 
