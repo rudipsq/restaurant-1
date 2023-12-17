@@ -59,10 +59,72 @@ header nav {
     top: 0;
     left: 0;
 
-    background-color: rgb(41, 41, 41);
+    /* background-color: rgb(41, 41, 41); */
+    background-image: url('/img/pic/start_stone.png');
+    
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+#darkOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.66);
+    /* Adjust the alpha value for darkness */
+}
+
+#ssCenter {
+    text-align: center;
+    height: 650px;
+
+    z-index: 1010;
+}
+
+#ssCorner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 600px;
+    height: 600px;
+
+    /* background-color: blue; */
+}
+
+.parallax {
+    position: absolute;
+
+    background-size: contain;
+    background-position: center;
+    will-change: transform;
+}
+
+#ssBackground {
+    background-image: url('/img/pic/start_brett.png');
+    
+    height: 900px;
+    width: 1500px;
+
+    z-index: 1;
+}
+
+#ssForeground {
+    background-image: url('/img/pic/start_fl.png');
+    
+    width: 800px;
+    height: 800px;
+    
+    z-index: 2;
+}
+
 
 
 
@@ -205,6 +267,12 @@ section {
 #speisen {
     text-align: center;
     /* height: 100vh; */
+}
+
+@media (max-width: 950px) {
+    #speisen {
+        display: none;
+    }
 }
 
 #spGrid {

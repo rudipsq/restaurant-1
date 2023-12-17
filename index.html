@@ -24,9 +24,26 @@
         </div>
     </header>
 
-    <section id="startScreen" onclick="removeStartScreen()">
-    
-    </section>
+    <div id="startScreen" style="display: none;" onclick="removeStartScreen()">
+        <div id="darkOverlay">
+            
+        </div>
+        <div id="ssCenter">
+            <img src="/img/logo/medium.png" alt="">
+        </div>
+        <div id="ssCorner">
+            <!-- <div>
+                <img src="/img/pic/start_fl.png" alt="">
+            </div> -->
+            <div id="ssBackground" class="parallax">
+
+            </div>
+            <div id="ssForeground" class="parallax">
+            
+            </div>
+        </div>
+    </div>
+    <script>document.getElementById("startScreen").style.display = "flex"</script>
 
     <main>
         <section id="willkommen">

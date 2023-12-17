@@ -223,3 +223,20 @@ spHswiper = new Swiper("#spHswiper", {
   });
 
 
+
+
+  const container = document.getElementById('ssCorner');
+  const background = document.getElementById('ssBackground');
+  const foreground = document.getElementById('ssForeground');
+
+  document.addEventListener('mousemove', (e) => {
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+
+    parallax(background, xAxis, yAxis, 0.32);
+    parallax(foreground, xAxis, yAxis, 0.55);
+  });
+
+  function parallax(element, xAxis, yAxis, speed) {
+    element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px) scale(1)`;
+  }
