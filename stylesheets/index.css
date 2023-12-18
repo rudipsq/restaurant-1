@@ -1,5 +1,12 @@
+:root {
+    --c-text: rgb(255, 255, 255);
+    --c-cardBackground: #ffae00;
+    --c-fhBackground: rgb(39, 39, 39);
+}
+
+
 body {
-    color: white;
+    color: var(--c-text);
 
     margin: 0;
     padding: 0;
@@ -7,6 +14,15 @@ body {
     margin-top: 120px;
 
     font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: white;
+}
+a:hover {
+    text-decoration: underline dashed;
 }
 
 header {
@@ -21,7 +37,7 @@ header {
     z-index: 999;
     height: 120px;
 
-    background: rgb(39, 39, 39);
+    background: var(--c-fhBackground);
     /* backdrop-filter: blur(20px); */
     width: 100%;
 
@@ -33,23 +49,29 @@ header {
 }
 
 header nav {
-    margin-top: 30px;
+    margin-top: 47px;
     display: flex;
-    gap: 30px;
+    gap: 36px;
 }
 
-/* header nav a.active {
-    background-color: aliceblue;
-} */
+header nav a {
+    z-index: 2;
+}
 
 #underline {
     position: absolute;
-    bottom: 30px;
+    bottom: 34px;
     left: 0;
-    height: 20px;
-    width: 20px;
-    z-index: 10000;
-    background-color: rgb(150, 30, 9);
+    z-index: 1;
+
+    height: 58px;
+    width: 120px;
+
+
+    background-image: url('/img/pic/brett2.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     transition: transform 0.2s ease-out;
 }
 
@@ -62,7 +84,8 @@ header nav {
     top: 0;
     left: 0;
 
-    background-image: url('/img/pic/start_stone.png');
+    background-image: url('/img/pic/start_wood.jpg');
+    background-size: cover;
     
     display: flex;
     flex-direction: column;
@@ -76,7 +99,7 @@ header nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.66);
+    background: rgba(27, 15, 0, 0.65);
 }
 
 #ssCenter {
@@ -123,7 +146,14 @@ header nav {
 }
 
 main {
-    background-color: rgb(39, 39, 39);
+    /* background-color: rgb(39, 39, 39); */
+
+    background-image: url('/img/pic/background.jpg');
+    background-size: auto;
+}
+
+#mainBackground {
+    background: rgba(26, 13, 0, 0.705);
 }
 
 
@@ -149,6 +179,7 @@ section {
 #willkommen #wiGrid {
     display: grid;
 }
+
 @media (min-width: 721px) {
     #wiGrid {
         grid-template-rows: repeat(2, 1fr);
@@ -169,7 +200,9 @@ section {
 }
 
 #willkommen .wiGridItem {
-    /* background-color: rgb(29, 29, 29); */
+    background-color: rgba(0, 0, 0, 0.301);
+    backdrop-filter: blur(5px);
+    
     min-width: 300px;
     min-height: 300px;
     overflow: hidden;
@@ -265,7 +298,15 @@ section {
 
 #speisen {
     text-align: center;
-    /* height: 100vh; */
+}
+
+#spText {
+    display: flex;
+    justify-content: center;
+}
+
+#spText div {
+    width: 700px;
 }
 
 @media (max-width: 950px) {
@@ -285,8 +326,6 @@ section {
     height: 400px;
 
     padding: 20px;
-
-    background-color: rebeccapurple;
 
     display: flex;
     flex-direction: column;
@@ -331,7 +370,6 @@ section {
     #stMobil div {
         width: calc(100% - 120px);
     
-        background-color: rgb(44, 44, 44);
         border-radius: 10px;
         padding: 20px;
     }
@@ -350,7 +388,7 @@ section {
     }
 
     #standorte .swiper-slide{
-        box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
     }
 
     #stMobil {
@@ -360,7 +398,6 @@ section {
     #stMobil div {
         width: calc(600px + calc(10% - 20px));
     
-        background-color: rgb(44, 44, 44);
         border-radius: 10px;
         max-height: 150px;
 
@@ -391,11 +428,11 @@ section {
     width: 240px;
     height: 320px;
 
-    background-color: rgb(44, 44, 44);
+    background-color: var(--c-cardBackground);
     border-radius: 10px;
 
     outline-style: solid;
-    outline-color: lightgrey;
+    outline-color: var(--c-text);
     outline-width: 1px;
     outline-offset: -8px;
 }
@@ -412,11 +449,13 @@ section {
 
 #stMobil div {
     outline-style: solid;
-    outline-color: lightgrey;
+    outline-color: var(--c-text);
     outline-width: 1px;
     outline-offset: -8px;
 
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.1);
+    background-color: var(--c-cardBackground);
+
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* - - - - GUTSCHEINE - - - - */
@@ -435,7 +474,7 @@ footer {
     padding: 20px;
 
     text-align: center;
-    background-color: rgb(27, 27, 27);
+    background-color: var(--c-fhBackground);
 }
 
 footer div {

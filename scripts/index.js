@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     menuLinks.forEach(link => {
-      link.classList.remove("active");
+      // link.classList.remove("active"); //? not used right now
       if (link.getAttribute("href") === `#${currentSectionId}`) {
-        link.classList.add("active");
+        // link.classList.add("active"); //? not used right now
         if (!clickedAtag) {
           const rect = link.getBoundingClientRect();
           const underlinePosition = rect.left + (rect.width / 2) - (underline.offsetWidth / 2);
@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   window.addEventListener("scroll", highlightMenu);
+  window.addEventListener("resize", highlightMenu);
   highlightMenu(); // Call it once on page load
 });
 
@@ -211,8 +212,8 @@ spHswiper = new Swiper("#spHswiper", {
     const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
     const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
 
-    parallax(background, xAxis, yAxis, 0.32);
-    parallax(foreground, xAxis, yAxis, 0.55);
+    parallax(background, xAxis, yAxis, 0.2);
+    parallax(foreground, xAxis, yAxis, 0.5);
   });
 
   function parallax(element, xAxis, yAxis, speed) {

@@ -12,15 +12,15 @@
     <header>
         <img src="" alt="LOGO">
         <nav>
-            <a class="active" href="#willkommen">willkommen</a>
+            <a href="#willkommen">willkommen</a>
             <a href="#speisen">speisen</a>
             <a href="#standorte">standorte</a>
             <a href="#gutscheine">gutscheine</a>
         </nav>
         <div id="underline"></div>
         <div>
-            <p>franchise</p>
-            <p>jobs</p>
+            <a href="franchise.html">Frenchise</a>
+            <a href="jobs.html">Jobs</a>
         </div>
     </header>
 
@@ -32,9 +32,8 @@
     </script>
 
     <div id="startScreen">
-        <div id="darkOverlay">
-    
-        </div>
+        <img style="z-index: 1; position: fixed; bottom: -800px; left: -200px; width: 800px; height: 1000px;" src="/img/pic/start_flour.png" alt="">
+        <div id="darkOverlay"></div>
         <div id="ssCenter">
             <img src="/img/logo/medium.png" alt="">
         </div>
@@ -45,6 +44,8 @@
     </div>
 
     <main>
+        <div id="mainBackground">
+
         <section id="willkommen">
             <div id="wiGrid">
                 <div class="wiGridItem" style="grid-column: span 3;">
@@ -123,7 +124,17 @@
         </section> -->
 
         <section id="speisen">
-            <h1>Speisekarte</h1>
+            <div id="spText">
+                <div>
+                    <h1>Speisekarte</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus ullam laboriosam amet, odit
+                        asperiores quidem quos aliquid suscipit unde vitae fugit. Recusandae praesentium obcaecati facere voluptate eveniet
+                        nihil sequi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis hic dolores consequuntur adipisci
+                        quia illo laboriosam, natus, repellat est, debitis eius deleniti laudantium omnis dolorem optio quos vitae. Aperiam,
+                        non!</p>
+                </div>
+            </div>
+            
             <div id="spGrid">
                 <div>
                     <div class="spGridItem" style="margin-left: auto;">
@@ -280,6 +291,8 @@
             <h1>Gutscheine</h1>
 
         </section>
+
+        </div>
     </main>
 
     <footer>
