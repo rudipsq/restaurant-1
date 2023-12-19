@@ -108,6 +108,12 @@ header nav a {
     justify-content: center;
 }
 
+#startScreen img {
+    user-drag: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 #darkOverlay {
     position: fixed;
     top: 0;
@@ -142,23 +148,29 @@ header nav a {
     width: 100px;
 
     z-index: 3;
-    background-color: rgba(116, 116, 116, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
 
-    border-radius: 50px;
+    border-radius: 50%;
+
+    transition: all 0.1s ease-out;
+    overflow: hidden;
+}
+
+#ssMid:hover {
+    outline-color: white;
+    outline-style: solid;
 }
 
 #ssMid img {
     margin-top: 25px;
     width: 60px;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-out;
 }
 
-#ssMid img:hover {
-    margin-top: 22px;
-    width: 65px;
+#ssMid:hover img {
+    margin-top: 30px;
 }
-
 
 .parallax {
     position: absolute;
