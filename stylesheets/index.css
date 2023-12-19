@@ -17,7 +17,7 @@ body {
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: underline 2px;
     text-underline-offset: 3px;
     color: white;
 }
@@ -28,7 +28,8 @@ a:hover {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: space-evenly;
     gap: 30px;
 
     position: fixed;
@@ -43,24 +44,38 @@ header {
 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
-
 .header-fade {
     transition: opacity ease-out 0.3s;
 }
 
+#hLogo {
+    margin-top: 20px;
+    height: 80px;
+}
+
+#hStuff {
+    width: 333px;
+}
+
 header nav {
-    margin-top: 47px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+    padding: 20px;
     display: flex;
     gap: 36px;
+
+    background-color: rgba(0, 0, 0, 0.247);
+    border-radius: 10px;
 }
 
 header nav a {
     z-index: 2;
+    margin-top: 3px
 }
 
 #underline {
     position: absolute;
-    bottom: 34px;
+    bottom: 30px;
     left: 0;
     z-index: 1;
 
@@ -72,7 +87,7 @@ header nav a {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    transition: transform 0.2s ease-out;
+    transition: transform 0.2s linear;
 }
 
 #startScreen {
@@ -118,6 +133,33 @@ header nav a {
     height: 600px;
 }
 
+#ssMid {
+    position: absolute;
+    bottom: 5vh;
+
+    text-align: center;
+    height: 100px;
+    width: 100px;
+
+    z-index: 3;
+    background-color: rgba(116, 116, 116, 0.1);
+    backdrop-filter: blur(10px);
+
+    border-radius: 50px;
+}
+
+#ssMid img {
+    margin-top: 25px;
+    width: 60px;
+    transition: all 0.1s ease-in-out;
+}
+
+#ssMid img:hover {
+    margin-top: 22px;
+    width: 65px;
+}
+
+
 .parallax {
     position: absolute;
 
@@ -145,6 +187,8 @@ header nav a {
     z-index: 2;
 }
 
+
+
 main {
     /* background-color: rgb(39, 39, 39); */
 
@@ -165,7 +209,6 @@ section {
 }
 
 /* - - - - WILLKOMMEN - - - - */
-
 #willkommen{
     margin-top: 100vh;
 }
@@ -201,6 +244,7 @@ section {
 
 #willkommen .wiGridItem {
     background-color: rgba(0, 0, 0, 0.301);
+    background-color: black;
     backdrop-filter: blur(5px);
     
     min-width: 300px;
@@ -220,10 +264,21 @@ section {
     object-fit: cover;
 }
 
-#willkommen .wiGridIcon {
+/* #willkommen .wiGridIcon {
     height: 75%;
     width: auto;
     filter: blur(15px) brightness(0.35);
+    user-drag: none;
+    user-select: none;
+    -webkit-user-drag: none;
+} */
+
+#willkommen .wiGridIcon {
+    /* width: 130%; */
+    height: 200%;
+    filter: blur(15px) brightness(0.35);
+    bottom: -25%;
+    position: absolute;
     user-drag: none;
     user-select: none;
     -webkit-user-drag: none;
@@ -244,58 +299,6 @@ section {
 
 
 /* - - - - SPEISEN - - - - */
-/* #speisen #spContainer {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-
-    gap: 12px;
-}
-
-#spContainer div {
-    width: 100%;
-
-    background-size: cover;
-    background-position: center;
-
-    padding-top: 120px;
-    outline-color: rgb(44, 44, 44);
-    outline-style: solid;
-    outline-width: 3px;
-    text-align: center;
-}
-
-#spContainer div div {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    height: 35px;
-
-    outline-style: none;
-    padding: 0;
-    padding-top: 5px;
-}
-
-#spContainer div div h2 {
-    margin: 0;
-}
-
-.spHidden {
-    display: none;
-}
-
-#spContainer #spMehr {
-    padding-top: 0;
-    height: 160px;
-
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#spContainer #spMehr div {
-    height: 100%;
-    padding: 0;
-} */
-
 #speisen {
     text-align: center;
 }
