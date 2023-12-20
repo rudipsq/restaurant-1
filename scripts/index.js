@@ -16,6 +16,7 @@ document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
   });
 });
 
+addSpeisen();
 
 
 // make header visible
@@ -219,3 +220,34 @@ spHswiper = new Swiper("#spHswiper", {
   function parallax(element, xAxis, yAxis, speed) {
     element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px) scale(1)`;
   }
+
+
+
+
+
+async function addSpeisen() {
+  try {
+    const response = await fetch('/data/speisen.json');
+    const jsonData = await response.json();
+    const products = jsonData.products; // Access the "products" property
+
+    console.log(products);
+
+    products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('swiper-slide');
+      productDiv.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+      `;
+
+      if (product.type) {
+        document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      } else {
+        document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching or parsing JSON:', error);
+  }
+}
