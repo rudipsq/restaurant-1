@@ -19,6 +19,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* - - - - - A Tags - - - - -*/
 a {
     text-decoration: underline 2px;
     text-underline-offset: 3px;
@@ -28,6 +30,8 @@ a:hover {
     text-decoration: underline dashed;
 }
 
+
+/* - - - - - Header - - - - -*/
 header {
     display: flex;
     flex-direction: row;
@@ -71,4 +75,23 @@ header nav {
 header nav a {
     z-index: 2;
     margin-top: 3px
+}
+
+
+
+
+/* - - - - - Footer - - - - -*/
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+
+    padding: 20px;
+
+    text-align: center;
+    background-color: var(--c-fhBackground);
+}
+
+footer div {
+    min-width: 70px;
 }

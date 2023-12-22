@@ -411,19 +411,3 @@ section {
     height: 900px;
     margin-bottom: 0;
 }
-
-
-footer {
-    display: flex;
-    justify-content: center;
-    gap: 8%;
-
-    padding: 20px;
-
-    text-align: center;
-    background-color: var(--c-fhBackground);
-}
-
-footer div {
-    min-width: 70px;
-}
