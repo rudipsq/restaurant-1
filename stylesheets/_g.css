@@ -10,6 +10,7 @@ html {
 
 body {
     color: var(--c-text);
+    background-color: black;
 
     margin: 0;
     padding: 0;

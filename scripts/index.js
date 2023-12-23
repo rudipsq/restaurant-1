@@ -1,23 +1,11 @@
-// document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
-//   anchor.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     const targetId = this.getAttribute("href").substring(1);
-//     const targetElement = document.getElementById(targetId);
 
-//     const offset = 120; // Adjust this value to your desired offset
+document.addEventListener("DOMContentLoaded", async function () {
+  checkWindowWidth();
+  addSpeisen();
 
-//     if (targetElement) {
-//       const targetOffsetTop = targetElement.getBoundingClientRect().top + window.scrollY;
-//       window.scroll({
-//         top: targetOffsetTop - offset,
-//         behavior: "smooth"
-//       });
-//     }
-//   });
-// });
-
-addSpeisen();
-
+  
+  document.querySelector('header').classList.add('header-fade');
+});
 
 // make header visible
 document.addEventListener("DOMContentLoaded", function () {
@@ -124,9 +112,6 @@ function checkWindowWidth() {
   }
 }
 
-// Initial check
-checkWindowWidth();
-
 function debounce(func, wait) {
   let timeout;
   return function () {
@@ -151,6 +136,56 @@ window.addEventListener("resize", debounce(function () {
 
 
 
+
+const container = document.getElementById('ssCorner');
+const background = document.getElementById('ssBackground');
+const foreground = document.getElementById('ssForeground');
+
+document.addEventListener('mousemove', (e) => {
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+
+  parallax(background, xAxis, yAxis, 0.2);
+  parallax(foreground, xAxis, yAxis, 0.5);
+});
+
+function parallax(element, xAxis, yAxis, speed) {
+  element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px) scale(1)`;
+}
+
+
+
+
+
+async function addSpeisen() {
+  try {
+    const response = await fetch('/data/speisen.json');
+    const jsonData = await response.json();
+    const products = jsonData.products; // Access the "products" property
+
+    console.log(products);
+
+    products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('swiper-slide');
+      productDiv.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+      `;
+
+      if (product.type) {
+        document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      } else {
+        document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      }
+    });
+    initializeSpSwiper()
+  } catch (error) {
+    console.error('Error fetching or parsing JSON:', error);
+  }
+}
+
+function initializeSpSwiper(){
 spHswiper = new Swiper("#spHswiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -201,53 +236,4 @@ spHswiper = new Swiper("#spHswiper", {
     spaceBetween: -100,
     loop: true
   });
-
-
-
-
-  const container = document.getElementById('ssCorner');
-  const background = document.getElementById('ssBackground');
-  const foreground = document.getElementById('ssForeground');
-
-  document.addEventListener('mousemove', (e) => {
-    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-
-    parallax(background, xAxis, yAxis, 0.2);
-    parallax(foreground, xAxis, yAxis, 0.5);
-  });
-
-  function parallax(element, xAxis, yAxis, speed) {
-    element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px) scale(1)`;
-  }
-
-
-
-
-
-async function addSpeisen() {
-  try {
-    const response = await fetch('/data/speisen.json');
-    const jsonData = await response.json();
-    const products = jsonData.products; // Access the "products" property
-
-    console.log(products);
-
-    products.forEach(product => {
-      const productDiv = document.createElement('div');
-      productDiv.classList.add('swiper-slide');
-      productDiv.innerHTML = `
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-      `;
-
-      if (product.type) {
-        document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
-      } else {
-        document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
-      }
-    });
-  } catch (error) {
-    console.error('Error fetching or parsing JSON:', error);
-  }
 }
