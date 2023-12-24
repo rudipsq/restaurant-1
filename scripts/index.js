@@ -1,37 +1,28 @@
-document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute("href").substring(1);
-    const targetElement = document.getElementById(targetId);
 
-    const offset = 120; // Adjust this value to your desired offset
+document.addEventListener("DOMContentLoaded", async function () {
+  checkWindowWidth();
+  addSpeisen();
 
-    if (targetElement) {
-      const targetOffsetTop = targetElement.getBoundingClientRect().top + window.scrollY;
-      window.scroll({
-        top: targetOffsetTop - offset,
-        behavior: "smooth"
-      });
+  
+  document.querySelector('header').classList.add('header-fade');
+});
+
+// make header visible
+document.addEventListener("DOMContentLoaded", function () {
+  var header = document.querySelector('header');
+
+  window.addEventListener('scroll', function () {
+    var scrollDistance = window.scrollY;
+
+    var threshold = window.innerHeight - 180;
+
+    if (scrollDistance > threshold) {
+      header.style.opacity = '1';
+    } else {
+      header.style.opacity = '0';
     }
   });
 });
-
-window.addEventListener("scroll", function() {
-  // Check if the user has scrolled, and if so, hide the start screen
-  if (window.scrollY > 0) {
-    removeStartScreen()
-
-    // Enable scrolling for the body content when the start screen is removed
-    document.body.style.overflow = "auto";
-  }
-});
-
-function removeStartScreen() {
-    let startScreen = document.getElementById("startScreen")
-    startScreen.style.opacity = 0;
-    startScreen.style.pointerEvents = "none";
-}
-
 
 document.addEventListener("DOMContentLoaded", function() {
   const menuLinks = document.querySelectorAll("header nav a");
@@ -51,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     menuLinks.forEach(link => {
-      link.classList.remove("active");
+      // link.classList.remove("active"); //? not used right now
       if (link.getAttribute("href") === `#${currentSectionId}`) {
-        link.classList.add("active");
+        // link.classList.add("active"); //? not used right now
         if (!clickedAtag) {
           const rect = link.getBoundingClientRect();
           const underlinePosition = rect.left + (rect.width / 2) - (underline.offsetWidth / 2);
@@ -64,34 +55,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   window.addEventListener("scroll", highlightMenu);
+  window.addEventListener("resize", highlightMenu);
   highlightMenu(); // Call it once on page load
 });
 
 
-
-// document.addEventListener('DOMContentLoaded', function () {
-//       // Get all elements with the class 'grid-item'
-//       const gridContainer = document.getElementById("spContainer")
-//       const gridItems = gridContainer.querySelectorAll('div');
-
-//       // Function to toggle visibility based on data type
-//       function toggleVisibility(dataType) {
-//         gridItems.forEach(item => {
-//           if (item.dataset.type === dataType) {
-//             item.classList.toggle('spHidden');
-//           }
-//         });
-//       }
-
-//       // Add click event listeners to the buttons
-//       document.getElementById('buttonS').addEventListener('click', function () {
-//         toggleVisibility('s');
-//       });
-
-//       document.getElementById('buttonH').addEventListener('click', function () {
-//         toggleVisibility('h');
-//       });
-//     });
 
 var swiper = null; // Initialize swiper variable
 
@@ -144,9 +112,6 @@ function checkWindowWidth() {
   }
 }
 
-// Initial check
-checkWindowWidth();
-
 function debounce(func, wait) {
   let timeout;
   return function () {
@@ -171,6 +136,56 @@ window.addEventListener("resize", debounce(function () {
 
 
 
+
+const container = document.getElementById('ssCorner');
+const background = document.getElementById('ssBackground');
+const foreground = document.getElementById('ssForeground');
+
+document.addEventListener('mousemove', (e) => {
+  const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+  const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+
+  parallax(background, xAxis, yAxis, 0.2);
+  parallax(foreground, xAxis, yAxis, 0.5);
+});
+
+function parallax(element, xAxis, yAxis, speed) {
+  element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px) scale(1)`;
+}
+
+
+
+
+
+async function addSpeisen() {
+  try {
+    const response = await fetch('/data/speisen.json');
+    const jsonData = await response.json();
+    const products = jsonData.products; // Access the "products" property
+
+    console.log(products);
+
+    products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('swiper-slide');
+      productDiv.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+      `;
+
+      if (product.type) {
+        document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      } else {
+        document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      }
+    });
+    initializeSpSwiper()
+  } catch (error) {
+    console.error('Error fetching or parsing JSON:', error);
+  }
+}
+
+function initializeSpSwiper(){
 spHswiper = new Swiper("#spHswiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -221,22 +236,4 @@ spHswiper = new Swiper("#spHswiper", {
     spaceBetween: -100,
     loop: true
   });
-
-
-
-
-  const container = document.getElementById('ssCorner');
-  const background = document.getElementById('ssBackground');
-  const foreground = document.getElementById('ssForeground');
-
-  document.addEventListener('mousemove', (e) => {
-    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-
-    parallax(background, xAxis, yAxis, 0.32);
-    parallax(foreground, xAxis, yAxis, 0.55);
-  });
-
-  function parallax(element, xAxis, yAxis, speed) {
-    element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px) scale(1)`;
-  }
+}

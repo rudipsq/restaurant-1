@@ -1,57 +1,30 @@
-body {
-    /* background-color: rgb(20, 20, 20); */
-    background-color: rgb(14, 14, 14);
-    color: white;
 
-    margin: 0;
-    padding: 0;
-
-    margin-top: 120px;
-
-    font-family: Arial, Helvetica, sans-serif;
-    /* background-image: url('/img/pic/f12.jpg'); */
+/* - - - - - HEADER - - - - - */
+.header-fade {
+    transition: opacity ease-out 0.3s;
 }
-
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    height: 120px;
-
-    background: rgba(75, 75, 75, 0.5);
-    backdrop-filter: blur(50px);
-    width: 100%;
-}
-
-header nav {
-    margin-top: 30px;
-    display: flex;
-    gap: 30px;
-}
-
-/* header nav a.active {
-    background-color: aliceblue;
-} */
 
 #underline {
     position: absolute;
     bottom: 30px;
     left: 0;
-    height: 20px;
-    width: 20px;
-    z-index: 10000;
-    background-color: rgb(150, 30, 9);
-    transition: transform 0.2s ease-out;
+    z-index: 1;
+
+    height: 58px;
+    width: 120px;
+
+
+    background-image: url('/img/pic/brett2.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.2s linear;
 }
 
+
+/* - - - - - START SCREEN - - - - - */
 #startScreen {
-    z-index: 1000;
+    z-index: -1;
     height: 100vh;
     width: 100%;
 
@@ -59,16 +32,20 @@ header nav {
     top: 0;
     left: 0;
 
-    /* background-color: rgb(41, 41, 41); */
-    background-image: url('/img/pic/start_stone.png');
+    background-image: url('/img/pic/start_wood.jpg');
+    background-size: cover;
+    background-position: center top;
     
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#startScreen img {
+    user-drag: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 #darkOverlay {
@@ -77,15 +54,14 @@ header nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.66);
-    /* Adjust the alpha value for darkness */
+    background: rgba(27, 15, 0, 0.65);
 }
 
 #ssCenter {
     text-align: center;
     height: 650px;
 
-    z-index: 1010;
+    z-index: 3;
 }
 
 #ssCorner {
@@ -95,8 +71,39 @@ header nav {
 
     width: 600px;
     height: 600px;
+}
 
-    /* background-color: blue; */
+#ssMid {
+    position: absolute;
+    bottom: 5vh;
+
+    text-align: center;
+    height: 100px;
+    width: 100px;
+
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    border-radius: 50%;
+
+    transition: all 0.1s ease-out;
+    overflow: hidden;
+}
+
+#ssMid:hover {
+    outline-color: white;
+    outline-style: solid;
+}
+
+#ssMid img {
+    margin-top: 25px;
+    width: 60px;
+    transition: all 0.1s ease-out;
+}
+
+#ssMid:hover img {
+    margin-top: 30px;
 }
 
 .parallax {
@@ -119,6 +126,7 @@ header nav {
 #ssForeground {
     background-image: url('/img/pic/start_fl.png');
     
+    
     width: 800px;
     height: 800px;
     
@@ -127,17 +135,26 @@ header nav {
 
 
 
+#mainBackgroundImg {
+    background-image: url('/img/pic/background.jpg');
+    background-size: auto;
+    background-position: center top;
+}
+
+#mainBackgroundDark {
+    background: rgba(26, 13, 0, 0.705);
+}
 
 section {
     min-height: 300px;
     width: 100%;
-
-    margin-bottom: 100px;
+    padding-top: 120px;
 }
 
-/* - - - - WILLKOMMEN - - - - */
 
+/* - - - - WILLKOMMEN - - - - */
 #willkommen{
+    margin-top: 100vh;
 }
 
 @media (min-width: 721px) {
@@ -148,8 +165,8 @@ section {
 
 #willkommen #wiGrid {
     display: grid;
-    /* background-color: rgba(202, 13, 13, 0.5); */
 }
+
 @media (min-width: 721px) {
     #wiGrid {
         grid-template-rows: repeat(2, 1fr);
@@ -170,7 +187,10 @@ section {
 }
 
 #willkommen .wiGridItem {
-    /* background-color: rgb(29, 29, 29); */
+    background-color: rgba(0, 0, 0, 0.301);
+    background-color: black;
+    backdrop-filter: blur(5px);
+    
     min-width: 300px;
     min-height: 300px;
     overflow: hidden;
@@ -188,10 +208,21 @@ section {
     object-fit: cover;
 }
 
-#willkommen .wiGridIcon {
+/* #willkommen .wiGridIcon {
     height: 75%;
     width: auto;
     filter: blur(15px) brightness(0.35);
+    user-drag: none;
+    user-select: none;
+    -webkit-user-drag: none;
+} */
+
+#willkommen .wiGridIcon {
+    /* width: 130%; */
+    height: 200%;
+    filter: blur(15px) brightness(0.35);
+    bottom: -25%;
+    position: absolute;
     user-drag: none;
     user-select: none;
     -webkit-user-drag: none;
@@ -212,61 +243,17 @@ section {
 
 
 /* - - - - SPEISEN - - - - */
-/* #speisen #spContainer {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-
-    gap: 12px;
-}
-
-#spContainer div {
-    width: 100%;
-
-    background-size: cover;
-    background-position: center;
-
-    padding-top: 120px;
-    outline-color: rgb(44, 44, 44);
-    outline-style: solid;
-    outline-width: 3px;
-    text-align: center;
-}
-
-#spContainer div div {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    height: 35px;
-
-    outline-style: none;
-    padding: 0;
-    padding-top: 5px;
-}
-
-#spContainer div div h2 {
-    margin: 0;
-}
-
-.spHidden {
-    display: none;
-}
-
-#spContainer #spMehr {
-    padding-top: 0;
-    height: 160px;
-
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#spContainer #spMehr div {
-    height: 100%;
-    padding: 0;
-} */
-
 #speisen {
     text-align: center;
-    /* height: 100vh; */
+}
+
+#spText {
+    display: flex;
+    justify-content: center;
+}
+
+#spText div {
+    width: 700px;
 }
 
 @media (max-width: 950px) {
@@ -283,11 +270,6 @@ section {
 
 .spGridItem {
     width: 400px;
-    height: 400px;
-
-    padding: 20px;
-
-    background-color: rebeccapurple;
 
     display: flex;
     flex-direction: column;
@@ -332,7 +314,6 @@ section {
     #stMobil div {
         width: calc(100% - 120px);
     
-        background-color: rgb(44, 44, 44);
         border-radius: 10px;
         padding: 20px;
     }
@@ -351,7 +332,7 @@ section {
     }
 
     #standorte .swiper-slide{
-        box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
     }
 
     #stMobil {
@@ -361,7 +342,6 @@ section {
     #stMobil div {
         width: calc(600px + calc(10% - 20px));
     
-        background-color: rgb(44, 44, 44);
         border-radius: 10px;
         max-height: 150px;
 
@@ -392,11 +372,11 @@ section {
     width: 240px;
     height: 320px;
 
-    background-color: rgb(44, 44, 44);
+    background-color: var(--c-cardBackground);
     border-radius: 10px;
 
     outline-style: solid;
-    outline-color: lightgrey;
+    outline-color: var(--c-text);
     outline-width: 1px;
     outline-offset: -8px;
 }
@@ -413,31 +393,18 @@ section {
 
 #stMobil div {
     outline-style: solid;
-    outline-color: lightgrey;
+    outline-color: var(--c-text);
     outline-width: 1px;
     outline-offset: -8px;
 
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.1);
+    background-color: var(--c-cardBackground);
+
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* - - - - GUTSCHEINE - - - - */
 
 #gutscheine {
     height: 900px;
-}
-
-
-footer {
-    display: flex;
-    justify-content: center;
-    gap: 8%;
-
-    padding: 20px;
-
-    text-align: center;
-    background-color: rgb(27, 27, 27);
-}
-
-footer div {
-    min-width: 70px;
+    margin-bottom: 0;
 }
