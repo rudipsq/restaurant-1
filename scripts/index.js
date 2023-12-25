@@ -1,6 +1,10 @@
+var swiper = null;
+var spHswiper = null;
+var spSswiper = null;
 
 document.addEventListener("DOMContentLoaded", async function () {
   checkWindowWidth();
+  initializeSpSwiper();
   addSpeisen();
 
   
@@ -21,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       header.style.opacity = '0';
     }
-  });
+  }, { passive: true });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -58,10 +62,6 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("resize", highlightMenu);
   highlightMenu(); // Call it once on page load
 });
-
-
-
-var swiper = null; // Initialize swiper variable
 
 function initializeSwiper() {
   swiper = new Swiper(".swiper", {
@@ -161,7 +161,7 @@ async function addSpeisen() {
   try {
     const response = await fetch('/data/speisen.json');
     const jsonData = await response.json();
-    const products = jsonData.products; // Access the "products" property
+    const products = jsonData.products;
 
     console.log(products);
 
@@ -179,7 +179,10 @@ async function addSpeisen() {
         document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
       }
     });
-    initializeSpSwiper()
+
+    // Instead of initializing immediately, use the update method
+    spHswiper.update();
+    spSswiper.update();
   } catch (error) {
     console.error('Error fetching or parsing JSON:', error);
   }
