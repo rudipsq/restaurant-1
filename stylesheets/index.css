@@ -1,3 +1,21 @@
+/* - - - - - SCROLL ANIM - - - - - */
+.scHiddenRight {
+    /* opacity: 0; */
+    transform: translateX(75%);
+    transition: all 1s ease-out;
+}
+
+.scHiddenBottom {
+    opacity: 0.5;
+    transform: translateY(50%);
+    transition: all 0.5s ease;
+}
+
+.scShow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 /* - - - - - HEADER - - - - - */
 .header-fade {
@@ -6,7 +24,8 @@
 
 #underline {
     position: absolute;
-    bottom: 30px;
+    /* bottom: 30px; */
+    bottom: calc(var(--s-headerHeight)/5);
     left: 0;
     z-index: 1;
 
@@ -59,7 +78,8 @@
 
 #ssCenter {
     text-align: center;
-    height: 650px;
+    /* height: 650px; */
+    margin-bottom: 500px; /* remove later */
 
     z-index: 3;
 }
@@ -136,19 +156,22 @@
 
 
 #mainBackgroundImg {
+    /* background-color: rgb(212, 212, 212); */
     background-image: url('/img/pic/background.jpg');
     background-size: auto;
     background-position: center top;
 }
 
 #mainBackgroundDark {
-    background: rgba(26, 13, 0, 0.705);
+    /* background: rgba(26, 13, 0, 0.705); */
+    background: rgba(26, 13, 0, 0.767);
+    /* backdrop-filter: blur(3px); */
 }
 
 section {
     min-height: 300px;
     width: 100%;
-    padding-top: 120px;
+    padding-top: var(--s-headerHeight);
 }
 
 
@@ -159,7 +182,7 @@ section {
 
 @media (min-width: 721px) {
     #willkommen {
-        height: calc(100vh - 120px);
+        height: calc(100vh - var(--s-headerHeight));
     }
 }
 
@@ -208,15 +231,6 @@ section {
     object-fit: cover;
 }
 
-/* #willkommen .wiGridIcon {
-    height: 75%;
-    width: auto;
-    filter: blur(15px) brightness(0.35);
-    user-drag: none;
-    user-select: none;
-    -webkit-user-drag: none;
-} */
-
 #willkommen .wiGridIcon {
     /* width: 130%; */
     height: 200%;
@@ -245,6 +259,16 @@ section {
 /* - - - - SPEISEN - - - - */
 #speisen {
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#spWrapper {
+    width: 900px;
+    background-image: url(/img/pic/brett2.png);
+    background-position-y: -50px;
+    background-size: 900px 110%;
+    background-repeat: no-repeat;
 }
 
 #spText {
@@ -286,10 +310,22 @@ section {
 }
 
 #speisen .swiper-slide {
-    background-color: black;
+    background-color: var(--c-cardBackground);
+    border-radius: 7px;
 
     width: 200px;
-    height: 280px;
+    height: 270px;
+
+    overflow: hidden;
+}
+
+#speisen .swiper-slide img {
+    height: 180px;
+}
+
+#speisen .swiper-slide h3,p {
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 
@@ -375,9 +411,7 @@ section {
     background-color: var(--c-cardBackground);
     border-radius: 10px;
 
-    outline-style: solid;
-    outline-color: var(--c-text);
-    outline-width: 1px;
+    outline: var(--s-standardOutline);
     outline-offset: -8px;
 }
 

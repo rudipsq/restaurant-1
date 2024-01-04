@@ -6,14 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="icon" href="/img/logo/tiny.png">
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/stylesheets/_g.css">
     <link rel="stylesheet" href="/stylesheets/index.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabriela">
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 
 <body>
     <header>
-        <img src="/img/logo/medium.png" alt="Logo" id="hLogo">
+        <div id="hDark">
+        <div class="hWrapper">
+            <div  id="hLogo">
+                <img src="/img/logo/tiny.png" alt="Logo" class="logo1">
+                <img src="/img/logo/medium.png" alt="Logo" class="logo1">
+            </div>
+        </div>
         <nav>
             <a href="#willkommen">Willkommen</a>
             <a href="#speisen">Speisen</a>
@@ -21,10 +33,13 @@
             <a href="#gutscheine">Gutscheine</a>
         </nav>
         <div id="underline"></div>
-        <div id="hStuff">
-            <a href="franchise.html">Frenchise</a>
-            <br>
-            <a href="/franchise.html#jobs">Jobs</a>
+        <div class="hWrapper">
+            <div id="hStuff">
+                <a href="franchise.html">Frenchise</a>
+                <br>
+                <a href="/franchise.html#jobs">Jobs</a>
+            </div>
+        </div>
         </div>
     </header>
 
@@ -36,14 +51,16 @@
         <img style="z-index: 1; position: fixed; bottom: -800px; left: -200px; width: 800px; height: 1000px;" src="/img/pic/start_flour.png" alt="">
         <div id="darkOverlay"></div>
         <div id="ssCenter">
-            <img src="/img/logo/banner.png" alt="">
+            <!-- <img src="/img/logo/banner.png" alt=""> -->
+            <dotlottie-player src="/data/animation.json" background="transparent" speed="1" style="width: 2000px; height: 1000px;" autoplay></dotlottie-player>
+            <!-- <dotlottie-player src="https://lottie.host/464f0fa2-58ae-4b20-a565-92c24037fd1c/WC85ukAe4p.json" background="transparent" speed="1" style="width: 800px; height: 400px;" autoplay></dotlottie-player> -->
         </div>
         <div id="ssCorner">
             <div id="ssBackground" class="parallax"></div>
             <div id="ssForeground" class="parallax"></div>
         </div>
         <a id="ssMid" href="#willkommen">
-            <img src="/img/icon/arrowDown.png" alt="">
+            <img src="/img/icon/arrowDown.png" alt="arrowDown">
         </a>
     </div>
 
@@ -76,6 +93,7 @@
         <div id="mainBackgroundDark">
 
         <section id="speisen">
+            <div id="spWrapper" class="scHiddenRight">
             <div id="spText">
                 <div>
                     <h1>Speisekarte</h1>
@@ -127,6 +145,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
 
 
@@ -139,29 +158,26 @@
                         <h2>Zur Traube</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati natus magnam doloremque
                             accusantium explicabo eos
-                            esse consequuntur totam dolores enim possimus aperiam, accusamus suscipit atque quae ipsa quam alias
-                            fugiat.</p>
+                            esse consequuntur totam dolores enim.</p>
                     </div>
                     <div class="swiper-slide">
                         <img src="/img/icon/stEngele.png" alt="Icon Engele">
                         <h2>Zum Engele</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sint repudiandae neque tempore
                             accusamus, soluta atque
-                            fugit vitae eligendi laborum impedit, ipsum cumque excepturi exercitationem, recusandae nihil
-                            aperiam harum autem.</p>
+                            fugit vitae eligendi laborum impedit, ipsum cumque excepturi exercitationem.</p>
                     </div>
                     <div class="swiper-slide">
                         <img src="/img/icon/stRose.png" alt="Icon Rose">
                         <h2>Zur Rose</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum fugit odit harum sunt dolorem ullam
                             tempore corporis
-                            aspernatur cumque, obcaecati fuga, dicta perspiciatis beatae sit repudiandae dignissimos ad quisquam
-                            possimus.</p>
+                            aspernatur cumque, obcaecati fuga, dicta perspiciatis beatae sit.</p>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <div id="stMobil">
+            <div id="stMobil" class="scHiddenBottom">
                 <div>
                     <h2>Sie sind mehr als 50 Personen?</h2>
                     <p>Kein Problem, dann kommen wir einfach mit unserem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam sed nemo natus ratione quasi repellendus nostrum accusantium expedita hic alias quam ex eveniet repudiandae laboriosam, nihil velit id. Magnam, reiciendis?</p>

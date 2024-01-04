@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('scroll', function () {
     var scrollDistance = window.scrollY;
 
-    var threshold = window.innerHeight - 180;
+    var threshold = window.innerHeight - 130;
 
     if (scrollDistance > threshold) {
       header.style.opacity = '1';
@@ -136,27 +136,46 @@ window.addEventListener("resize", debounce(function () {
 
 
 
+//* SCROLL ANIMATION
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if(entry.isIntersecting){
+      entry.target.classList.add('scShow');
+    } else {
+      // wenn animation jedes mal spielen soll:
+      entry.target.classList.remove('scShow');
+    }
+  })
+})
 
+const hiddenRightElements = document.querySelectorAll('.scHiddenRight');
+hiddenRightElements.forEach((el)=> observer.observe(el));
+
+const hiddenBottomElements = document.querySelectorAll('.scHiddenBottom');
+hiddenBottomElements.forEach((el)=> observer.observe(el));
+
+
+
+//* START SCREEN
 const container = document.getElementById('ssCorner');
 const background = document.getElementById('ssBackground');
 const foreground = document.getElementById('ssForeground');
 
 document.addEventListener('mousemove', (e) => {
-  const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-  const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+  const xAxis = (window.innerWidth / 2 - e.clientX) / 25;
+  const yAxis = (window.innerHeight / 2 - e.clientY) / 25;
 
-  parallax(background, xAxis, yAxis, 0.2);
+  parallax(background, xAxis, yAxis, 0.35);
   parallax(foreground, xAxis, yAxis, 0.5);
 });
 
 function parallax(element, xAxis, yAxis, speed) {
-  element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px) scale(1)`;
+  element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px)`;
 }
 
 
-
-
-
+//* SPEISEN
 async function addSpeisen() {
   try {
     const response = await fetch('/data/speisen.json');
@@ -169,9 +188,12 @@ async function addSpeisen() {
       const productDiv = document.createElement('div');
       productDiv.classList.add('swiper-slide');
       productDiv.innerHTML = `
+        <img src="/img/pic/start_fl.png">
         <h3>${product.name}</h3>
         <p>${product.description}</p>
       `;
+      
+      //<img src="/img/pic/fl_${product.id}.jpg">
 
       if (product.type) {
         document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
@@ -187,6 +209,8 @@ async function addSpeisen() {
     console.error('Error fetching or parsing JSON:', error);
   }
 }
+
+
 
 function initializeSpSwiper(){
 spHswiper = new Swiper("#spHswiper", {

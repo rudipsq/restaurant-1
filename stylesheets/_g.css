@@ -1,7 +1,10 @@
 :root {
     --c-text: rgb(255, 255, 255);
     --c-cardBackground: #ffae00;
-    --c-fhBackground: rgb(39, 39, 39);
+    --c-fhBackground: #ffae00;
+
+    --s-headerHeight: 100px;
+    --s-standardOutline: 1px solid rgb(255, 255, 255);
 }
 
 html {
@@ -10,14 +13,16 @@ html {
 
 body {
     color: var(--c-text);
-    background-color: black;
+    /* background-color: black; */
+    overflow-x: hidden;
 
     margin: 0;
     padding: 0;
 
     /* margin-top: 120px; */
 
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Gabriela', serif;
 }
 
 
@@ -34,48 +39,83 @@ a:hover {
 
 /* - - - - - Header - - - - -*/
 header {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    /* justify-content: center; */
-    justify-content: space-evenly;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 30px; */
 
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
-    height: 120px;
+    height: var(--s-headerHeight);
 
-    background: var(--c-fhBackground);
-    /* backdrop-filter: blur(20px); */
+    /* background: var(--c-fhBackground); */
+    /* background-color: rgba(10, 10, 10, 0.096); */
+    background-image: url(/img/pic/background.jpg);
+    background-repeat: no-repeat;
+    /* backdrop-filter: blur(10px); */
     width: 100%;
 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+#hDark {
+    background: rgba(26, 13, 0, 0.767);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+
+    height: 100%;
+}
+
+.hWrapper {
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #hLogo {
-    margin-top: 20px;
-    height: 80px;
+    height: calc(var(--s-headerHeight)/2);
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.logo1{
+    height: 100%;
 }
 
 #hStuff {
-    width: 333px;
+    margin-left: auto;
+    margin-right: 20px;
+    text-align: center;
+    width: 75px;
 }
 
 header nav {
-    margin-top: 27px;
-    margin-bottom: 27px;
-    padding: 20px;
+    padding: 10px;
+    margin: 10px;
     display: flex;
     gap: 36px;
 
-    background-color: rgba(0, 0, 0, 0.247);
-    border-radius: 10px;
+    /* background-color: rgba(0, 0, 0, 0.247); */
+    border-radius: 5px;
+
+    outline: var(--s-standardOutline);
+    outline-color: rgba(255, 255, 255, 0.377);
+    outline-width: 2px;
 }
 
 header nav a {
     z-index: 2;
-    margin-top: 3px
+    /* margin-top: 3px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
