@@ -39,11 +39,6 @@ a:hover {
 
 /* - - - - - Header - - - - -*/
 header {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 30px; */
-
     position: fixed;
     top: 0;
     left: 0;
@@ -85,7 +80,7 @@ header {
     gap: 10px;
 }
 
-.logo1{
+#hLogo img {
     height: 100%;
 }
 

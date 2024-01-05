@@ -1,6 +1,9 @@
 # BUGS:
 
-arrow cant be accessed when scrolled down a bit: padding of #willkommen over arrow button
+- arrow cant be accessed when scrolled down a bit: padding of #willkommen over arrow button
+- header at start is only opacity 0, so it can still be clicked, should this be like this?
+
+# NOTES:
 
 font family: Gabriela
 good color: #B61A1F

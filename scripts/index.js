@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   initializeSpSwiper();
   addSpeisen();
 
+  parallax(background, (window.innerWidth / 2)/ 25, (window.innerHeight / 2)/ 25, 0.35);
+  parallax(foreground, (window.innerWidth / 2)/ 25, (window.innerHeight / 2)/ 25, 0.5);
+
   
   document.querySelector('header').classList.add('header-fade');
 });
@@ -158,7 +161,6 @@ hiddenBottomElements.forEach((el)=> observer.observe(el));
 
 
 //* START SCREEN
-const container = document.getElementById('ssCorner');
 const background = document.getElementById('ssBackground');
 const foreground = document.getElementById('ssForeground');
 
