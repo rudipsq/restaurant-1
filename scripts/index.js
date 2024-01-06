@@ -145,9 +145,6 @@ const observer = new IntersectionObserver((entries) => {
     console.log(entry);
     if(entry.isIntersecting){
       entry.target.classList.add('scShow');
-    } else {
-      // wenn animation jedes mal spielen soll:
-      entry.target.classList.remove('scShow');
     }
   })
 })
