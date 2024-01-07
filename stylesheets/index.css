@@ -157,14 +157,14 @@
 
 #mainBackgroundImg {
     /* background-color: rgb(212, 212, 212); */
-    background-image: url('/img/pic/background.jpg');
+    /* background-image: url('/img/pic/background.jpg');
     background-size: auto;
-    background-position: center top;
+    background-position: center top; */
 }
 
 #mainBackgroundDark {
     /* background: rgba(26, 13, 0, 0.705); */
-    background: rgba(26, 13, 0, 0.767);
+    /* background: rgba(26, 13, 0, 0.767); */
     /* backdrop-filter: blur(3px); */
 }
 
