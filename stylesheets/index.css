@@ -16,6 +16,14 @@
     transform: translateX(0);
 }
 
+.hide {
+    opacity: 0;
+}
+
+.active {
+    position: fixed;
+}
+
 
 /* - - - - - HEADER - - - - - */
 .header-fade {
@@ -40,16 +48,30 @@
     transition: transform 0.2s linear;
 }
 
+main {
+    min-height: 300vh;
+
+    /* background-image: url('/img/pic/background.jpg');
+    background-size: auto;
+    background-position: center top; */
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    padding-top: var(--s-headerHeight);
+}
 
 /* - - - - - START SCREEN - - - - - */
 #startScreen {
-    z-index: -1;
-    height: 100vh;
-    width: 100%;
-
     position: fixed;
     top: 0;
     left: 0;
+
+    z-index: 2;
+    height: 100vh;
+    width: 100%;
+    padding-top: 0;
 
     background-image: url('/img/pic/start_wood.jpg');
     background-size: cover;
@@ -78,8 +100,6 @@
 
 #ssCenter {
     text-align: center;
-    /* height: 650px; */
-    margin-bottom: 500px; /* remove later */
 
     z-index: 3;
 }
@@ -162,22 +182,12 @@
     background-position: center top; */
 }
 
-#mainBackgroundDark {
-    /* background: rgba(26, 13, 0, 0.705); */
-    /* background: rgba(26, 13, 0, 0.767); */
-    /* backdrop-filter: blur(3px); */
-}
-
-section {
-    min-height: 300px;
-    width: 100%;
-    padding-top: var(--s-headerHeight);
-}
-
 
 /* - - - - WILLKOMMEN - - - - */
 #willkommen{
     margin-top: 100vh;
+    position: relative;
+    z-index: 5;
 }
 
 @media (min-width: 721px) {
@@ -232,7 +242,6 @@ section {
 }
 
 #willkommen .wiGridIcon {
-    /* width: 130%; */
     height: 200%;
     filter: blur(15px) brightness(0.35);
     bottom: -25%;
@@ -255,12 +264,16 @@ section {
 
 
 
+#wrapper {
+    top: 0;
+}
 
 /* - - - - SPEISEN - - - - */
 #speisen {
     text-align: center;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
 }
 
 #spWrapper {

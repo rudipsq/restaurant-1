@@ -55,7 +55,7 @@ height: 300vh;
             top: 0;
             width: 100%;
             height: 200vh;
-          background-color: #e74c3c;
+            background-color: #e74c3c;
         }
 
         .hide {
@@ -65,24 +65,3 @@ height: 300vh;
         .active {
             position: fixed;
         }
-
-document.addEventListener("DOMContentLoaded", function () {
-const startSection = document.getElementById("start");
-const thirdSection = document.getElementById("third");
-
-            window.addEventListener("scroll", function () {
-                const scrollPosition = window.scrollY;
-
-                if (scrollPosition >= window.innerHeight) {
-                    startSection.classList.add("hide");
-                } else {
-                    startSection.classList.remove("hide");
-                }
-
-                if (scrollPosition >= (window.innerHeight *2)) {
-                  thirdSection.classList.remove("active");
-                } else {
-                    thirdSection.classList.add("active");
-                }
-            });
-        });

@@ -263,3 +263,24 @@ spHswiper = new Swiper("#spHswiper", {
     loop: true
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+const startSection = document.getElementById("startScreen");
+const thirdSection = document.getElementById("wrapper");
+
+            window.addEventListener("scroll", function () {
+                const scrollPosition = window.scrollY;
+
+                if (scrollPosition >= window.innerHeight) {
+                    startSection.classList.add("hide");
+                } else {
+                    startSection.classList.remove("hide");
+                }
+
+                if (scrollPosition >= (window.innerHeight *2)) {
+                    thirdSection.classList.remove("active");
+                } else {
+                    thirdSection.classList.add("active");
+                }
+            });
+        });
