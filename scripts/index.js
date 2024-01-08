@@ -209,14 +209,13 @@ async function addSpeisen() {
   }
 }
 
-
-
 function initializeSpSwiper(){
 spHswiper = new Swiper("#spHswiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
+    initialSlide: 1,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
@@ -230,7 +229,7 @@ spHswiper = new Swiper("#spHswiper", {
     mousewheel: {
       forceToAxis: true,
       thresholdDelta: 70,
-      eventsTarget: "#spHswiper",
+      eventsTarget: "#spSswiper",
       passiveListeners: true
     },
     spaceBetween: -100,
@@ -238,11 +237,14 @@ spHswiper = new Swiper("#spHswiper", {
   });
 
 
+
+
   spSswiper = new Swiper("#spSswiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
+    initialSlide: 1,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,

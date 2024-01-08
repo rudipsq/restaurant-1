@@ -296,15 +296,22 @@ section {
     width: 400px;
 
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.spTextContainer {
+    display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .spGridText {
-    padding: 50px;
+    padding: 30px;
 }
 
 .spGridDisplay {
+    width: 206px;
     padding: 20px;
     overflow: hidden;
 }
@@ -333,10 +340,6 @@ section {
 #standorte {
     text-align: center;
 }
-
-/* #standorte .swiper {
-    width: 100%;
-} */
 
 @media (max-width: 950px) {
     .swiper-pagination-bullet {
