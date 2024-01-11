@@ -28,12 +28,12 @@ body {
 
 /* - - - - - A Tags - - - - -*/
 a {
-    text-decoration: underline 2px;
+    text-decoration: underline 1px;
     text-underline-offset: 3px;
     color: white;
 }
 a:hover {
-    text-decoration: underline dashed;
+    text-decoration: underline 2px;
 }
 
 

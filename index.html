@@ -50,6 +50,7 @@
     <div id="startScreen">
         <img style="z-index: 1; position: fixed; bottom: -800px; left: -200px; width: 800px; height: 1000px;" src="/img/pic/start_flour.png" alt="">
         <div id="darkOverlay"></div>
+        <div id="startOverlay"></div>
         <div id="ssCenter">
             <!-- <img src="/img/logo/banner.png" alt=""> -->
             <dotlottie-player src="/data/animation.json" background="transparent" speed="1" style="width: 500px; height: 250px;" autoplay></dotlottie-player>
@@ -69,22 +70,24 @@
         <section id="willkommen">
             <div id="wiGrid">
                 <div class="wiGridItem" style="grid-column: span 3;">
-                    <img class="wiGridImg" src="/img/pic/f16.jpg" alt="">
+                    <img class="wiGridImg" src="/img/pic/f16.jpg" data-speed="0.15">
                 </div>
                 <div class="wiGridItem" style="grid-column: span 2;">
                     <img class="wiGridIcon" src="/img/gif/fireIcon.gif">
+                    <div class="glow-overlay"></div>
                     <div class="textContainer">
                         <p>Lorem ipsum dolor sadipisicing elit. Aliquam amet quibusdam, nam veniam vitae neque molesti quod?</p>
                     </div>
                 </div>
                 <div class="wiGridItem" id="wiGridItem3" style="grid-column: span 2;">
                     <img class="wiGridIcon" src="/img/gif/fireIcon.gif">
+                    <div class="glow-overlay"></div>
                     <div class="textContainer">
                         <p>Lorem ipsum dolor amet quibusdam, nam veniam vitae neque molestias.</p>
                     </div>
                 </div>
                 <div class="wiGridItem" style="grid-column: span 3;">
-                    <img class="wiGridImg" src="/img/pic/f12.jpg" alt="">
+                    <img class="wiGridImg" src="/img/pic/f12.jpg" data-speed="0.15">
                 </div>
             </div>
         </section>

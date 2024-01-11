@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   
   document.querySelector('header').classList.add('header-fade');
+
+  setTimeout(function() {
+    document.getElementById('startOverlay').style.opacity = '0';
+  }, 500);
 });
 
 // make header visible
@@ -265,3 +269,22 @@ spHswiper = new Swiper("#spHswiper", {
     loop: true
   });
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var parallaxElements = document.querySelectorAll(".wiGridImg");
+
+    function updateParallax() {
+        parallaxElements.forEach(function (element) {
+            var speed = parseFloat(element.getAttribute("data-speed")) || 1;
+            var yOffset = window.pageYOffset * speed;
+            element.style.transform = "translate3d(0, " + yOffset + "px, 0)";
+        });
+    }
+
+    window.addEventListener("scroll", updateParallax);
+
+    // Initial update
+    updateParallax();
+});
