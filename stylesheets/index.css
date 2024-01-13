@@ -1,8 +1,10 @@
 /* - - - - - SCROLL ANIM - - - - - */
-.scHiddenRight {
-    /* opacity: 0; */
-    transform: translateX(75%);
-    transition: all 1s ease-out;
+@media (min-width: 951px) {
+    .scHiddenRight {
+        /* opacity: 0; */
+        transform: translateX(75%);
+        transition: all 1s ease-out;
+    }
 }
 
 .scHiddenBottom {
@@ -291,7 +293,7 @@ section {
     display: flex;
     justify-content: center;
 }
-
+@media (min-width: 951px) {
 #spWrapper {
     width: 900px;
     background-image: url(/img/pic/brett2.png);
@@ -307,12 +309,6 @@ section {
 
 #spText div {
     width: 700px;
-}
-
-@media (max-width: 950px) {
-    #speisen {
-        display: none;
-    }
 }
 
 #spGrid {
@@ -344,6 +340,7 @@ section {
     padding: 20px;
     overflow: hidden;
 }
+}
 
 #speisen .swiper-slide {
     background-color: var(--c-cardBackground);
@@ -356,13 +353,45 @@ section {
 }
 
 #speisen .swiper-slide img {
-    height: 180px;
+    height: 66%;
 }
 
 #speisen .swiper-slide h3,p {
     margin-top: 4px;
     margin-bottom: 4px;
 }
+
+@media (max-width: 950px) {
+    #spText {
+        display: none;
+    }
+
+    #spGrid div {
+        max-width: 400px;
+    }
+
+    .spGridItem {
+        margin-top: 30px;
+        width: 400px;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .spGridDisplay {
+        width: 354px;
+        overflow: hidden;
+    }
+
+    #speisen .swiper-slide {
+        width: 280px;
+        height: 360px;
+    }
+
+}
+
+
 
 
 /* - - - - STANDORTE - - - - */
