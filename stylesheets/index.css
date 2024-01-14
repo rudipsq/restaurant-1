@@ -459,7 +459,8 @@ section {
         height: auto;
         top: 50%;
         left: 50%;
-        transform: translate(450px, -150px);
+        float: right;
+        transform: translate(250px, -150px);
         z-index: 1;
     }
 }
@@ -497,9 +498,10 @@ section {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
+
 /* - - - - GUTSCHEINE - - - - */
 
 #gutscheine {
-    height: 900px;
+    height: calc(100vh - 100px);
     margin-bottom: 0;
 }
