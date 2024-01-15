@@ -20,22 +20,22 @@
 
 
 /* - - - - - HEADER - - - - - */
-.header-fade {
-    transition: opacity ease-out 0.3s;
+header {
+    transition: top 0.2s ease;
 }
 
 #underline {
     position: absolute;
-    /* bottom: 30px; */
     bottom: calc(var(--s-headerHeight)/5);
     left: 0;
     z-index: 1;
 
     height: 58px;
     width: 120px;
+    opacity: 0;
 
 
-    background-image: url('/img/pic/brett2.png');
+    background-image: url('/img/pic/header_underline.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -53,7 +53,7 @@
     top: 0;
     left: 0;
 
-    background-image: url('/img/pic/start_wood.jpg');
+    background-image: url('/img/pic/start_background.jpg');
     background-size: cover;
     background-position: center top;
     
@@ -173,8 +173,8 @@
 
 
 #mainBackgroundImg {
-    /* background-color: rgb(212, 212, 212); */
-    background-image: url('/img/pic/background.jpg');
+    background-color: rgb(56, 27, 0);
+    background-image: url('/img/pic/main_background.jpg');
     background-size: auto;
     background-position: center top;
 }
@@ -296,7 +296,7 @@ section {
 @media (min-width: 951px) {
 #spWrapper {
     width: 900px;
-    background-image: url(/img/pic/brett2.png);
+    background-image: url('/img/pic/speisen_brett.png');
     background-position-y: -50px;
     background-size: 900px 110%;
     background-repeat: no-repeat;
@@ -333,6 +333,10 @@ section {
 
 .spGridText {
     padding: 30px;
+}
+
+.spGridText h1 {
+    margin-top: 0;
 }
 
 .spGridDisplay {

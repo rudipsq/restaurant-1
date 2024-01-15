@@ -11,40 +11,39 @@ document.addEventListener("DOMContentLoaded", async function () {
   parallax(foreground, (window.innerWidth / 2)/ 25, (window.innerHeight / 2)/ 25, 0.5);
 
   
-  document.querySelector('header').classList.add('header-fade');
+  document.getElementById('underline').style.opacity = '1'
+  window.addEventListener('scroll', function () {
+    showHideHeader()
+  }, { passive: true });
 
   setTimeout(function() {
     document.getElementById('startOverlay').style.opacity = '0';
+    showHideHeader()
   }, 500);
 });
 
-// make header visible
-document.addEventListener("DOMContentLoaded", function () {
-  var header = document.querySelector('header');
+function showHideHeader() {
+    var header = document.querySelector('header');
 
-  window.addEventListener('scroll', function () {
     var scrollDistance = window.scrollY;
 
-    var threshold = window.innerHeight - 130;
+    var threshold = window.innerHeight - 25;
 
     if (scrollDistance > threshold) {
-      header.style.opacity = '1';
+      header.style.top = "0";
     } else {
-      header.style.opacity = '0';
+      header.style.top = "-100px";
     }
-  }, { passive: true });
-});
+}
 
 document.addEventListener("DOMContentLoaded", function() {
   const menuLinks = document.querySelectorAll("header nav a");
   const underline = document.getElementById("underline");
   const sections = document.querySelectorAll("section");
 
-  let clickedAtag = false;
-
   function highlightMenu() {
     let currentSectionId = "";
-    
+
     sections.forEach(section => {
       const rect = section.getBoundingClientRect();
       if (rect.top <= 400 && rect.bottom >= 50) {
@@ -52,17 +51,21 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    menuLinks.forEach(link => {
-      // link.classList.remove("active"); //? not used right now
-      if (link.getAttribute("href") === `#${currentSectionId}`) {
-        // link.classList.add("active"); //? not used right now
-        if (!clickedAtag) {
+    if (currentSectionId !== "") {
+      menuLinks.forEach(link => {
+        if (link.getAttribute("href") === `#${currentSectionId}`) {
           const rect = link.getBoundingClientRect();
           const underlinePosition = rect.left + (rect.width / 2) - (underline.offsetWidth / 2);
           underline.style.transform = `translateX(${underlinePosition}px)`;
         }
-      }
-    });
+      });
+    } else {
+      // If no section is active, set underline to the #willkommen section
+      const willkommenLink = document.querySelector("header nav a[href='#willkommen']");
+      const willkommenRect = willkommenLink.getBoundingClientRect();
+      const underlinePosition = willkommenRect.left + (willkommenRect.width / 2) - (underline.offsetWidth / 2);
+      underline.style.transform = `translateX(${underlinePosition}px)`;
+    }
   }
 
   window.addEventListener("scroll", highlightMenu);
