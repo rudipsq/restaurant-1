@@ -94,8 +94,8 @@ header {
 
 #ssCenter {
     text-align: center;
-    /* height: 650px; */
     margin-bottom: 500px; /* remove later */
+    max-width: 80vw;
 
     z-index: 3;
 }
@@ -204,7 +204,7 @@ section {
     background-color: black;
 }
 
-@media (min-width: 721px) {
+@media (min-width: 741px) {
     #willkommen {
         height: calc(100vh - var(--s-headerHeight));
     }
@@ -221,11 +221,16 @@ section {
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 740px) {
+    #willkommen {
+        padding-top: 0;
+    }
+    
     #wiGrid {
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: 1fr;
-        height: calc(200vh - 200px);
+        /* height: calc(200vh - 200px); */
+        height: 200vh;
     }
     #wiGridItem3 {
         grid-row: 4;
@@ -294,6 +299,7 @@ section {
     display: flex;
     justify-content: center;
 }
+
 @media (min-width: 951px) {
     #spWrapper {
         width: 900px;
@@ -381,8 +387,8 @@ section {
         grid-row: 1;
     }
 
-    #spGrid div:nth-child(3){
-        padding-top: 40px;
+    #spGrid>div:nth-child(3) {
+        padding-top: 50px;
     }
 
     #spGrid div {
