@@ -87,17 +87,32 @@ header {
     height: 100%;
 
     background-color: rgba(27, 16, 1, 0.6);
-    transition: opacity 2s ease;
+    transition: opacity 2.2s ease;
     
     z-index: 3;
 }
 
 #ssCenter {
+    position: absolute;
     text-align: center;
     margin-bottom: 500px; /* remove later */
     max-width: 80vw;
 
     z-index: 3;
+}
+
+#ssLabel {
+    position: fixed;
+    top: 65px;
+    z-index: 3;
+
+    width: 650px;
+    max-width: 121vw;
+
+}
+
+#ssCenter dotlottie-player {
+    z-index: 4;
 }
 
 #ssCorner {
@@ -301,10 +316,16 @@ section {
 }
 
 @media (min-width: 951px) {
+    #speisen {
+        min-height: 800px;
+    }
+
     #spWrapper {
+        padding-top: 40px;
         width: 900px;
+
         background-image: url('/img/pic/speisen_brett.png');
-        background-position-y: -50px;
+        background-position-y: -10px;
         background-size: 900px 110%;
         background-repeat: no-repeat;
     }
