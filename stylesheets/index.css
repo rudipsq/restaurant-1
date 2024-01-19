@@ -87,32 +87,44 @@ header {
     height: 100%;
 
     background-color: rgba(27, 16, 1, 0.6);
-    transition: opacity 2.2s ease;
+    transition: opacity 2.3s ease;
     
     z-index: 3;
 }
 
-#ssCenter {
+#ssCenter1 {
     position: absolute;
     text-align: center;
-    margin-bottom: 500px; /* remove later */
+    margin-bottom: 600px; /* edit later ? */
     max-width: 80vw;
 
     z-index: 3;
 }
 
-#ssLabel {
-    position: fixed;
-    top: 65px;
-    z-index: 3;
+#ssCenter2 {
+    position: absolute;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 600px; /* edit later ? */
+    max-width: 121vw;
 
+    z-index: 3;
+}
+
+#ssLabel {
     width: 650px;
     max-width: 121vw;
 
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-#ssCenter dotlottie-player {
+#animationPlayer {
     z-index: 4;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 #ssCorner {
