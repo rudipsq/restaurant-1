@@ -28,13 +28,14 @@ body {
 /* - - - - - A Tags - - - - -*/
 a {
     text-decoration: underline 1px;
-    text-underline-offset: 3px;
+    text-underline-offset: 2px;
     color: white;
 
     /* font-variant: small-caps; */
 }
 a:hover {
     text-decoration: underline 2px;
+    text-underline-offset: 2px;
 }
 
 
