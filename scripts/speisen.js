@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", async function () {
     addSpeisen();
+
+    let spGrid = document.getElementById('spGrid');
+    spGrid.addEventListener('click', function(event) {
+      let product = event.target.closest('#spGrid>div')
+    
+    if (product) {
+      showSpeise(product.getAttribute('data-id'))
+    }
+});
 })
 
 //* SPEISEN
@@ -13,6 +22,7 @@ async function addSpeisen() {
 
     products.forEach(product => {
       const productDiv = document.createElement('div');
+      productDiv.setAttribute('data-id', product.id);
       productDiv.innerHTML = `
         <div class="spText">
             <h3>${product.name}</h3>
@@ -25,9 +35,9 @@ async function addSpeisen() {
       
         //<img src="/img/pic/fl_${product.id}.jpg">
 
-        if (product.type) {
-        } else {
-        }
+        // if (product.type) {
+        // } else {
+        // }
 
         document.getElementById('spGrid').appendChild(productDiv);
     });
@@ -35,4 +45,10 @@ async function addSpeisen() {
   } catch (error) {
     console.error('Error fetching or parsing JSON:', error);
   }
+}
+
+function showSpeise(speiseId) {
+  console.log(speiseId);
+
+  // TODO: create overlay to show speise
 }
