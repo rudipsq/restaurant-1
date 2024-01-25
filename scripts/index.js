@@ -205,7 +205,7 @@ async function addSpeisen() {
       productDiv.classList.add('swiper-slide');
       productDiv.innerHTML = `
         <img src="/img/pic/start_fl.png">
-        <h3>${product.name}</h3>
+        <a href="/speisen.html?id=${product.id}">${product.name}</a>
         <p>${product.description}</p>
       `;
       

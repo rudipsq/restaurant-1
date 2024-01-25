@@ -2,6 +2,7 @@ main {
     min-height: 100vh;
 }
 
+/* - - - - Speisen - - - - */
 #spContainer {
     width: calc(100% - 40px);
 
@@ -85,9 +86,12 @@ main {
     transition: all 0.4s ease;
 }
 
+/* - - - - Overlay - - - - */
 #overlay {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
@@ -95,8 +99,13 @@ main {
     background: rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
-
     z-index: 999;
+    transition: visibility 0.2s, opacity 0.2s ease-in-out;
+}
+
+#overlay.active {
+    visibility: visible;
+    opacity: 1;
 }
 
 #overlay-content {
@@ -104,7 +113,12 @@ main {
     padding: 20px;
     border-radius: 15px;
     text-align: center;
-
-    width: 500px;
+    width: 450px;
     height: 700px;
+    margin-top: 200vh;
+    transition: margin-top 0.25s ease-in-out;
+}
+
+#overlay.active #overlay-content {
+    margin-top: 0;
 }
