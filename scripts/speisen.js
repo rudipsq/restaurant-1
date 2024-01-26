@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let overlay = document.getElementById('overlay');
     overlay.addEventListener('click', function (event) {
         if (event.target === overlay) {
-            closeOverlay()
+          closeOverlay()
         }
     });
 
@@ -77,30 +77,33 @@ function addSpeisen() {
 }
 
 function showSpeise(speiseId) {
-  console.log(speiseId);
+
+  let speise;
+
+  for (let i = 0; i < speisen.length; i++) {
+    if (speisen[i].id === speiseId) {
+      speise = speisen[i];
+      break;
+    }
+  }
   
-  openOverlay()
+  openOverlay(speiseId, speise.name, speise.description, speise.type)
 }
 
-// function openOverlay(id, name, description, isSweet) {
-//   const overlay = document.getElementById('overlay');
-//   // document.getElementById('overlay-content').style.margin = '0'
-
-//   // TODO: speisen details as parameters, load them into overlay by getting elements with id
-  
-//   // overlay.style.display = 'flex';
-//   overlay.classList.add('active');
-// }
 function openOverlay(id, name, description, isSweet) {
-    const overlay = document.getElementById('overlay');
+  const overlay = document.getElementById('overlay');
 
-    // TODO: Load content into the overlay by getting elements with id
+  // TODO: Load content into the overlay by getting elements with id
+  document.getElementById('ocImg').src = '/img/pic/start_fl.png';
+  document.getElementById('ocHead').innerHTML = 'Flammkuchen '+name;
+  document.getElementById('ocDesc').innerHTML = description;
 
-    overlay.classList.add('active');
+  //<img src="/img/pic/fl_${product.id}.jpg">
+
+  overlay.classList.add('active');
 }
 
 function closeOverlay() {
   const overlay = document.getElementById('overlay');
-  // overlay.style.display = 'none';
   overlay.classList.remove('active');
 }
