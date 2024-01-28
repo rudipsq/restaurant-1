@@ -397,12 +397,16 @@ section {
 }
 
 #speisen .swiper-slide img {
-    height: 66%;
+    height: 55%;
+    margin-top: 7px;
 }
 
-#speisen .swiper-slide h3,p {
-    margin-top: 4px;
-    margin-bottom: 4px;
+#speisen .swiper-slide h3 {
+    margin: 0;
+}
+
+#speisen .swiper-slide p {
+    margin: 8px;
 }
 
 @media (max-width: 950px) {

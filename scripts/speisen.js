@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     speisen = await getSpeisen();
     addSpeisen();
 
+    setUpContainer()
+    window.addEventListener('resize', setUpContainer);
+
     // opening overlay
     let spGrid = document.getElementById('spGrid');
     spGrid.addEventListener('click', function(event) {
@@ -34,6 +37,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     // remove unclean stuff from url
     history.replaceState({}, document.title, window.location.pathname);
 })
+
+//* GRID DISPLAY
+function setUpContainer() {
+  let container = document.getElementById('spContainer');
+  let main = document.querySelector('main');
+
+  main.classList.add("mFix")
+  container.classList.remove("hFix")
+  if (!((container.clientHeight + 159) > window.innerHeight)) {
+    container.classList.add("hFix")
+    main.classList.remove("mFix")
+  }
+}
 
 //* SPEISEN
 async function getSpeisen() {
@@ -93,7 +109,6 @@ function showSpeise(speiseId) {
 function openOverlay(id, name, description, isSweet) {
   const overlay = document.getElementById('overlay');
 
-  // TODO: Load content into the overlay by getting elements with id
   document.getElementById('ocImg').src = '/img/pic/start_fl.png';
   document.getElementById('ocHead').innerHTML = 'Flammkuchen '+name;
   document.getElementById('ocDesc').innerHTML = description;
