@@ -157,10 +157,10 @@ header {
 #ssMid img {
     margin-top: 25px;
     width: 60px;
-    transition: all 0.1s ease-out;
+    transition: all 0.11s ease-out;
 }
 
-@media (min-width: 721px) {
+/* @media (min-width: 721px) { */
     #ssMid:hover {
         outline-color: white;
         outline-style: solid;
@@ -169,7 +169,7 @@ header {
     #ssMid:hover img {
         margin-top: 30px;
     }
-}
+/* } */
 
 .parallax {
     position: absolute;
@@ -349,6 +349,10 @@ section {
 
     #spText div {
         width: 700px;
+    }
+
+    #spText button {
+        cursor: pointer;
     }
 
     #spGrid {

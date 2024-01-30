@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   
   document.getElementById('underline').style.opacity = '1'
-  document.getElementById('ssLabel').style.opacity = '1';
-  document.getElementById('ssLabel').style.transform = 'scale(1)';
+
+  // document.getElementById('ssLabel').style.opacity = '1';
+  // document.getElementById('ssLabel').style.transform = 'scale(1)';
   document.getElementById('animationPlayer').style.opacity = '1';
   document.getElementById('animationPlayer').style.transform = 'scale(1)';
   

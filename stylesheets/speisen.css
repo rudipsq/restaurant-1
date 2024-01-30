@@ -6,6 +6,46 @@ main {
     min-height: calc(100vh - 100px);
 }
 
+/* - - - - Back - - - - */
+#back {
+    position: fixed;
+    bottom: 5vh;
+    left: calc(50% - 50px);
+
+    
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    
+    border-radius: 50%;
+    
+    transition: all 0.1s ease-out;
+    overflow: hidden;
+}
+
+#back img {
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 60px;
+    transition: all 0.11s ease-out;
+    transform: rotate(90deg)
+}
+
+/* @media (min-width: 721px) { */
+    #back:hover {
+        outline-color: white;
+        outline-style: solid;
+    }
+
+    #back:hover img {
+        margin-right: 15px;
+    }
+/* } */
+
 /* - - - - Speisen - - - - */
 #spContainer {
     width: calc(100% - 40px);
