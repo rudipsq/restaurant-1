@@ -44,12 +44,9 @@
     </header>
 
     <div id="startScreen">
-        <img style="z-index: 1; position: fixed; bottom: -800px; left: -200px; width: 800px; height: 1000px;" src="/img/pic/start_flour.png" alt="">
+        <!-- <img style="z-index: 1; position: fixed; bottom: -800px; left: -200px; width: 800px; height: 1000px;" src="/img/pic/start_flour.png" alt=""> -->
         <div id="darkOverlay"></div>
         <div id="startOverlay"></div>
-        <div id="ssCenter2">
-            <img src="/img/pic/start_label.png" id="ssLabel">
-        </div>
         <div id="ssCenter1">
             <a href="index.html">
                 <dotlottie-player id="animationPlayer" src="/data/animation.json" background="transparent" speed="1" autoplay></dotlottie-player>
@@ -60,7 +57,7 @@
             <div id="ssForeground" class="parallax"></div>
         </div>
         <a id="ssMid" href="#willkommen">
-            <img src="/img/icon/arrowDown.png" alt="arrowDown">
+            <img src="/img/icon/arrowDown.png" alt="arrow down">
         </a>
     </div>
 
@@ -103,7 +100,14 @@
                         asperiores quidem quos aliquid suscipit unde vitae fugit. Recusandae praesentium obcaecati facere voluptate eveniet
                         nihil sequi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis hic dolores consequuntur adipisci
                     </p>
-                    <a href="/speisen.html"><button>alle anzeigen</button></a>
+                    <a href="/speisen.html">
+                        <button id="spButton">
+                            <div>
+                                <img src="/img/icon/arrowDown.png" alt="arrow right">
+                                <p>alle ansehen</p>
+                            </div>
+                        </button>
+                    </a>
                 </div>
             </div>
             
@@ -112,9 +116,7 @@
                     <div class="spGridItem" style="margin-left: auto;">
                         <div id="spHswiper" class="spGridDisplay">
 
-                            <div class="swiper-wrapper">
-                                
-                            </div>
+                            <div class="swiper-wrapper"></div>
 
                         </div>
                     </div>
@@ -139,9 +141,7 @@
                     <div class="spGridItem">
                         <div id="spSswiper" class="spGridDisplay">
                         
-                            <div class="swiper-wrapper">
-                                
-                            </div>
+                            <div class="swiper-wrapper"></div>
                         
                         </div>
                     </div>

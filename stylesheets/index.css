@@ -3,7 +3,7 @@
     .scHiddenRight {
         /* opacity: 0; */
         transform: translateX(75%);
-        transition: all 1s ease-out;
+        transition: all 0.7s ease-out;
     }
 }
 
@@ -38,7 +38,7 @@ header {
 
     background-image: url('/img/pic/header_underline.png');
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     transition: transform 0.2s linear;
 }
@@ -124,7 +124,8 @@ header {
     z-index: 4;
     opacity: 0;
     transform: scale(0);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    /* transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; */
+    transition: opacity 0.5s ease-in-out;
 }
 
 #ssCorner {
@@ -198,12 +199,16 @@ header {
     z-index: 2;
 }
 
+main {
+    background: none;
+}
+
 
 
 #mainBackgroundImg {
     background-color: rgb(56, 27, 0);
     background-image: url('/img/pic/main_background.jpg');
-    background-size: auto;
+    background-size: contain;
     background-position: center top;
 }
 
@@ -377,6 +382,10 @@ section {
 
     .spGridText {
         padding: 30px;
+        background: radial-gradient(ellipse farthest-side at center, rgba(27, 15, 0, 0.5) 40%, rgba(27, 15, 0, 0.2) 80%, rgba(0, 0, 0, 0) 100%);
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
     }
 
     .spGridText h1 {
@@ -387,6 +396,68 @@ section {
     width: 206px;
     padding: 20px;
     overflow: hidden;
+    }
+
+    #spButton {
+        width: 130px;
+        height: 36px;
+        padding: 0;
+
+        overflow: hidden;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+    
+        border-radius: 50px;
+        border: solid 1px white;
+    
+        overflow: hidden;
+    }
+
+    #spButton:hover {
+        outline: solid 1px white;
+    }
+
+    #spButton div {
+        position: absolute;
+        top: 0;
+        right: 18px;
+        width: 124px;
+        height: 36px;
+        display: flex;
+
+        transition: all 0.1s ease-out;
+    }
+
+    #spButton:hover div {
+        right: 5px;
+        width: 116px;
+    }
+
+    #spButton img {
+        height: 16px;
+        transform: rotate(-90deg);
+        margin-top: 10px;
+    }
+
+    #spButton p {
+        color: white;
+        width: 100px;
+        height: 30px;
+        margin: 0;
+        margin-top: 8px;
+        margin-left: 15px;
+
+        font-family: "span", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.11em;
+
+        transition: all 0.1s ease-out;
+    }
+
+    #spButton:hover p {
+        margin-left: 0px;
     }
 }
 
@@ -570,4 +641,5 @@ section {
 #gutscheine {
     height: calc(100vh - 100px);
     margin-bottom: 0;
+    text-align: center;
 }

@@ -1,25 +1,32 @@
 var swiper = null;
 var spHswiper = null;
 var spSswiper = null;
+var willkommenParallaxElements;
 
 document.addEventListener("DOMContentLoaded", async function () {
   checkWindowWidth();
   initializeSpSwiper();
   addSpeisen();
 
+  // header
+  document.getElementById('underline').style.opacity = '1'
+
+  // start screen
   parallax(background, (window.innerWidth / 2)/ 25, (window.innerHeight / 2)/ 25, 0.35);
   parallax(foreground, (window.innerWidth / 2)/ 25, (window.innerHeight / 2)/ 25, 0.5);
 
-  
-  document.getElementById('underline').style.opacity = '1'
-
-  // document.getElementById('ssLabel').style.opacity = '1';
-  // document.getElementById('ssLabel').style.transform = 'scale(1)';
   document.getElementById('animationPlayer').style.opacity = '1';
   document.getElementById('animationPlayer').style.transform = 'scale(1)';
-  
+
+  // willkommen section
+  willkommenParallaxElements = document.querySelectorAll(".wiGridImg");
+  updateWillkommenParallax();
+
+
+  // scroll eventListener
   window.addEventListener('scroll', function () {
     showHideHeader()
+    updateWillkommenParallax();
   }, { passive: true });
   
 
@@ -175,6 +182,7 @@ hiddenBottomElements.forEach((el)=> observer.observe(el));
 
 
 
+
 //* START SCREEN
 const background = document.getElementById('ssBackground');
 const foreground = document.getElementById('ssForeground');
@@ -190,6 +198,18 @@ document.addEventListener('mousemove', (e) => {
 function parallax(element, xAxis, yAxis, speed) {
   element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px)`;
 }
+
+
+
+//* WILLKOMMEN
+function updateWillkommenParallax() {
+  willkommenParallaxElements.forEach(function (element) {
+    var speed = parseFloat(element.getAttribute("data-speed")) || 1;
+    var yOffset = window.pageYOffset * speed;
+    element.style.transform = "translate3d(0, " + yOffset + "px, 0)";
+  });
+}
+
 
 
 //* SPEISEN
@@ -286,19 +306,16 @@ spHswiper = new Swiper("#spHswiper", {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    var parallaxElements = document.querySelectorAll(".wiGridImg");
+//* STANDORTE
+function openMaps(latitude, longitude) {
+  // Check if the user is on an Apple device
+  const isAppleDevice = /(iPhone|iPad|iPod|Macintosh)/.test(navigator.userAgent);
 
-    function updateParallax() {
-        parallaxElements.forEach(function (element) {
-            var speed = parseFloat(element.getAttribute("data-speed")) || 1;
-            var yOffset = window.pageYOffset * speed;
-            element.style.transform = "translate3d(0, " + yOffset + "px, 0)";
-        });
-    }
+  // Create the maps URL with the coordinates
+  const mapsUrl = isAppleDevice
+    ? `maps://maps.apple.com/?q=${latitude},${longitude}`
+    : `https://www.google.com/maps?q=${latitude},${longitude}`;
 
-    window.addEventListener("scroll", updateParallax);
-
-    // Initial update
-    updateParallax();
-});
+  // Open the maps URL
+  window.location.href = mapsUrl;
+}
