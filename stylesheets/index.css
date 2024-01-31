@@ -28,11 +28,11 @@ header {
 #underline {
     position: absolute;
     bottom: calc(var(--s-headerHeight)/5);
-    left: 0;
+    left: 15px;
     z-index: 1;
 
     height: 58px;
-    width: 120px;
+    width: 150px;
     opacity: 0;
 
 
@@ -334,17 +334,19 @@ section {
 
 @media (min-width: 951px) {
     #speisen {
-        min-height: 800px;
+        height: 1000px;
     }
 
     #spWrapper {
         padding-top: 40px;
-        width: 900px;
+        width: 1900px;
 
         background-image: url('/img/pic/speisen_brett.png');
-        background-position-y: -10px;
-        background-size: 900px 110%;
+        background-position-y: 20px;
+        background-position-x: calc(50vw - 450px);
+        background-size: 1200px 850px;
         background-repeat: no-repeat;
+        overflow-x: visible;
     }
 
     #spText {
@@ -382,7 +384,7 @@ section {
 
     .spGridText {
         padding: 30px;
-        background: radial-gradient(ellipse farthest-side at center, rgba(27, 15, 0, 0.5) 40%, rgba(27, 15, 0, 0.2) 80%, rgba(0, 0, 0, 0) 100%);
+        background: radial-gradient(ellipse farthest-side at center, rgba(61, 34, 0, 0.6) 40%, rgba(61, 34, 0, 0.3) 75%, transparent 100%);
         background-size: 100% 100%;
         background-position: center center;
         background-repeat: no-repeat;
