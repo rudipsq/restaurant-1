@@ -225,12 +225,12 @@ async function addSpeisen() {
       const productDiv = document.createElement('div');
       productDiv.classList.add('swiper-slide');
       productDiv.innerHTML = `
-        <img src="/img/pic/fl_temp1.png">
-        <h3><a href="/speisen.html?id=${product.id}">${product.name}</a></h3>
+        <img src="img/pic/fl_temp1.png">
+        <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
         <p>${product.description}</p>
       `;
       
-      //<img src="/img/pic/fl_${product.id}.jpg">
+      //<img src="img/pic/fl_${product.id}.jpg">
 
       if (product.type) {
         document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);

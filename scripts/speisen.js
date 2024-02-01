@@ -78,11 +78,11 @@ function addSpeisen() {
         <p>${product.description}</p>
       </div>
       <div>
-        <img src="/img/pic/fl_temp1.png">
+        <img src="img/pic/fl_temp1.png">
       </div>
     `;
       
-    //<img src="/img/pic/fl_${product.id}.jpg">
+    //<img src="img/pic/fl_${product.id}.jpg">
 
     // if (product.type) {
     // } else {
@@ -109,11 +109,11 @@ function showSpeise(speiseId) {
 function openOverlay(id, name, description, isSweet) {
   const overlay = document.getElementById('overlay');
 
-  document.getElementById('ocImg').src = '/img/pic/start_fl.png';
+  document.getElementById('ocImg').src = 'img/pic/start_fl.png';
   document.getElementById('ocHead').innerHTML = 'Flammkuchen '+name;
   document.getElementById('ocDesc').innerHTML = description;
 
-  //<img src="/img/pic/fl_${product.id}.jpg">
+  //<img src="img/pic/fl_${product.id}.jpg">
 
   overlay.classList.add('active');
 }
