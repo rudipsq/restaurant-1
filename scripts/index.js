@@ -215,8 +215,8 @@ function updateWillkommenParallax() {
 //* SPEISEN
 async function addSpeisen() {
   try {
-    const response = await fetch('https://rudipsq.github.io/restaurant-1/data/speisen.json');
-    const jsonData = await response.json();
+    let response = await fetch('../data/speisen.json');
+    let jsonData = await response.json();
     const products = jsonData.products;
 
     console.log(products);
