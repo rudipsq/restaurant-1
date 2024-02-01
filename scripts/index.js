@@ -215,7 +215,7 @@ function updateWillkommenParallax() {
 //* SPEISEN
 async function addSpeisen() {
   try {
-    const response = await fetch('../data/speisen.json');
+    const response = await fetch('./data/speisen.json');
     const jsonData = await response.json();
     const products = jsonData.products;
 
