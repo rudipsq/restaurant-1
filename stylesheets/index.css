@@ -358,10 +358,6 @@ section {
         width: 700px;
     }
 
-    #spText button {
-        cursor: pointer;
-    }
-
     #spGrid {
         display: grid;
         grid-template-rows: 1fr 1fr;
@@ -405,6 +401,7 @@ section {
         height: 36px;
         padding: 0;
 
+        cursor: pointer;
         overflow: hidden;
 
         background-color: rgba(255, 255, 255, 0.1);

@@ -215,6 +215,7 @@ function updateWillkommenParallax() {
 //* SPEISEN
 async function addSpeisen() {
   try {
+    console.warn("version uses direct links")
     let response = await fetch('https://rudipsq.github.io/restaurant-1/data/speisen.json');
     let jsonData = await response.json();
     const products = jsonData.products;
@@ -307,15 +308,18 @@ spHswiper = new Swiper("#spHswiper", {
 
 
 //* STANDORTE
-function openMaps(latitude, longitude) {
+function openMaps(locationName) {
   // Check if the user is on an Apple device
   const isAppleDevice = /(iPhone|iPad|iPod|Macintosh)/.test(navigator.userAgent);
 
   // Create the maps URL with the coordinates
-  const mapsUrl = isAppleDevice
-    ? `maps://maps.apple.com/?q=${latitude},${longitude}`
-    : `https://www.google.com/maps?q=${latitude},${longitude}`;
+  const encodedLocationName = encodeURIComponent(locationName);
+  const url = isAppleDevice
+    ? `http://maps.apple.com/?q=${encodedLocationName}`
+    : `https://www.google.com/maps/search/?api=1&query=${encodedLocationName}`;
+
+  
 
   // Open the maps URL
-  window.location.href = mapsUrl;
+  window.open(url, '_blank');
 }
