@@ -71,7 +71,7 @@
 
 #spGrid>div {
     height: 120px;
-    background-color: var(--c-cardBackground);
+    background-color: var(--c-secondary);
     transition: transform 0.3s ease;
     cursor: pointer;
 

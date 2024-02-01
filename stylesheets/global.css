@@ -1,10 +1,12 @@
 :root {
     --c-text: rgb(255, 255, 255);
-    --c-cardBackground: #ffae00;
-    --c-fhBackground: #ffae00;
+    --c-accent: #98161B;
+    --c-primary: #7c0283;
+    --c-secondary: #460349;
+    --c-background: rgba(22, 3, 24, 0.5);
 
     --s-headerHeight: 100px;
-    --s-standardOutline: 1px solid rgb(255, 255, 255);
+    --s-standardOutline: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 html {
@@ -56,7 +58,8 @@ header {
 }
 
 #hDark {
-    background: rgba(26, 13, 0, 0.85);
+    background: var(--c-background);
+    background-blend-mode: color;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -101,7 +104,6 @@ header nav {
 
     font-size: large;
 
-    outline: var(--s-standardOutline);
     outline-color: rgba(26, 13, 0, 0.35);
     outline-width: 3px;
     outline-style: inset;
@@ -158,7 +160,8 @@ main {
 }
 
 #mainDark {
-    background: rgba(26, 13, 0, 0.767);
+    /* background: rgba(26, 13, 0, 0.767); */
+    background-color: var(--c-background);
     position: fixed;
     top: 100;
     height: 100vh;
@@ -178,7 +181,7 @@ footer {
     padding: 20px;
 
     text-align: center;
-    background-color: var(--c-fhBackground);
+    background-color: var(--c-secondary);
 
     position: relative;
     z-index: 3;
@@ -192,29 +195,39 @@ footer div {
 
 
 
-/* - - - - - Footer - - - - -*/
-.mainButton {
-    width: 130px;
+/* - - - - - Button - - - - -*/
+.primaryButton {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 128px;
     height: 36px;
     padding: 0;
 
     cursor: pointer;
     overflow: hidden;
 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--c-primary);
     backdrop-filter: blur(5px);
 
     border-radius: 50px;
-    border: solid 1px white;
+    border: none;
+    
+    outline: var(--s-standardOutline);
+    outline-color: rgba(255, 255, 255, 0.6);
+    /* outline-width: 0; */
 
     overflow: hidden;
 }
 
-.mainButton:hover {
-    outline: solid 1px white;
+.primaryButton:hover {
+    /* outline-width: 1px; */
+    outline-width: 2px;
 }
 
-.mainButton div {
+.primaryButton div {
     position: absolute;
     top: 0;
     right: 18px;
@@ -225,18 +238,18 @@ footer div {
     transition: all 0.1s ease-out;
 }
 
-.mainButton:hover div {
+.primaryButton:hover div {
     right: 5px;
     width: 116px;
 }
 
-.mainButton img {
+.primaryButton img {
     height: 16px;
     margin-top: 10px;
     height: 16px;
 }
 
-.mainButton p {
+.primaryButton p {
     color: white;
     width: 100px;
     height: 30px;
@@ -252,6 +265,6 @@ footer div {
     transition: all 0.1s ease-out;
 }
 
-.mainButton:hover p {
+.primaryButton:hover p {
     margin-left: 0px;
 }

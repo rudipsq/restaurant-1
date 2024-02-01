@@ -213,9 +213,7 @@ main {
 }
 
 #mainBackgroundDark {
-    /* background: rgba(26, 13, 0, 0.705); */
-    background: rgba(26, 13, 0, 0.767);
-    /* backdrop-filter: blur(3px); */
+    background: var(--c-background);
 }
 
 section {
@@ -461,7 +459,7 @@ section {
 }
 
 #speisen .swiper-slide {
-    background-color: var(--c-cardBackground);
+    background-color: var(--c-secondary);
     border-radius: 7px;
 
     width: 200px;
@@ -606,16 +604,52 @@ section {
     width: 240px;
     height: 320px;
 
-    background-color: var(--c-cardBackground);
+    background-color: var(--c-secondary);
     border-radius: 10px;
 
     outline: var(--s-standardOutline);
     outline-offset: -8px;
 }
 
-#standorte .swiper-slide img {
-    height: 75px;
-    width: auto;
+#standorte .swiper-slide .spImgWrapper {
+    height: 0px;
+    width: 0px;
+
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: var(--c-primary);
+    opacity: 0.5;
+    border-radius: 50%;
+    backdrop-filter: blur(10%);
+
+    text-align: center;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#standorte .swiper-slide:hover .spImgWrapper {
+    height: 90px;
+    width: 90px;
+
+    position: absolute;
+    top: 20px;
+}
+
+#standorte .swiper-slide .stIcon {
+    height: 76px;
+    width: 76px;
+
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#standorte .swiper-slide h2 {
+    margin-top: 100px;
 }
 
 #stMobil {
@@ -624,12 +658,10 @@ section {
 }
 
 #stMobil div {
-    outline-style: solid;
-    outline-color: var(--c-text);
-    outline-width: 1px;
+    outline: var(--s-standardOutline);
     outline-offset: -8px;
 
-    background-color: var(--c-cardBackground);
+    background-color: var(--c-secondary);
 
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
