@@ -167,7 +167,7 @@ window.addEventListener("resize", debounce(function () {
 //* SCROLL ANIMATION
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
+    //console.log(entry);
     if(entry.isIntersecting){
       entry.target.classList.add('scShow');
     }
@@ -215,7 +215,8 @@ function updateWillkommenParallax() {
 //* SPEISEN
 async function addSpeisen() {
   try {
-    const response = await fetch('./data/speisen.json');
+    const response = await fetch('../data/speisen.json');
+    if(!response) return;
     const jsonData = await response.json();
     const products = jsonData.products;
 

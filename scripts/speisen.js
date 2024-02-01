@@ -54,7 +54,8 @@ function setUpContainer() {
 //* SPEISEN
 async function getSpeisen() {
   try {
-    const response = await fetch('./data/speisen.json');
+    const response = await fetch('/data/speisen.json');
+    if(!response) return;
     const jsonData = await response.json();
     const products = jsonData.products;
 
