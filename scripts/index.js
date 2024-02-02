@@ -216,7 +216,8 @@ function updateWillkommenParallax() {
 async function addSpeisen() {
   try {
     console.warn("version uses direct links")
-    let response = await fetch('https://rudipsq.github.io/restaurant-1/data/speisen.json');
+    // let response = await fetch('https://rudipsq.github.io/restaurant-1/data/speisen.json');
+    let response = await fetch('/data/speisen.json');
     let jsonData = await response.json();
     const products = jsonData.products;
 
@@ -226,7 +227,7 @@ async function addSpeisen() {
       const productDiv = document.createElement('div');
       productDiv.classList.add('swiper-slide');
       productDiv.innerHTML = `
-        <img src="img/pic/fl_temp1.png">
+        <a href="speisen.html?id=${product.id}"><img src="img/pic/start_fl.png"></a>
         <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
         <p>${product.description}</p>
       `;

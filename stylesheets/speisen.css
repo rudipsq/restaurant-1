@@ -147,13 +147,17 @@
 }
 
 #overlay-content {
-    background: var(--c-cardBackground);
+    background: var(--c-secondary);
     /* padding: 20px; */
     border-radius: 15px;
     width: 450px;
+    max-width: 90%;
     height: 650px;
-    margin-top: 200vh;
+    max-height: 90%;
+    /* margin-top: 200vh; */
     transition: margin-top 0.25s ease-in-out;
+
+    overflow: hidden;
 }
 
 #overlay.active #overlay-content {
