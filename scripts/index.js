@@ -5,7 +5,6 @@ var willkommenParallaxElements;
 
 document.addEventListener("DOMContentLoaded", async function () {
   checkWindowWidth();
-  initializeSpSwiper();
   addSpeisen();
 
   // header
@@ -40,6 +39,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   }, 600);
 });
 
+
+
+
+//* HEADER
 function showHideHeader() {
     var header = document.querySelector('header');
 
@@ -54,6 +57,7 @@ function showHideHeader() {
     }
 }
 
+// underline
 document.addEventListener("DOMContentLoaded", function() {
   const menuLinks = document.querySelectorAll("header nav a");
   const underline = document.getElementById("underline");
@@ -90,78 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("resize", highlightMenu);
   highlightMenu(); // Call it once on page load
 });
-
-function initializeSwiper() {
-  swiper = new Swiper(".swiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    coverflowEffect: {
-      rotate: 10,
-      stretch: 0,
-      depth: 100,
-      modifier: 2,
-      slideShadows: true
-    },
-    keyboard: {
-      enabled: true
-    },
-    mousewheel: {
-      forceToAxis: true,
-      thresholdDelta: 70,
-      eventsTarget: ".swiper",
-      passiveListeners: true
-    },
-    spaceBetween: 60,
-    loop: false,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    }
-  });
-}
-
-function destroySwiper() {
-  if (swiper !== null) {
-    swiper.destroy(true, true);
-    swiper = null;
-  }
-}
-
-// Check window width initially and on resize
-function checkWindowWidth() {
-  if (window.innerWidth < 951) {
-    // If the window width is under 941, initialize Swiper
-    initializeSwiper();
-  } else {
-    // If the window width is not under 941, destroy Swiper if it exists
-    destroySwiper();
-  }
-}
-
-function debounce(func, wait) {
-  let timeout;
-  return function () {
-    const context = this;
-    const args = arguments;
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      func.apply(context, args);
-    }, wait);
-  };
-}
-
-// Use debounce for the resize event
-window.addEventListener("resize", debounce(function () {
-  checkWindowWidth();
-
-  // Ensure that Swiper is updated after resize
-  if (swiper !== null) {
-    swiper.update();
-  }
-}, 200));
-
 
 
 //* SCROLL ANIMATION
@@ -242,15 +174,17 @@ async function addSpeisen() {
     });
 
     // Instead of initializing immediately, use the update method
-    spHswiper.update();
-    spSswiper.update();
+    // spHswiper.update();
+    // spSswiper.update();
+
+    initializeSpSwiper()
   } catch (error) {
     console.error('Error fetching or parsing JSON:', error);
   }
 }
 
 function initializeSpSwiper(){
-spHswiper = new Swiper("#spHswiper", {
+  spHswiper = new Swiper("#spHswiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
@@ -273,10 +207,12 @@ spHswiper = new Swiper("#spHswiper", {
       passiveListeners: true
     },
     spaceBetween: -100,
+    navigation: {
+      nextEl: '#spHnext',
+      prevEl: '#spHprev',
+    },
     loop: true
   });
-
-
 
 
   spSswiper = new Swiper("#spSswiper", {
@@ -302,6 +238,10 @@ spHswiper = new Swiper("#spHswiper", {
       passiveListeners: true
     },
     spaceBetween: -100,
+    navigation: {
+      nextEl: '#spSnext',
+      prevEl: '#spSprev',
+    },
     loop: true
   });
 }
@@ -324,3 +264,74 @@ function openMaps(locationName) {
   // Open the maps URL
   window.open(url, '_blank');
 }
+
+function initializeSwiper() {
+  swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 10,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    mousewheel: {
+      forceToAxis: true,
+      thresholdDelta: 70,
+      eventsTarget: ".swiper",
+      passiveListeners: true
+    },
+    spaceBetween: 60,
+    loop: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+}
+
+function destroySwiper() {
+  if (swiper !== null) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
+}
+
+// Check window width initially and on resize
+function checkWindowWidth() {
+  if (window.innerWidth < 951) {
+    // If the window width is under 941, initialize Swiper
+    initializeSwiper();
+  } else {
+    // If the window width is not under 941, destroy Swiper if it exists
+    destroySwiper();
+  }
+}
+
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
+}
+
+// Use debounce for the resize event
+window.addEventListener("resize", debounce(function () {
+  checkWindowWidth();
+
+  // Ensure that Swiper is updated after resize
+  if (swiper !== null) {
+    swiper.update();
+  }
+}, 200));

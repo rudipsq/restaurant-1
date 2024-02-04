@@ -24,7 +24,10 @@ body {
     font-family: "span", serif;
     font-weight: 400;
     font-style: normal;
+
+    overscroll-behavior-y: none;
 }
+
 
 
 /* - - - - - A Tags - - - - -*/
@@ -37,6 +40,7 @@ a:hover {
     text-decoration: underline 2px;
     text-underline-offset: 2px;
 }
+
 
 
 /* - - - - - Header - - - - -*/
@@ -148,7 +152,8 @@ header nav a:hover {
 }
 
 
-/* - - - - - Footer - - - - -*/
+
+/* - - - - - Main - - - - -*/
 main {
     min-height: 100vh;
     
@@ -173,7 +178,6 @@ main {
 
 
 
-
 /* - - - - - Footer - - - - -*/
 footer {
     display: flex;
@@ -188,12 +192,12 @@ footer {
     position: relative;
     z-index: 3;
 
+    height: 20px;
 }
 
 footer div {
     min-width: 70px;
 }
-
 
 
 

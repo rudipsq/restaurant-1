@@ -145,7 +145,8 @@ header {
     height: 100px;
     width: 100px;
 
-    z-index: 3;
+    /* z-index: 3; */
+    z-index: 10;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
 
@@ -210,6 +211,8 @@ main {
     background-image: url('../img/pic/main_background.jpg');
     background-size: contain;
     background-position: center top;
+
+    overflow: hidden;
 }
 
 #mainBackgroundDark {
@@ -339,6 +342,10 @@ section {
         padding-top: 40px;
     }
 
+    .swiper-button-next, .swiper-button-prev {
+        color: white;
+    }
+
     #spBrett {
         position: absolute;
         top: 25px;
@@ -372,6 +379,13 @@ section {
         justify-content: center;
     }
 
+    .spSwiperContainer{
+        background: radial-gradient(ellipse farthest-side at center, rgba(61, 34, 0, 0.6) 40%, rgba(61, 34, 0, 0.3) 85%, transparent 100%);
+        background-size: 80% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
     .spTextContainer {
         display: flex;
         flex-direction: column;
@@ -391,9 +405,9 @@ section {
     }
 
     .spGridDisplay {
-    width: 206px;
-    padding: 20px;
-    overflow: hidden;
+        width: 206px;
+        padding: 20px;
+        overflow: hidden;
     }
 
     #spButton {
@@ -545,6 +559,9 @@ section {
         height: 360px;
     }
 
+    .swiper-button-next, .swiper-button-prev {
+        display: none;
+    }
 }
 
 
