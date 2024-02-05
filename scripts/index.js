@@ -151,11 +151,9 @@ async function addSpeisen() {
     // let response = await fetch('https://rudipsq.github.io/restaurant-1/data/speisen.json');
     let response = await fetch('/data/speisen.json');
     let jsonData = await response.json();
-    const products = jsonData.products;
+    const flammkuchen = jsonData.flammkuchen;
 
-    console.log(products);
-
-    products.forEach(product => {
+    flammkuchen.forEach(product => {
       const productDiv = document.createElement('div');
       productDiv.classList.add('swiper-slide');
       productDiv.innerHTML = `
