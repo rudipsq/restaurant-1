@@ -129,11 +129,17 @@ header {
 
 #ssCorner {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 0px;
+    right: 600px;
 
-    width: 600px;
-    height: 600px;
+    height: 66vh;
+}
+
+@media (max-width: 740px) {
+    #ssCorner {
+        bottom: -10vh;
+        right: calc(80vw - 0px);
+    }
 }
 
 #ssMid {
