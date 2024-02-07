@@ -10,3 +10,5 @@
 - edit header and footer (no Franchise)
 - add images (anheanger)
 - change gutscheine section
+- finish footer fire
+- logo ue ausgeschrieben?
