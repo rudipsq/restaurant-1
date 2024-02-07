@@ -140,6 +140,11 @@ header {
         bottom: -10vh;
         right: calc(80vw - 0px);
     }
+
+    #ssCenter1 {
+        max-width: 90vw;
+        top: 10vh;
+    }
 }
 
 #ssMid {
