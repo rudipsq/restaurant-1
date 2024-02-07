@@ -729,3 +729,24 @@ section {
     margin-bottom: 0;
     text-align: center;
 }
+
+
+
+
+
+/* - - - - TEST - - - - */
+.video-container {
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.video-container video {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
