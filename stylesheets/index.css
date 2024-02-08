@@ -571,8 +571,12 @@ section {
     }
 
     #speisen .swiper-slide {
-        width: 280px;
-        height: 360px;
+        padding: 20px;
+        width: 240px;
+        height: 320px;
+
+        outline: var(--s-standardOutline);
+        outline-offset: -8px;
     }
 
     .swiper-button-next, .swiper-button-prev {
@@ -589,9 +593,9 @@ section {
 }
 
 @media (max-width: 950px) {
-    .swiper-pagination-bullet {
+    /* .swiper-pagination-bullet {
         background-color: white;
-    }
+    } */
 
     #stMobil {
         margin-top: 40px;

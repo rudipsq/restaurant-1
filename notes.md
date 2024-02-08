@@ -12,3 +12,5 @@
 - change gutscheine section
 - finish footer fire
 - logo ue ausgeschrieben?
+- standorte infos, 4 lines: ort, strasse, tel, res empf
+- footer decoration
