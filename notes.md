@@ -13,4 +13,5 @@
 - finish footer fire
 - logo ue ausgeschrieben?
 - standorte infos, 4 lines: ort, strasse, tel, res empf
-- footer decoration
+- footer decoration?
+- footer fire positioning, loop, height
