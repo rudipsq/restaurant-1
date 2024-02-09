@@ -110,10 +110,10 @@ header nav {
 
     font-size: large;
 
-    /* outline-color: rgba(26, 13, 0, 0.35); */
-    /* outline-color: var(--c-background);
+    outline-color: rgba(26, 13, 0, 0.45);
+    /* outline-color: var(--c-background); */
     outline-width: 3px;
-    outline-style: inset; */
+    outline-style: inset;
 }
 
 header nav a {
