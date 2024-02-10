@@ -5,13 +5,18 @@
 # TODO:
 
 - rechtschreibung kontrolle
+- test verschiedene geraete
+- ladezeit test (code minimalisierung und image compression)
 - speisen.html: add getraenke
 - speisen.html: add "mehr in restaurants" field
+- speisen.html: formatierung
 - edit header and footer (no Franchise)
-- add images (anheanger)
+- add images (anheanger, flammkuchen, bretter)
 - change gutscheine section
 - finish footer fire
 - logo ue ausgeschrieben?
 - standorte infos, 4 lines: ort, strasse, tel, res empf
 - footer decoration?
 - footer fire positioning, loop, height
+- sp formatierung
+- add decoration food
