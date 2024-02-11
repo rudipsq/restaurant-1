@@ -52,23 +52,8 @@ function setUpContainer() {
 }
 
 //* SPEISEN
-async function getSpeisen() {
-  try {
-    //console.warn("version uses direct links")
-    // let response = await fetch('https://rudipsq.github.io/restaurant-1/data/speisen.json');
-    let response = await fetch('/data/speisen.json');
-    let jsonData = await response.json();
-    const flammkuchen = jsonData.flammkuchen;
-
-    return flammkuchen;
-
-  } catch (error) {
-    console.error('Error fetching or parsing JSON:', error);
-  }
-}
-
 function addSpeisen() {
-  const flammkuchen = speisen;
+  const flammkuchen = speisen[0];
   
   flammkuchen.forEach(product => {
     const productDiv = document.createElement('div');

@@ -2,9 +2,11 @@ var swiper = null;
 var spHswiper = null;
 var spSswiper = null;
 var willkommenParallaxElements;
+let speisen;
 
 document.addEventListener("DOMContentLoaded", async function () {
   checkWindowWidth();
+  speisen = await getSpeisen();
   addSpeisen();
 
   // header
@@ -146,39 +148,27 @@ function updateWillkommenParallax() {
 
 //* SPEISEN
 async function addSpeisen() {
-  try {
-    //console.warn("version uses direct links")
-    // let response = await fetch('https://rudipsq.github.io/restaurant-1/data/speisen.json');
-    let response = await fetch('/data/speisen.json');
-    let jsonData = await response.json();
-    const flammkuchen = jsonData.flammkuchen;
+  const flammkuchen = speisen[0];
 
-    flammkuchen.forEach(product => {
-      const productDiv = document.createElement('div');
-      productDiv.classList.add('swiper-slide');
-      productDiv.innerHTML = `
-        <a href="speisen.html?id=${product.id}"><img src="img/pic/start_fl.png"></a>
-        <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
-        <p>${product.description}</p>
-      `;
+  flammkuchen.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.classList.add('swiper-slide');
+    productDiv.innerHTML = `
+      <a href="speisen.html?id=${product.id}"><img src="img/pic/start_fl.png"></a>
+      <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
+      <p>${product.description}</p>
+    `;
       
-      //<img src="img/pic/fl_${product.id}.jpg">
+    //<img src="img/pic/fl_${product.id}.jpg">
 
-      if (product.type) {
-        document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
-      } else {
-        document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
-      }
-    });
+    if (product.type) {
+      document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+    } else {
+      document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+    }
+  });
 
-    // Instead of initializing immediately, use the update method
-    // spHswiper.update();
-    // spSswiper.update();
-
-    initializeSpSwiper()
-  } catch (error) {
-    console.error('Error fetching or parsing JSON:', error);
-  }
+  initializeSpSwiper()
 }
 
 function initializeSpSwiper(){
