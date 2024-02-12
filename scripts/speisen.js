@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // adding speisen
     speisen = await getSpeisen();
     addSpeisen();
+    addGetraenke()
 
     setUpContainer()
     window.addEventListener('resize', setUpContainer);
@@ -76,6 +77,14 @@ function addSpeisen() {
 
     document.getElementById('spGrid').appendChild(productDiv);
   });
+}
+
+function addGetraenke() {
+  const getraenke = speisen[1];
+
+  // getraenke.forEach(product => {
+    
+  // });
 }
 
 function showSpeise(speiseId) {

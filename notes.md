@@ -5,6 +5,7 @@
 # TODO:
 
 - rechtschreibung kontrolle
+- logo/ img royalty kontrolle
 - test verschiedene geraete
 - ladezeit test (code minimalisierung und image compression)
 - speisen.html: add getraenke
