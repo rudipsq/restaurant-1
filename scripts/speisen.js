@@ -9,10 +9,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     setUpContainer()
     window.addEventListener('resize', setUpContainer);
 
-    // opening overlay
+    // opening overlays
     let spGrid = document.getElementById('spGrid');
     spGrid.addEventListener('click', function(event) {
       let product = event.target.closest('#spGrid>div')
+    
+      if (product) {
+        showSpeise(product.getAttribute('data-id'))
+      }
+    });
+
+    let gtGrid = document.getElementById('gtGrid');
+    gtGrid.addEventListener('click', function(event) {
+      let product = event.target.closest('#gtGrid>div')
     
       if (product) {
         showSpeise(product.getAttribute('data-id'))
@@ -41,13 +50,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 //* GRID DISPLAY
 function setUpContainer() {
-  let container = document.getElementById('spContainer');
+  let spContainer = document.getElementById('spContainer');
+  let gtContainer = document.getElementById('gtContainer');
   let main = document.querySelector('main');
 
   main.classList.add("mFix")
-  container.classList.remove("hFix")
-  if (!((container.clientHeight + 159) > window.innerHeight)) {
-    container.classList.add("hFix")
+  // spContainer.classList.add("hFix")
+  // gtContainer.classList.add("hFix")
+  if (!((spContainer.clientHeight + gtContainer.clientHeight + 159) > window.innerHeight)) {
+    spContainer.classList.add("hFix")
+    gtContainer.classList.add("hFix")
     main.classList.remove("mFix")
   }
 }
@@ -82,9 +94,29 @@ function addSpeisen() {
 function addGetraenke() {
   const getraenke = speisen[1];
 
-  // getraenke.forEach(product => {
-    
-  // });
+  const flammkuchen = speisen[0];
+  
+  flammkuchen.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.setAttribute('data-id', product.id);
+    productDiv.innerHTML = `
+      <div class="spText">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+      </div>
+      <div>
+        <img src="img/pic/fl_temp1.png">
+      </div>
+    `;
+      
+    //<img src="img/pic/fl_${product.id}.jpg">
+
+    // if (product.type) {
+    // } else {
+    // }
+
+    document.getElementById('gtGrid').appendChild(productDiv);
+  });
 }
 
 function showSpeise(speiseId) {

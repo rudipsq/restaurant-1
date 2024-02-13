@@ -43,14 +43,14 @@
 /* } */
 
 /* - - - - Speisen - - - - */
-#spContainer {
+.mainContainer {
     width: calc(100% - 40px);
 
     padding: 20px;
 }
 
 @media (min-width: 741px) {
-    #spContainer {
+    .mainContainer {
         margin-top: 100px;
     }
 }
@@ -63,13 +63,13 @@
     height: calc(100vh - 199px);
 }
 
-#spGrid {
+.mainGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
 }
 
-#spGrid>div {
+.mainGrid>div {
     height: 120px;
     background-color: var(--c-secondary);
     transition: transform 0.3s ease;
@@ -85,16 +85,16 @@
     margin: 0;
 }
 
-#spGrid>div:hover {
+.mainGrid>div:hover {
     transform: scale(1.05);
 }
 
-#spGrid>div:hover img {
+.mainGrid>div:hover img {
     /* background-color: black; */
     transform: translate(-42%, -50%);
 }
 
-#spGrid div>div:nth-child(1) {
+.mainGrid div>div:nth-child(1) {
     display: flex;
     flex-direction: column;
 
@@ -102,19 +102,19 @@
     padding: 7px;
 }
 
-#spGrid div>div:nth-child(2) {
+.mainGrid div>div:nth-child(2) {
     width: 40%;
 }
 
-#spGrid h3 {
+.mainGrid h3 {
     margin: 0;
 }
 
-#spGrid p {
+.mainGrid p {
     margin: 0;
 }
 
-#spGrid img {
+.mainGrid img {
     height: 100%;
     position: relative;
     top: 50%;

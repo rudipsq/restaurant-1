@@ -11,6 +11,7 @@
 - speisen.html: add getraenke
 - speisen.html: add "mehr in restaurants" field
 - speisen.html: formatierung
+- speisen.html "weniger anzeigen" button?
 - edit header and footer (no Franchise)
 - add images (anheanger, flammkuchen, bretter)
 - change gutscheine section
