@@ -50,16 +50,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 //* GRID DISPLAY
 function setUpContainer() {
-  let spContainer = document.getElementById('spContainer');
-  let gtContainer = document.getElementById('gtContainer');
+  let mainContainer = document.getElementById('mainContainer');
   let main = document.querySelector('main');
 
   main.classList.add("mFix")
-  // spContainer.classList.add("hFix")
-  // gtContainer.classList.add("hFix")
-  if (!((spContainer.clientHeight + gtContainer.clientHeight + 159) > window.innerHeight)) {
-    spContainer.classList.add("hFix")
-    gtContainer.classList.add("hFix")
+  // mainContainer.classList.add("hFix")
+  if (!((mainContainer.clientHeight + 159) > window.innerHeight)) {
+    mainContainer.classList.add("hFix")
     main.classList.remove("mFix")
   }
 }
@@ -92,7 +89,7 @@ function addSpeisen() {
 }
 
 function addGetraenke() {
-  const getraenke = speisen[1];
+  //const getraenke = speisen[1];
 
   const flammkuchen = speisen[0];
   
@@ -124,16 +121,18 @@ function showSpeise(speiseId) {
   let speise;
 
   for (let i = 0; i < speisen.length; i++) {
-    if (speisen[i].id === speiseId) {
-      speise = speisen[i];
-      break;
+    for (let j = 0; j < speisen[i].length; j++) {
+      if (speisen[i][j].id === speiseId) {
+        speise = speisen[i][j];
+        break;
+      }
     }
   }
   
-  openOverlay(speiseId, speise.name, speise.description, speise.type)
+  openOverlay(speiseId, speise.name, speise.description)
 }
 
-function openOverlay(id, name, description, isSweet) {
+function openOverlay(id, name, description) {
   const overlay = document.getElementById('overlay');
 
   document.getElementById('ocImg').src = 'img/pic/start_fl.png';

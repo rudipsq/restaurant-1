@@ -43,14 +43,14 @@
 /* } */
 
 /* - - - - Speisen - - - - */
-.mainContainer {
+#mainContainer {
     width: calc(100% - 40px);
 
     padding: 20px;
 }
 
 @media (min-width: 741px) {
-    .mainContainer {
+    #mainContainer {
         margin-top: 100px;
     }
 }

@@ -14,7 +14,6 @@
 - speisen.html "weniger anzeigen" button?
 - edit header and footer (no Franchise)
 - add images (anheanger, flammkuchen, bretter)
-- change gutscheine section
 - finish footer fire
 - logo ue ausgeschrieben?
 - standorte infos, 4 lines: ort, strasse, tel, res empf
@@ -22,3 +21,5 @@
 - footer fire positioning, loop, height
 - sp formatierung
 - add decoration food
+- speisen.json: updaten
+- change gutscheine section: infos/ueber uns?
