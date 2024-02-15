@@ -348,6 +348,14 @@ section {
         height: 1000px;
     }
 
+    #spImageLayer {
+        height: 1100px;
+        width: 1920px;
+        background-color: red;
+        position: absolute;
+        transform: translateY(-100px);
+    }
+
     #spWrapper {
         padding-top: 40px;
     }
@@ -530,6 +538,10 @@ section {
 }
 
 @media (max-width: 950px) {
+    #spImageLayer{
+        display: none;
+    }
+    
     #spText {
         display: none;
     }
