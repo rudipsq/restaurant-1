@@ -13,7 +13,6 @@
 - speisen.html: formatierung
 - speisen.html "weniger anzeigen" button?
 - edit header and footer (no Franchise)
-- add images (anheanger, flammkuchen, bretter)
 - finish footer fire
 - logo ue ausgeschrieben?
 - standorte infos, 4 lines: ort, strasse, tel, res empf
@@ -23,3 +22,9 @@
 - add decoration food
 - speisen.json: updaten
 - change gutscheine section: infos/ueber uns?
+
+- bilder:
+  - "alle" flammkuchen; topdown, licht von oben, weisser hintergrund
+  - brett, cutter, ... ; topdown, licht von oben, weisser hintergrund
+  - knoblauch, zwiebel, ... zutaten; licht von oben, weisser hintergrund
+  - anhaenger; von vorne symmetrisch

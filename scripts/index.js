@@ -104,6 +104,10 @@ const observer = new IntersectionObserver((entries) => {
     //console.log(entry);
     if(entry.isIntersecting){
       entry.target.classList.add('scShow');
+
+      if(entry.target.id == "spImageTrigger"){
+        speisenAnimation()
+      }
     }
   })
 })
@@ -113,6 +117,24 @@ hiddenRightElements.forEach((el)=> observer.observe(el));
 
 const hiddenBottomElements = document.querySelectorAll('.scHiddenBottom');
 hiddenBottomElements.forEach((el)=> observer.observe(el));
+
+observer.observe(document.querySelector("#spImageTrigger"));
+
+function speisenAnimation() {
+  const elements = document.querySelectorAll("#spImageLayer img")
+
+  elements.forEach(element => {
+    const deferTime = parseInt(element.getAttribute('data-defer')); // Assuming 'time' attribute stores time in milliseconds
+
+    // Log the element for debugging purposes
+    console.log(element);
+
+    // Set a timeout to remove the class after the specified time
+    setTimeout(() => {
+        element.classList.remove('hideSpImage');
+    }, deferTime);
+  });
+}
 
 
 

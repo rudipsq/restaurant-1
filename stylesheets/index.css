@@ -343,6 +343,10 @@ section {
     justify-content: center;
 }
 
+.hideSpImage{
+    transform: translateY(-1000px);
+}
+
 @media (min-width: 951px) {
     #speisen {
         height: 1000px;
@@ -350,10 +354,16 @@ section {
 
     #spImageLayer {
         height: 1100px;
-        width: 1920px;
-        background-color: red;
+        width: 3000px;
         position: absolute;
         transform: translateY(-100px);
+        overflow: hidden;
+    }
+
+    #spImageLayer img {
+        position: absolute;
+
+        transition: transform 0.4s ease-out;
     }
 
     #spWrapper {
@@ -541,7 +551,7 @@ section {
     #spImageLayer{
         display: none;
     }
-    
+
     #spText {
         display: none;
     }
