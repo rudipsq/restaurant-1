@@ -124,12 +124,8 @@ function speisenAnimation() {
   const elements = document.querySelectorAll("#spImageLayer img")
 
   elements.forEach(element => {
-    const deferTime = parseInt(element.getAttribute('data-defer')); // Assuming 'time' attribute stores time in milliseconds
+    const deferTime = parseInt(element.getAttribute('data-defer'));
 
-    // Log the element for debugging purposes
-    console.log(element);
-
-    // Set a timeout to remove the class after the specified time
     setTimeout(() => {
         element.classList.remove('hideSpImage');
     }, deferTime);

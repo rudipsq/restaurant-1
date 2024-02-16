@@ -21,7 +21,7 @@
 - sp formatierung
 - add decoration food
 - speisen.json: updaten
-- change gutscheine section: infos/ueber uns?
+- change gutscheine section: infos/ueber uns?, mit gedicht
 
 - bilder:
   - "alle" flammkuchen; topdown, licht von oben, weisser hintergrund
