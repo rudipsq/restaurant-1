@@ -683,7 +683,7 @@ section {
 #standorte .swiper-slide {
     padding: 20px;
     width: 240px;
-    height: 320px;
+    height: 340px;
 
     background-color: var(--c-secondary);
     border-radius: 10px;
@@ -692,7 +692,7 @@ section {
     outline-offset: -8px;
 }
 
-#standorte .swiper-slide .spImgWrapper {
+#standorte .swiper-slide .stImgWrapper {
     height: 0px;
     width: 0px;
 
@@ -711,7 +711,7 @@ section {
     transition: all 0.3s ease-in-out;
 }
 
-#standorte .swiper-slide:hover .spImgWrapper {
+#standorte .swiper-slide:hover .stImgWrapper {
     height: 90px;
     width: 90px;
 
@@ -731,6 +731,26 @@ section {
 
 #standorte .swiper-slide h2 {
     margin-top: 100px;
+    text-decoration: var(--c-primary) solid underline 5px;
+    text-underline-offset: 0px;
+/* 
+    background-color: var(--c-primary);
+    width: 180px;
+    margin-left: 30px;
+    border-radius: 10px; */
+}
+
+.stTextWrapper p {
+    margin: 0;
+}
+
+.stTextWrapper > :nth-child(2) {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.stTextWrapper> :nth-child(3) {
+    margin-bottom: 10px;
 }
 
 #stMobil {
