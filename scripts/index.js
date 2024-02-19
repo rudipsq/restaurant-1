@@ -341,3 +341,11 @@ window.addEventListener("resize", debounce(function () {
     swiper.update();
   }
 }, 200));
+
+
+
+
+//<button onclick="callNumber('+123456789')">Call Us</button>
+function callNumber(number) {
+  window.location.href = 'tel:' + number;
+}
