@@ -7,77 +7,10 @@
       "description": "Crème fraîche, Lauch, Camembert & Preisselbeeren"
     },
     {
-      "id": "eiThuns",
-      "name": "eiThuns",
-      "type": false,
-      "description": "Tomatisierte Crème fraîche, Zwiebel, Ei, Thunfisch & Käse"
-    },
-    {
-      "id": "gratiniert",
-      "name": "Gratiniert",
-      "type": false,
-      "description": "Crème fraîche, Zwiebel, Speck, Käse & frische Petersilie"
-    },
-    {
-      "id": "klassisch",
-      "name": "Klassisch",
-      "type": false,
-      "description": "Crème fraîche, Zwiebel & Speck"
-    },
-    {
-      "id": "kreuzberg4",
-      "name": "Kreuzberg4",
-      "type": false,
-      "description": "Crème fraîche, Zwiebel, Dönerfleisch & Scharf!"
-    },
-    {
-      "id": "lachs",
-      "name": "Lachs",
-      "type": false,
-      "description": "Crème fraîche, Lauch, Räucherlachs & Käse"
-    },
-    {
-      "id": "papadopulus",
-      "name": "Papadopulus",
-      "type": false,
-      "description": "Crème fraîche, Zwiebel, Tomaten, Oliven & Schafskäse"
-    },
-    {
-      "id": "toskana",
-      "name": "Toskana",
-      "type": false,
-      "description": "Crème fraîche, Zwiebel, Tomaten, Mozzarella, frischer Basilikum & Créme de Balsamico"
-    },
-    {
-      "id": "banatella",
-      "name": "Banatella",
-      "type": true,
-      "description": "Crème fraîche, Banane & Nutella"
-    },
-    {
       "id": "feuerapfel",
       "name": "Feuerapfel",
       "type": true,
       "description": "Crème fraîche, Apfel, Zimt, Zucker & Calvados flambiert"
-    },
-    {
-      "id": "himmel_ehre",
-      "name": "Himmel & Ehre",
-      "type": true,
-      "description": "Crème fraîche, Himbeeren & Himbeergeist flambiert"
-    },
-    {
-      "id": "klebaer",
-      "name": "Klebaer",
-      "type": true,
-      "description": "Crème fraîche, Nonpareilles & Gummibärchen"
-    },
-    {
-      "id": "kreuzberg4",
-      "name": "Schwarzwaelder",
-      "type": true,
-      "description": "Crème fraîche, Sauerkirschen, Schokosoße & Sahne"
     }
-  ],
-  "getraenke": []
+  ]
 }
