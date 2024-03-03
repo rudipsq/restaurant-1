@@ -166,7 +166,7 @@ function updateWillkommenParallax() {
 
 //* SPEISEN
 async function addSpeisen() {
-  const flammkuchen = speisen[0];
+  const flammkuchen = speisen;
 
   flammkuchen.forEach(product => {
     const productDiv = document.createElement('div');

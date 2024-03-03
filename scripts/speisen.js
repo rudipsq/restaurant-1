@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // adding speisen
     speisen = await getSpeisen();
     addSpeisen();
-    addGetraenke()
+    //addGetraenke()
 
     setUpContainer()
     window.addEventListener('resize', setUpContainer);
@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     });
 
-    let gtGrid = document.getElementById('gtGrid');
-    gtGrid.addEventListener('click', function(event) {
-      let product = event.target.closest('#gtGrid>div')
+    // let gtGrid = document.getElementById('gtGrid');
+    // gtGrid.addEventListener('click', function(event) {
+    //   let product = event.target.closest('#gtGrid>div')
     
-      if (product) {
-        showSpeise(product.getAttribute('data-id'))
-      }
-    });
+    //   if (product) {
+    //     showSpeise(product.getAttribute('data-id'))
+    //   }
+    // });
 
     // overlay closing event
     let overlay = document.getElementById('overlay');
@@ -63,7 +63,7 @@ function setUpContainer() {
 
 //* SPEISEN
 function addSpeisen() {
-  const flammkuchen = speisen[0];
+  const flammkuchen = speisen;
   
   flammkuchen.forEach(product => {
     const productDiv = document.createElement('div');
@@ -88,46 +88,54 @@ function addSpeisen() {
   });
 }
 
-function addGetraenke() {
-  //const getraenke = speisen[1];
+// function addGetraenke() {
+//   //const getraenke = speisen[1];
 
-  const flammkuchen = speisen[0];
+//   const flammkuchen = speisen[0];
   
-  flammkuchen.forEach(product => {
-    const productDiv = document.createElement('div');
-    productDiv.setAttribute('data-id', product.id);
-    productDiv.innerHTML = `
-      <div class="spText">
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-      </div>
-      <div>
-        <img src="img/pic/fl_temp1.png">
-      </div>
-    `;
+//   flammkuchen.forEach(product => {
+//     const productDiv = document.createElement('div');
+//     productDiv.setAttribute('data-id', product.id);
+//     productDiv.innerHTML = `
+//       <div class="spText">
+//         <h3>${product.name}</h3>
+//         <p>${product.description}</p>
+//       </div>
+//       <div>
+//         <img src="img/pic/fl_temp1.png">
+//       </div>
+//     `;
       
-    //<img src="img/pic/fl_${product.id}.jpg">
+//     //<img src="img/pic/fl_${product.id}.jpg">
 
-    // if (product.type) {
-    // } else {
-    // }
+//     // if (product.type) {
+//     // } else {
+//     // }
 
-    document.getElementById('gtGrid').appendChild(productDiv);
-  });
-}
+//     document.getElementById('gtGrid').appendChild(productDiv);
+//   });
+// }
 
 function showSpeise(speiseId) {
 
   let speise;
 
+  // for (let i = 0; i < speisen.length; i++) {
+  //   for (let j = 0; j < speisen[i].length; j++) {
+  //     if (speisen[i][j].id === speiseId) {
+  //       speise = speisen[i][j];
+  //       break;
+  //     }
+  //   }
+  // }
+
   for (let i = 0; i < speisen.length; i++) {
-    for (let j = 0; j < speisen[i].length; j++) {
-      if (speisen[i][j].id === speiseId) {
-        speise = speisen[i][j];
-        break;
-      }
+    if (speisen[i].id === speiseId) {
+      speise = speisen[i];
+      break;
     }
   }
+
   
   openOverlay(speiseId, speise.name, speise.description)
 }
