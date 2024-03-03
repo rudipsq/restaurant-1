@@ -28,3 +28,27 @@
   - brett, cutter, ... ; topdown, licht von oben, weisser hintergrund
   - knoblauch, zwiebel, ... zutaten; licht von oben, weisser hintergrund
   - anhaenger; von vorne symmetrisch
+
+# FINISH:
+
+Speisen:
+
+- bilder der flammkuchen
+
+Standorte:
+
+- Heading decoration
+- card title underline
+
+Gutscheine:
+
+- umbenennen
+
+Footer:
+
+- anders feuer
+- decortion on the sides
+
+speisen.html:
+
+- bilder der flammkuchen
