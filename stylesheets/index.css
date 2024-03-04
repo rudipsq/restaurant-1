@@ -771,8 +771,8 @@ section {
 
 
 
-/* - - - - GUTSCHEINE - - - - */
-#gutscheine {
+/* - - - - INFOS - - - - */
+#infos {
     height: calc(100vh - 100px);
     margin-bottom: 0;
     text-align: center;
