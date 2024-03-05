@@ -1,0 +1,190 @@
+{
+  "flammkuchen": [
+    {
+      "id": "carmen_bert",
+      "name": "Carmen & Bert",
+      "type": false,
+      "description": "Schmand, Lauch, Camembert, Preisselbeeren & grober Pfeffer"
+    },
+    {
+      "id": "feige_feta",
+      "name": "Feige & Feta",
+      "type": false,
+      "description": "Schmand, Zwiebeln, Schafskäse, Feigen & Waldhonig"
+    },
+    {
+      "id": "etaly",
+      "name": "Etaly",
+      "type": false,
+      "description": "Tomatisierter Schmand, Zwiebeln, Salami, Champignons, Goudakäse & frische Petersilie"
+    },
+    {
+      "id": "gratiniert",
+      "name": "Gratiniert",
+      "type": false,
+      "description": "Schmand, Zwiebel, Speck, Gouda überbacken & frische Petersilie"
+    },
+    {
+      "id": "klassisch",
+      "name": "Klassisch",
+      "type": false,
+      "description": "Schmand, Zwiebel & Speck"
+    },
+    {
+      "id": "kreuzberg4",
+      "name": "Kreuzberg4",
+      "type": false,
+      "description": "Schmand, Zwiebel, Dönerfleisch & Scharf!"
+    },
+    {
+      "id": "generation_lax",
+      "name": "Generation L.A.X",
+      "type": false,
+      "description": "Schmand, Lauch, Räucherlachs & Goudakäse"
+    },
+    {
+      "id": "stinkerkaaas",
+      "name": "Stinkerkäääs",
+      "type": false,
+      "description": "Schmand, Lauch, Speck, emotionaler Käse & Kümmel"
+    },
+    {
+      "id": "champignons_league",
+      "name": "Champignons League",
+      "type": false,
+      "description": "Schmand, Zwiebel, Champignons, Goudakäse & Petersilie"
+    },
+    {
+      "id": "laperla",
+      "name": "La Perla!",
+      "type": false,
+      "description": "Tomatisierter Schmand, Zwiebel, Goudakäse & Pizzagewürz"
+    },
+    {
+      "id": "bollywood",
+      "name": "Bollywood",
+      "type": false,
+      "description": "Schmand, Zwiebel, Hähnchenbruststreifen, Honig & Curry"
+    },
+    {
+      "id": "chilli_cheesinger",
+      "name": "Chilli Cheesinger",
+      "type": false,
+      "description": "Schmand, Zwiebel, Chester Schmelzkäse, scharfe Jalapenos & geschrotete Chillis"
+    },
+    {
+      "id": "los_amigos",
+      "name": "Los Amigos",
+      "type": false,
+      "description": "Schmand, Zwiebel, Chorizo, milde grüne Peperonis & Schafskäse"
+    },
+    {
+      "id": "alles_worscht",
+      "name": "Alles Worscht",
+      "type": false,
+      "description": "Schmand, Zwiebel, Speck, irgendwelche Vesperwurst, Goudakäse & grober Pfeffer"
+    },
+    {
+      "id": "heisses_haenchen",
+      "name": "Heißes Hähnchen",
+      "type": false,
+      "description": "Tomatisierter Schmand, Zwiebel, Hähnchenbruststreifen, Gouda & Chilliöl"
+    },
+    {
+      "id": "suekrues_sucuk",
+      "name": "Sükrüs Sucuk",
+      "type": false,
+      "description": "Schmand, Zwiebel, Knoblauchwurst, Ei, Gouda & Petersilie"
+    },
+    {
+      "id": "mexico",
+      "name": "Mexico",
+      "type": false,
+      "description": "Schmand, Zwiebel, Tortillas, milde Peperoni, Goudakäse & Chilli geschrotet"
+    },
+    {
+      "id": "ei_thuns",
+      "name": "Ei-Thunes",
+      "type": false,
+      "description": "Schmand, Zwiebel, Thunfisch, hartgekochte Eier & Goudakäse"
+    },
+    {
+      "id": "papadopoulos",
+      "name": "Papadopoulos",
+      "type": false,
+      "description": "Schmand, Zwiebel, Schafskäse, Tomaten & Oliven"
+    },
+    {
+      "id": "toskana",
+      "name": "Toskana",
+      "type": false,
+      "description": "Schmand, Zwiebel, Tomaten, Mozzarella, frischer Basilikum & Créme de Balsamico"
+    },
+    {
+      "id": "knobinger",
+      "name": "Knobinger",
+      "type": false,
+      "description": "Schmand, Zwiebel, Speck, Goudakäse, Knoblauchöl & frische Petersilie"
+    },
+    {
+      "id": "pepemild",
+      "name": "Pepe mild",
+      "type": false,
+      "description": "Schmand, Zwiebel, Speck & mild pikante Peperonis"
+    },
+    {
+      "id": "provence",
+      "name": "Provence",
+      "type": false,
+      "description": "Schmand, Zwiebel, Speck & Kräuter der Provence"
+    },
+    {
+      "id": "banatella",
+      "name": "Banatella",
+      "type": true,
+      "description": "Süßer Schmand, Bananen & Nutella"
+    },
+    {
+      "id": "himmel_ehre",
+      "name": "Himmel & Ehre",
+      "type": true,
+      "description": "Süßer Schmand, Himmbeeren & Himbeergeist flambiert"
+    },
+    {
+      "id": "schokolinze",
+      "name": "Schokolinze",
+      "type": true,
+      "description": "Süßer Schmand, Smarties & Dessertsauce Schoko"
+    },
+    {
+      "id": "oscho",
+      "name": "OSCHO",
+      "type": true,
+      "description": "Süßer Schmand, Oreo & Dessertsauce Schoko"
+    },
+    {
+      "id": "schwarzwaelder",
+      "name": "Schwarzwälder",
+      "type": true,
+      "description": "Süßer Schmand, Sauerkirschen, Sahne & Dessertsauce Schoko"
+    },
+    {
+      "id": "gummibaeren",
+      "name": "gummibaeren",
+      "type": true,
+      "description": "Süßer Schmand, Gummibären & Zuckerkügelchen"
+    },
+    {
+      "id": "pflaume",
+      "name": "Pflaume",
+      "type": true,
+      "description": "Süßer Schmand, Pflaumen, Zimt & Zwetschgenwasser flambiert"
+    },
+    {
+      "id": "apfel",
+      "name": "Apfel",
+      "type": true,
+      "description": "Süßer Schmand, Apfel, Zimt, Zucker & Calvados flambiert"
+    }
+  ]
+}

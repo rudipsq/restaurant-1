@@ -167,26 +167,51 @@ function updateWillkommenParallax() {
 //* SPEISEN
 async function addSpeisen() {
   const flammkuchen = speisen;
+  let typeTrueCount = 0;
 
   flammkuchen.forEach(product => {
     const productDiv = document.createElement('div');
     productDiv.classList.add('swiper-slide');
     productDiv.innerHTML = `
-      <a href="speisen.html?id=${product.id}"><img src="img/pic/start_fl.png"></a>
+      <a href="speisen.html?id=${product.id}"><img src="img/pic/flammkuchen/${product.id}.png"></a>
       <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
       <p>${product.description}</p>
     `;
       
     //<img src="img/pic/fl_${product.id}.jpg">
+    //<img src="img/pic/start_fl.png"></img>
 
     if (product.type) {
-      document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      //document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      typeTrueCount++;
+      const container = document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0];
+      container.appendChild(productDiv.cloneNode(true));
+      container.appendChild(productDiv.cloneNode(true));
     } else {
       document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
     }
   });
 
+  
+  insertAtPosition()
   initializeSpSwiper()
+}
+
+function insertAtPosition() {
+  var container = document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0];
+
+  // Get the first three elements inside the container
+  var firstThree = [];
+  for (var i = 0; i < 6; i++) {
+    firstThree.push(container.children[i]);
+    i += 1;
+  }
+
+  // Move the first three elements to the end of the container
+  firstThree.forEach(function(element) {
+    console.log(element)
+    container.appendChild(element);
+  });
 }
 
 function initializeSpSwiper(){
