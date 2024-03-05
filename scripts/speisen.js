@@ -74,7 +74,8 @@ function addSpeisen() {
         <p>${product.description}</p>
       </div>
       <div>
-        <img src="img/pic/fl_temp1.png">
+        <img src="img/pic/flammkuchen/brett.png">
+        <img src="img/pic/flammkuchen/${product.id}.png">
       </div>
     `;
       
@@ -143,7 +144,7 @@ function showSpeise(speiseId) {
 function openOverlay(id, name, description) {
   const overlay = document.getElementById('overlay');
 
-  document.getElementById('ocImg').src = 'img/pic/start_fl.png';
+  document.getElementById('ocImg').src = 'img/pic/flammkuchen/'+id+'.png';
   document.getElementById('ocHead').innerHTML = 'Flammkuchen '+name;
   document.getElementById('ocDesc').innerHTML = description;
 

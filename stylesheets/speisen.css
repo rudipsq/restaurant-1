@@ -81,7 +81,6 @@
     flex-direction: row;
 
     overflow: hidden;
-
     margin: 0;
 }
 
@@ -91,7 +90,7 @@
 
 .mainGrid>div:hover img {
     /* background-color: black; */
-    transform: translate(-42%, -50%);
+    /* transform: translate(-42%, -50%); */
 }
 
 .mainGrid div>div:nth-child(1) {
@@ -104,6 +103,30 @@
 
 .mainGrid div>div:nth-child(2) {
     width: 40%;
+    position: relative;
+}
+
+.mainGrid div>div:nth-child(2) img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%);  */
+}
+
+.mainGrid div>div:nth-child(2) img:nth-child(1) {
+    height: 90%;
+}
+.mainGrid div:hover img:nth-child(1) {
+    /* background-color: black; */
+    transform: translate(-42%, -50%);
+}
+
+.mainGrid div>div:nth-child(2) img:nth-child(2) {
+    height: 80%;
+}
+.mainGrid div:hover img:nth-child(2) {
+    /* background-color: black; */
+    transform: translate(-36%, -50%);
 }
 
 .mainGrid h3 {

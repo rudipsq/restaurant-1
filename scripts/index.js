@@ -192,12 +192,11 @@ async function addSpeisen() {
     }
   });
 
-  
-  insertAtPosition()
+  fixPosition()
   initializeSpSwiper()
 }
 
-function insertAtPosition() {
+function fixPosition() {
   var container = document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0];
 
   // Get the first three elements inside the container
