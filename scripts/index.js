@@ -41,6 +41,20 @@ document.addEventListener("DOMContentLoaded", async function () {
   }, 600);
 });
 
+window.addEventListener('load', function() {
+    // Hide the loader
+    // var loader = document.getElementById('loader');
+    // loader.style.display = 'none';
+
+    // Show the content
+    var elements = document.querySelectorAll(".mainPage");
+    console.log(elements)
+    elements.forEach(function(element) {
+      console.log(element);
+      // element.style.display = 'block';
+    });
+});
+
 
 
 
@@ -167,14 +181,17 @@ function updateWillkommenParallax() {
 //* SPEISEN
 async function addSpeisen() {
   const flammkuchen = speisen;
-  let typeTrueCount = 0;
 
   flammkuchen.forEach(product => {
     const productDiv = document.createElement('div');
     productDiv.classList.add('swiper-slide');
     productDiv.innerHTML = `
-      <a href="speisen.html?id=${product.id}"><img src="img/pic/flammkuchen/${product.id}.png"></a>
-      <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
+      
+        <a class="spSwiperImgContainer" href="speisen.html?id=${product.id}">
+        <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.png">
+        <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.png"></a>
+     
+        <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
       <p>${product.description}</p>
     `;
       
@@ -182,11 +199,11 @@ async function addSpeisen() {
     //<img src="img/pic/start_fl.png"></img>
 
     if (product.type) {
-      //document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
-      typeTrueCount++;
-      const container = document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0];
-      container.appendChild(productDiv.cloneNode(true));
-      container.appendChild(productDiv.cloneNode(true));
+      document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
+      // typeTrueCount++;
+      // const container = document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0];
+      // container.appendChild(productDiv.cloneNode(true));
+      // container.appendChild(productDiv.cloneNode(true));
     } else {
       document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
     }

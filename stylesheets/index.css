@@ -214,6 +214,10 @@ main {
     background: none;
 }
 
+.mainPage {
+    /* display: none; */
+}
+
 
 
 #mainBackgroundImg {
@@ -521,28 +525,35 @@ section {
     overflow: hidden;
 }
 
-#speisen .swiper-slide img {
-    position: absolute;
+.spSwiperImgContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    height: 135px;
 
-    top: 0;
-    left: 50%;
-    float: right;
-    transform: translate(-50%, 0);
-
-
-    height: 50%;
-    margin-top: 7px;
-
+    margin-top: 13px;
     transition: all 0.12s ease-out;
 }
 
-#speisen .swiper-slide img:hover {
-    transform: translate(-50%, 0) scale(1.1);
+.spSwiperImgContainer:hover {
+    transform: scale(1.07);
+}
+
+.spSwiperImg1 {
+    height: 100%;
+    position: absolute;
+}
+
+.spSwiperImg2 {
+    top: 4%;
+    height: 90%;
+    position: absolute;
 }
 
 #speisen .swiper-slide h3 {
     margin: 0;
-    margin-top: 75%;
+    margin-top: 10px;
 }
 
 #speisen .swiper-slide p {
@@ -601,6 +612,20 @@ section {
 
         outline: var(--s-standardOutline);
         outline-offset: -8px;
+    }
+
+    .spSwiperImgContainer {
+        height: 170px;
+        width: 252px;
+        overflow: hidden;
+    }
+
+    .spSwiperImgContainer:hover {
+        width: 244px;
+    }
+
+    #speisen .swiper-slide h3 {
+        margin-top: 20px;
     }
 
     .swiper-button-next, .swiper-button-prev {

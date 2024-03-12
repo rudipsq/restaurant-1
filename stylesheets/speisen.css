@@ -157,7 +157,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
     z-index: 999;
@@ -172,13 +172,18 @@
 #overlay-content {
     background: var(--c-secondary);
     /* padding: 20px; */
-    border-radius: 15px;
+    border-radius: 20px;
     width: 450px;
     max-width: 90%;
-    height: 650px;
+    height: 520px;
     max-height: 90%;
     /* margin-top: 200vh; */
     transition: margin-top 0.25s ease-in-out;
+
+    background-image: url('/img/pic/main_background.jpg');
+    background-size: cover;
+    background-position-x: 30%;
+    background-position-y: 20px;
 
     overflow: hidden;
 }
@@ -187,20 +192,42 @@
     margin-top: 0;
 }
 
-#ocCont {
+#ocCont1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: relative;
+    height: 280px;
+
+    margin: 25px;
+}
+
+#ocBrett {
+    height: 100%;
+    position: absolute;
 }
 
 #ocImg {
-    height: 300px;
+    height: 90%;
+    position: absolute;
+    top: 4%;
+}
+
+#ocCont2 {
+    background: var(--c-secondary);
+
+    height: 160px;
+    border-radius: 20px;
+    padding: 25px;
+
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.8);
 }
 
 #ocHead {
-    margin-left: 20px;
+    /* margin-top: 0; */
+    font-size: x-large;
 }
 
 #ocDesc {
-    margin-left: 20px;
+    font-size: larger;
 }
