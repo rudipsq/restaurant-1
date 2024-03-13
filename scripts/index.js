@@ -1,10 +1,15 @@
-var swiper = null;
-var spHswiper = null;
-var spSswiper = null;
+let swiper = null;
+let spHswiper = null;
+let spSswiper = null;
 var willkommenParallaxElements;
 let speisen;
 
+// setStartImage();
+
+
 document.addEventListener("DOMContentLoaded", async function () {
+  setStartImage();
+
   checkWindowWidth();
   speisen = await getSpeisen();
   addSpeisen();
@@ -55,6 +60,11 @@ window.addEventListener('load', function() {
     });
 });
 
+function setStartImage() {
+    let randomNumber = Math.floor(Math.random() * 3) + 1;
+    let imageUrl = `../img/pic/fl${randomNumber}.png`;
+    document.getElementById('ssForeground').style.backgroundImage = `url(${imageUrl})`;
+}
 
 
 
