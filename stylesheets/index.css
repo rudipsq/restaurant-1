@@ -330,7 +330,7 @@ section {
 }
 
 #willkommen .textContainer {
-    width: 200px;
+    width: 230px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -401,6 +401,7 @@ section {
     #spText {
         display: flex;
         justify-content: center;
+        font-size: larger;
 
         background: radial-gradient(ellipse farthest-side at center, rgba(61, 34, 0, 0.6) 40%, rgba(61, 34, 0, 0.3) 75%, transparent 100%);
     }
