@@ -62,7 +62,7 @@ window.addEventListener('load', function() {
 
 function setStartImage() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
-    let imageUrl = `../img/pic/fl${randomNumber}.png`;
+    let imageUrl = `../img/pic/fl${randomNumber}.webp`;
     document.getElementById('ssForeground').style.backgroundImage = `url(${imageUrl})`;
 }
 

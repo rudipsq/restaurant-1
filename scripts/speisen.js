@@ -144,7 +144,7 @@ function showSpeise(speiseId) {
 function openOverlay(id, name, description) {
   const overlay = document.getElementById('overlay');
 
-  document.getElementById('ocImg').src = 'img/pic/flammkuchen/'+id+'.png';
+  document.getElementById('ocImg').src = 'img/pic/flammkuchen/'+id+'.webp';
   document.getElementById('ocHead').innerHTML = 'Flammkuchen '+name;
   document.getElementById('ocDesc').innerHTML = description;
 
