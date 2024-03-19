@@ -62,7 +62,7 @@ window.addEventListener('load', function() {
 
 function setStartImage() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
-    let imageUrl = `../img/pic/fl${randomNumber}.webp`;
+    let imageUrl = `../img/pic/fl${randomNumber}.png`;
     document.getElementById('ssForeground').style.backgroundImage = `url(${imageUrl})`;
 }
 
@@ -199,7 +199,7 @@ async function addSpeisen() {
       
         <a class="spSwiperImgContainer" href="speisen.html?id=${product.id}">
         <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.png">
-        <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.png"></a>
+        <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.webp"></a>
      
         <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
       <p>${product.description}</p>

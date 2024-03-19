@@ -75,7 +75,7 @@ function addSpeisen() {
       </div>
       <div>
         <img src="img/pic/flammkuchen/brett.png">
-        <img src="img/pic/flammkuchen/${product.id}.png">
+        <img src="img/pic/flammkuchen/${product.id}.webp">
       </div>
     `;
       
