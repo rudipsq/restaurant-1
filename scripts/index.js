@@ -1,18 +1,17 @@
 let swiper = null;
 let spHswiper = null;
 let spSswiper = null;
-var willkommenParallaxElements;
+let willkommenParallaxElements;
 let speisen;
-
-// setStartImage();
+let loaded = false
 
 
 document.addEventListener("DOMContentLoaded", async function () {
-  setStartImage();
-
-  checkWindowWidth();
-  speisen = await getSpeisen();
-  addSpeisen();
+  console.log(1)
+  if(!loaded){
+    setStartImage()
+    loaded = true
+  }
 
   // header
   document.getElementById('underline').style.opacity = '1'
@@ -46,28 +45,46 @@ document.addEventListener("DOMContentLoaded", async function () {
   }, 600);
 });
 
-window.addEventListener('load', function() {
-    // Hide the loader
-    // var loader = document.getElementById('loader');
-    // loader.style.display = 'none';
+window.addEventListener('load', async function() {
+    speisen = await getSpeisen();
+    addSpeisen();
+    initializeSpSwiper()
 
     // Show the content
-    var elements = document.querySelectorAll(".mainPage");
-    console.log(elements)
+    let elements = document.querySelectorAll(".mainPage");
     elements.forEach(function(element) {
-      console.log(element);
-      // element.style.display = 'block';
+        console.log(element);
+        element.classList.remove('mainPage'); // Remove the 'hidden' class
+        //element.style.display = '';
+        console.log(element);
     });
+
+    checkWindowWidth();
+
+    let hash = window.location.hash;
+    if (hash) {
+        let targetElement = document.querySelector(hash);
+        if (targetElement) {
+            targetElement.scrollIntoView();
+        }
+    }
 });
 
 function setStartImage() {
-    let randomNumber = Math.floor(Math.random() * 3) + 1;
-    let imageUrl = `../img/pic/fl${randomNumber}.png`;
-    let imgElement = document.createElement('img');
-    imgElement.src = imageUrl;
-    imgElement.onload = function() {
-        document.getElementById('ssForeground').style.backgroundImage = `url(${imageUrl})`;
-    };
+    let firstRandom = Math.floor(Math.random() * 7) + 1; // Change range to 1-7
+
+    let randomNumber;
+
+    if (firstRandom <= 5) {
+        // For the first five cases (1 to 5), choose random number between 1 and 5
+        randomNumber = Math.floor(Math.random() * 5) + 1;
+    } else {
+        // For the remaining cases (6 and 7), choose random number between 6 and 9
+        randomNumber = Math.floor(Math.random() * 4) + 6;
+    }
+
+    let imageUrl = `../img/pic/fl${randomNumber}.webp`;
+    document.getElementById('ssForeground').style.backgroundImage = `url(${imageUrl})`;
 }
 
 
@@ -208,26 +225,19 @@ async function addSpeisen() {
         <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
       <p>${product.description}</p>
     `;
-      
-    //<img src="img/pic/fl_${product.id}.jpg">
-    //<img src="img/pic/start_fl.png"></img>
 
     if (product.type) {
       document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
-      // typeTrueCount++;
-      // const container = document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0];
-      // container.appendChild(productDiv.cloneNode(true));
-      // container.appendChild(productDiv.cloneNode(true));
     } else {
       document.getElementById('spHswiper').getElementsByClassName('swiper-wrapper')[0].appendChild(productDiv);
     }
   });
 
-  fixPosition()
-  initializeSpSwiper()
+  //fixPosition()
 }
 
 function fixPosition() {
+  //todo: used???
   var container = document.getElementById('spSswiper').getElementsByClassName('swiper-wrapper')[0];
 
   // Get the first three elements inside the container

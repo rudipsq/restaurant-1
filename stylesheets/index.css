@@ -192,7 +192,7 @@ header {
 }
 
 #ssBackground {
-    background-image: url('../img/pic/brett.png');
+    background-image: url('../img/pic/brett.webp');
     background-repeat: no-repeat;
     /* background-size: 90%; */
     
@@ -218,7 +218,7 @@ main {
 }
 
 .mainPage {
-    /* display: none; */
+    display: none;
 }
 
 

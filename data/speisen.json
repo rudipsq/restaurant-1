@@ -1,24 +1,6 @@
 {
   "flammkuchen": [
     {
-      "id": "carmen_bert",
-      "name": "Carmen & Bert",
-      "type": false,
-      "description": "Schmand, Lauch, Camembert, Preisselbeeren & grober Pfeffer"
-    },
-    {
-      "id": "feige_feta",
-      "name": "Feige & Feta",
-      "type": false,
-      "description": "Schmand, Zwiebeln, Schafskäse, Feigen & Waldhonig"
-    },
-    {
-      "id": "etaly",
-      "name": "Etaly",
-      "type": false,
-      "description": "Tomatisierter Schmand, Zwiebeln, Salami, Champignons, Goudakäse & frische Petersilie"
-    },
-    {
       "id": "gratiniert",
       "name": "Gratiniert",
       "type": false,
@@ -31,10 +13,16 @@
       "description": "Schmand, Zwiebel & Speck"
     },
     {
-      "id": "kreuzberg4",
-      "name": "Kreuzberg4",
+      "id": "etaly",
+      "name": "Etaly",
       "type": false,
-      "description": "Schmand, Zwiebel, Dönerfleisch & Scharf!"
+      "description": "Tomatisierter Schmand, Zwiebeln, Salami, Champignons, Goudakäse & frische Petersilie"
+    },
+    {
+      "id": "champignons_league",
+      "name": "Champignons League",
+      "type": false,
+      "description": "Schmand, Zwiebel, Champignons, Goudakäse & Petersilie"
     },
     {
       "id": "generation_lax",
@@ -49,12 +37,6 @@
       "description": "Schmand, Lauch, Speck, emotionaler Käse & Kümmel"
     },
     {
-      "id": "champignons_league",
-      "name": "Champignons League",
-      "type": false,
-      "description": "Schmand, Zwiebel, Champignons, Goudakäse & Petersilie"
-    },
-    {
       "id": "laperla",
       "name": "La Perla!",
       "type": false,
@@ -67,6 +49,12 @@
       "description": "Schmand, Zwiebel, Chester Schmelzkäse, scharfe Jalapenos & geschrotete Chillis"
     },
     {
+      "id": "kreuzberg4",
+      "name": "Kreuzberg4",
+      "type": false,
+      "description": "Schmand, Zwiebel, Dönerfleisch & Scharf!"
+    },
+    {
       "id": "heisshuhner",
       "name": "Heißhuhner",
       "type": false,
@@ -77,12 +65,6 @@
       "name": "Mexico",
       "type": false,
       "description": "Schmand, Zwiebel, Tortillas, milde Peperoni, Goudakäse & Chilli geschrotet"
-    },
-    {
-      "id": "ei_thunes",
-      "name": "Ei-Thunes",
-      "type": false,
-      "description": "Schmand, Zwiebel, Thunfisch, hartgekochte Eier & Goudakäse"
     },
     {
       "id": "papadopoulos",
@@ -109,10 +91,28 @@
       "description": "Schmand, Zwiebel, Speck & mild pikante Peperonis"
     },
     {
-      "id": "banatella",
-      "name": "Banatella",
+      "id": "feige_feta",
+      "name": "Feige & Feta",
+      "type": false,
+      "description": "Schmand, Zwiebeln, Schafskäse, Feigen & Waldhonig"
+    },
+    {
+      "id": "ei_thunes",
+      "name": "Ei-Thunes",
+      "type": false,
+      "description": "Schmand, Zwiebel, Thunfisch, hartgekochte Eier & Goudakäse"
+    },
+    {
+      "id": "carmen_bert",
+      "name": "Carmen & Bert",
+      "type": false,
+      "description": "Schmand, Lauch, Camembert, Preisselbeeren & grober Pfeffer"
+    },
+    {
+      "id": "apfel",
+      "name": "Apfel",
       "type": true,
-      "description": "Süßer Schmand, Bananen & Nutella"
+      "description": "Süßer Schmand, Apfel, Zimt, Zucker & Calvados flambiert"
     },
     {
       "id": "himmel_ehre",
@@ -121,16 +121,22 @@
       "description": "Süßer Schmand, Himmbeeren & Himbeergeist flambiert"
     },
     {
-      "id": "schokolinze",
-      "name": "Schokolinze",
-      "type": true,
-      "description": "Süßer Schmand, Smarties & Dessertsauce Schoko"
-    },
-    {
       "id": "oscho",
       "name": "OSCHO",
       "type": true,
       "description": "Süßer Schmand, Oreo & Dessertsauce Schoko"
+    },
+    {
+      "id": "banatella",
+      "name": "Banatella",
+      "type": true,
+      "description": "Süßer Schmand, Bananen & Nutella"
+    },
+    {
+      "id": "schokolinze",
+      "name": "Schokolinze",
+      "type": true,
+      "description": "Süßer Schmand, Smarties & Dessertsauce Schoko"
     },
     {
       "id": "schwarzwaelder",
@@ -149,12 +155,6 @@
       "name": "Pflaume",
       "type": true,
       "description": "Süßer Schmand, Pflaumen, Zimt & Zwetschgenwasser flambiert"
-    },
-    {
-      "id": "apfel",
-      "name": "Apfel",
-      "type": true,
-      "description": "Süßer Schmand, Apfel, Zimt, Zucker & Calvados flambiert"
     }
   ]
 }

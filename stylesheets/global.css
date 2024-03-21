@@ -188,6 +188,7 @@ footer {
     z-index: 3;
 
     height: 20px;
+    width: calc(100% - 40px);
 }
 
 footer div {
