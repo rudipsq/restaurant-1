@@ -63,7 +63,11 @@ window.addEventListener('load', function() {
 function setStartImage() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     let imageUrl = `../img/pic/fl${randomNumber}.png`;
-    document.getElementById('ssForeground').style.backgroundImage = `url(${imageUrl})`;
+    let imgElement = document.createElement('img');
+    imgElement.src = imageUrl;
+    imgElement.onload = function() {
+        document.getElementById('ssForeground').style.backgroundImage = `url(${imageUrl})`;
+    };
 }
 
 
@@ -198,7 +202,7 @@ async function addSpeisen() {
     productDiv.innerHTML = `
       
         <a class="spSwiperImgContainer" href="speisen.html?id=${product.id}">
-        <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.png">
+        <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.webp">
         <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.webp"></a>
      
         <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
