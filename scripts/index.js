@@ -184,13 +184,47 @@ function speisenAnimation() {
 const background = document.getElementById('ssBackground');
 const foreground = document.getElementById('ssForeground');
 
-document.addEventListener('mousemove', (e) => {
-  const xAxis = (window.innerWidth / 2 - e.clientX) / 25;
-  const yAxis = (window.innerHeight / 2 - e.clientY) / 25;
+let lastX = 0;
+let lastY = 0;
 
-  parallax(background, xAxis, yAxis, 0.35);
-  parallax(foreground, xAxis, yAxis, 0.5);
-});
+document.addEventListener('mousemove', handleMove);
+document.addEventListener('touchmove', handleMove);
+
+function handleMove(event) {
+  let clientX, clientY;
+
+  if (event.type === 'mousemove') {
+    clientX = event.clientX;
+    clientY = event.clientY;
+  } else if (event.type === 'touchmove' && event.touches.length === 1) {
+    clientX = event.touches[0].clientX;
+    clientY = event.touches[0].clientY;
+  } else {
+    return;
+  }
+
+  const xAxis = (window.innerWidth / 2 - clientX) / 25;
+  const yAxis = (window.innerHeight / 2 - clientY) / 25;
+
+  if (lastX !== 0 && lastY !== 0) {
+    const deltaX = clientX - lastX;
+    const deltaY = clientY - lastY;
+    
+    parallax(background, xAxis + deltaX / 25, yAxis + deltaY / 25, 0.35);
+    parallax(foreground, xAxis + deltaX / 25, yAxis + deltaY / 25, 0.5);
+  }
+
+  lastX = clientX;
+  lastY = clientY;
+}
+
+document.addEventListener('mouseup', handleEnd);
+document.addEventListener('touchend', handleEnd);
+
+function handleEnd() {
+  lastX = 0;
+  lastY = 0;
+}
 
 function parallax(element, xAxis, yAxis, speed) {
   element.style.transform = `translate(${-xAxis * speed}px, ${-yAxis * speed}px)`;

@@ -11,14 +11,15 @@
 
 html {
     scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+    /* overflow: hidden; */
 }
 
 body {
     color: var(--c-text);
     background-color: black;
-    overflow-x: hidden;
-
-    width: 100vw;
+    /* overflow-x: hidden; */
+    /* overflow: hidden; */
 
     margin: 0;
     padding: 0;
