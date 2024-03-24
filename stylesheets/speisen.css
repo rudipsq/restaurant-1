@@ -49,6 +49,15 @@
     padding: 20px;
 }
 
+#mainHeading {
+    /* todo: when big enough show heading decoration */
+    overflow: hidden;
+}
+
+#mainHeading h1 {
+    text-align: center;
+}
+
 @media (min-width: 741px) {
     #mainContainer {
         margin-top: 100px;
@@ -82,6 +91,11 @@
 
     overflow: hidden;
     margin: 0;
+
+    outline-color: rgba(255, 255, 255, 0.2);
+    outline-style: dashed;
+    outline-width: 1px;
+    outline-offset: -5px;
 }
 
 .mainGrid>div:hover {
@@ -184,7 +198,7 @@
     /* margin-top: 200vh; */
     transition: margin-top 0.25s ease-in-out;
 
-    background-image: url('/img/pic/main_background.jpg');
+    background-image: url('/img/pic/main_background.webp');
     background-size: cover;
     background-position-x: 30%;
     background-position-y: 20px;
@@ -214,18 +228,23 @@
 #ocImg {
     height: 90%;
     position: absolute;
-    top: 4%;
+    top: 5%;
 }
 
 #ocCont2 {
     background: var(--c-secondary);
 
-    height: 160px;
+    height: 140px;
     border-radius: 20px;
-    padding: 25px;
+    padding: 25px 0;
 
-    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.8);
-        text-align: center;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.9);
+    text-align: center;
+
+    outline-color: rgba(255, 255, 255, 0.2);
+    outline-style: dashed;
+    outline-offset: -8px;
+    outline-width: 2px;
 }
 
 #ocHead {

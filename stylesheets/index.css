@@ -81,7 +81,7 @@ header {
     background: rgba(27, 15, 0, 0.65);
 }
 
-#startOverlay{
+/* #startOverlay{
     position: fixed;
     top: 0;
     left: 0;
@@ -92,6 +92,19 @@ header {
     transition: opacity 2.3s ease;
     
     z-index: 3;
+} */
+
+#startOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(27, 16, 1, 0.6);
+    transition: opacity 2.3s ease;
+
+    z-index: 100;
 }
 
 #ssCenter1 {
@@ -140,7 +153,7 @@ header {
 @media (max-width: 740px) {
     #ssCorner {
         bottom: -10vh;
-        right: calc(80vw - 0px);
+        right: calc(90vw - 0px);
     }
 
     #ssCenter1 {
@@ -148,6 +161,13 @@ header {
         top: 10vh;
     }
 }
+
+@media (max-height: 800px) {
+    #ssCorner {
+        height: 75%;
+    }
+}
+
 
 #ssMid {
     position: absolute;
@@ -157,8 +177,7 @@ header {
     height: 100px;
     width: 100px;
 
-    /* z-index: 3; */
-    z-index: 10;
+    z-index: 110;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
 
@@ -214,8 +233,10 @@ header {
 }
 
 main {
+    margin-top: 100vh;
     background: none;
-    overflow: hidden; /*todo: overflow hidden makes button unclickable */
+    overflow: hidden;
+    z-index: 9;
 }
 
 .mainPage {
@@ -226,7 +247,7 @@ main {
 
 #mainBackgroundImg {
     background-color: rgb(56, 27, 0);
-    background-image: url('../img/pic/main_background.jpg');
+    background-image: url('../img/pic/main_background.webp');
     background-size: contain;
     background-position: center top;
 
@@ -246,7 +267,7 @@ section {
 
 /* - - - - WILLKOMMEN - - - - */
 #willkommen{
-    margin-top: 100vh;
+    /* margin-top: 100vh; */
     overflow: hidden;
 }
 

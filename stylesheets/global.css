@@ -154,7 +154,7 @@ main {
     min-height: 100vh;
     
     background-color: rgb(56, 27, 0);
-    background-image: url('../img/pic/main_background.jpg');
+    background-image: url('../img/pic/main_background.webp');
     background-size: cover;
     background-attachment: fixed;
     background-position: center top;

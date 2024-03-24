@@ -78,8 +78,6 @@ function addSpeisen() {
         <img src="img/pic/flammkuchen/${product.id}.webp">
       </div>
     `;
-      
-    //<img src="img/pic/fl_${product.id}.jpg">
 
     // if (product.type) {
     // } else {
@@ -145,7 +143,7 @@ function openOverlay(id, name, description) {
   const overlay = document.getElementById('overlay');
 
   document.getElementById('ocImg').src = 'img/pic/flammkuchen/'+id+'.webp';
-  document.getElementById('ocHead').innerHTML = 'Flammkuchen '+name;
+  document.getElementById('ocHead').innerHTML = 'Flammkuchen „'+name+'“';
   document.getElementById('ocDesc').innerHTML = description;
 
   overlay.classList.add('active');
