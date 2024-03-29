@@ -238,6 +238,10 @@
     border-radius: 20px;
     padding: 25px 0;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.9);
     text-align: center;
 
@@ -248,12 +252,14 @@
 }
 
 #ocHead {
-    margin-top: 12px;
-    margin-bottom: 30px;
+    margin-top: 6px;
+    margin-bottom: 14px;
     font-size: x-large;
     text-decoration: underline;
 }
 
 #ocDesc {
+    margin: 0 0 16px 0;
+    padding: 0 8px 0 8px;
     font-size: larger;
 }
