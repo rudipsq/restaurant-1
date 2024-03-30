@@ -58,7 +58,7 @@
     text-align: center;
 }
 
-@media (min-width: 741px) {
+@media (min-width: 761px) {
     #mainContainer {
         margin-top: 100px;
     }
@@ -189,6 +189,7 @@
 }
 
 #overlay-content {
+    position: relative;
     background: var(--c-secondary);
     /* padding: 20px; */
     border-radius: 20px;
@@ -196,8 +197,6 @@
     max-width: 90%;
     height: 520px;
     max-height: 90%;
-    margin-top: 150vh;
-    transition: margin-top 0.25s ease-in-out;
 
     background-image: url('/img/pic/main_background.webp');
     background-size: cover;
@@ -206,10 +205,27 @@
 
     overflow: hidden;
     
+    margin-top: 150vh;
+    transition: margin-top 0.25s ease;
 }
 
 #overlay.active #overlay-content {
     margin-top: 0;
+}
+
+#ocClose {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    right: 0;
+    top: 0;
+    margin: 2px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    opacity: 0.7;
+
+    transition: all 0.1s ease-out;
 }
 
 #ocCont1 {
@@ -221,12 +237,12 @@
 
     margin: 25px;
 
-    translate: 1000px;
-    transition: all 0.5s ease;
+    translate: 2000px;
+    transition: all 0.48s ease;
 }
 
 #overlay.active #ocCont1 {
-    translate: 0;
+    translate: 6px;
 }
 
 #ocBrett {
