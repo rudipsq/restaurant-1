@@ -223,7 +223,7 @@
     width: 34px;
     height: 34px;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 1; /* change if wanted */
 
     transition: all 0.1s ease-out;
 }

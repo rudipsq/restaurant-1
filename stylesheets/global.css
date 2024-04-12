@@ -28,7 +28,7 @@ body {
     font-weight: 400;
     font-style: normal;
 
-    overscroll-behavior-y: none;
+    overscroll-behavior: none;
 }
 
 img {
@@ -205,6 +205,11 @@ footer {
 
     height: 20px;
     width: calc(100% - 40px);
+
+    outline-color: rgba(255, 255, 255, 0.2);
+    outline-style: dashed;
+    outline-width: 1px;
+    outline-offset: -5px;
 }
 
 footer div {
