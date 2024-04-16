@@ -2,7 +2,7 @@
     min-height: calc(100vh - 100px);
 }
 
-/* - - - - Back - - - - */
+/* - - - - Back Arrow - - - - */
 #back {
     position: fixed;
     bottom: 5vh;
@@ -49,14 +49,19 @@
     padding: 20px;
 }
 
-#mainHeading {
-    /* todo: when big enough show heading decoration */
-    overflow: hidden;
+
+
+/* - - - - Heading Decoration - - - - */
+.headingDecoration span:nth-child(1) {
+    translate: 185px 37px;
 }
 
-#mainHeading h1 {
-    text-align: center;
+.headingDecoration span:nth-child(3) {
+    translate: -190px -43px;
 }
+
+
+
 
 @media (min-width: 761px) {
     #mainContainer {

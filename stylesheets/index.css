@@ -921,3 +921,24 @@ section {
     object-fit: cover;
     mix-blend-mode: lighten;
 }
+
+
+
+
+/* - - - - - Headings - - - - -*/
+.headingDecoration h1::before {
+    top: 45px;
+    translate: -7px 0;
+}
+
+.headingDecoration h1::after {
+    top: 45px;
+}
+
+.headingDecoration span:nth-child(1) {
+    translate: -84px 41px;
+}
+
+.headingDecoration span:nth-child(3) {
+    translate: 75px -49px;
+}
