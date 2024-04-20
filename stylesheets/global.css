@@ -1,338 +1,325 @@
 :root {
-    --c-text: rgb(255, 255, 255);
-    --c-accent: #98161B;
-    --c-primary: #7c0283;
-    --c-secondary: #460349;
-    --c-background: rgba(22, 3, 24, 0.5);
+  --c-text: rgb(255, 255, 255);
+  --c-accent: #98161b;
+  --c-primary: #7c0283;
+  --c-secondary: #460349;
+  --c-background: rgba(22, 3, 24, 0.5);
 
-    --s-headerHeight: 100px;
-    --s-standardOutline: 1px solid rgba(255, 255, 255, 0.2);
+  --s-headerHeight: 100px;
+  --s-standardOutline: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 html {
-    scroll-behavior: smooth;
-    /* overflow-x: hidden; */
-    /* overflow: hidden; */
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+  /* overflow: hidden; */
 }
 
 body {
-    color: var(--c-text);
-    background-color: black;
-    /* overflow-x: hidden; */
-    /* overflow: hidden; */
+  color: var(--c-text);
+  background-color: black;
+  /* overflow-x: hidden; */
+  /* overflow: hidden; */
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    font-family: "span", serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "span", serif;
+  font-weight: 400;
+  font-style: normal;
 
-    overscroll-behavior: none;
+  overscroll-behavior: none;
 }
 
 img {
-    user-drag: none;
-    /* Standard */
-    -webkit-user-drag: none;
-    /* Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    pointer-events: none;
-    /* Prevent pointer events */
+  user-drag: none;
+  /* Standard */
+  -webkit-user-drag: none;
+  /* Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  pointer-events: none;
+  /* Prevent pointer events */
 }
-
-
 
 /* - - - - - A Tags - - - - -*/
 a {
-    text-decoration: underline 1px;
-    text-underline-offset: 2px;
-    color: white;
+  text-decoration: underline 1px;
+  text-underline-offset: 2px;
+  color: white;
 }
 a:hover {
-    text-decoration: underline 2px;
-    text-underline-offset: 2px;
+  text-decoration: underline 2px;
+  text-underline-offset: 2px;
 }
-
-
 
 /* - - - - - Header - - - - -*/
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    height: var(--s-headerHeight);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: var(--s-headerHeight);
 
-    /* background: var(--c-fhBackground); */
-    /* background-color: rgba(10, 10, 10, 0.096); */
-    background-image: url('../img/pic/header_background.jpg');
-    background-position-y: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
+  /* background: var(--c-fhBackground); */
+  /* background-color: rgba(10, 10, 10, 0.096); */
+  background-image: url("../img/pic/header_background.jpg");
+  background-position-y: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
 
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.4);
 }
 
 #hDark {
-    background: var(--c-background);
-    background-blend-mode: color;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  background: var(--c-background);
+  background-blend-mode: color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-    height: 100%;
+  height: 100%;
 }
 
 .hWrapper {
-    width: 390px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #hLogo {
-    height: calc(var(--s-headerHeight)/2);
-    margin-left: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+  height: calc(var(--s-headerHeight) / 2);
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 #hLogo img {
-    height: 100%;
+  height: 100%;
 }
 
 header nav {
-    padding: 0 35px;
-    margin: 15px 0;
-    display: flex;
-    gap: 20px;
+  padding: 0 35px;
+  margin: 15px 0;
+  display: flex;
+  gap: 20px;
 
-    /* background-color: rgba(26, 13, 0, 0.55); */
-    background-color: var(--c-background);
-    border-radius: 10px;
+  /* background-color: rgba(26, 13, 0, 0.55); */
+  background-color: var(--c-background);
+  border-radius: 10px;
 
-    font-size: large;
+  font-size: large;
 
-    outline-color: rgba(26, 13, 0, 0.45);
-    /* outline-color: var(--c-background); */
-    outline-width: 3px;
-    outline-style: inset;
+  outline-color: rgba(26, 13, 0, 0.45);
+  /* outline-color: var(--c-background); */
+  outline-width: 3px;
+  outline-style: inset;
 }
 
 header nav a {
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 17px;
-    margin-bottom: 19px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 17px;
+  margin-bottom: 19px;
 
-    text-align: center;
+  text-align: center;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    width: 115px;
+  width: 115px;
 
-    transition: font-size 0.11s ease-out;
+  transition: font-size 0.11s ease-out;
 }
 
 header nav a:hover {
-    font-size: 1.1em;
+  font-size: 1.1em;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 @media (max-width: 1400px) {
-    #hLogoMedium {
-        display: none;
-    }
+  #hLogoMedium {
+    display: none;
+  }
 }
 
 @media (max-width: 760px) {
-    header {
-        display: none;
-    }
+  header {
+    display: none;
+  }
 }
-
-
 
 /* - - - - - Main - - - - -*/
 main {
-    min-height: 100vh;
-    
-    background-color: rgb(56, 27, 0);
-    background-image: url('../img/pic/main_background.webp');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center top;
+  min-height: 100vh;
 
-    position: relative;
-    z-index: 2;
+  background-color: rgb(56, 27, 0);
+  background-image: url("../img/pic/main_background.webp");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+
+  position: relative;
+  z-index: 2;
 }
 
 #mainDark {
-    background-color: var(--c-background);
-    position: fixed;
-    top: 100;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
+  background-color: var(--c-background);
+  position: fixed;
+  top: 100;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
 }
-
-
 
 /* - - - - - Footer - - - - -*/
 footer {
-    display: flex;
-    justify-content: center;
-    gap: 8%;
+  display: flex;
+  justify-content: center;
+  gap: 8%;
 
-    padding: 20px;
+  padding: 20px;
 
-    text-align: center;
-    background-color: var(--c-secondary);
+  text-align: center;
+  background-color: var(--c-secondary);
 
-    position: relative;
-    z-index: 3;
+  position: relative;
+  z-index: 3;
 
-    height: 20px;
-    width: calc(100% - 40px);
+  height: 20px;
+  width: calc(100% - 40px);
 
-    outline-color: rgba(255, 255, 255, 0.2);
-    outline-style: dashed;
-    outline-width: 1px;
-    outline-offset: -5px;
+  outline-color: rgba(255, 255, 255, 0.2);
+  outline-style: dashed;
+  outline-width: 1px;
+  outline-offset: -5px;
 }
 
 footer div {
-    min-width: 70px;
+  min-width: 70px;
 }
-
-
 
 /* - - - - - Button - - - - -*/
 .primaryButton {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 
-    width: 128px;
-    height: 36px;
-    padding: 0;
+  width: 128px;
+  height: 36px;
+  padding: 0;
 
-    cursor: pointer;
-    overflow: hidden;
+  cursor: pointer;
+  overflow: hidden;
 
-    background-color: var(--c-primary);
-    backdrop-filter: blur(5px);
+  background-color: var(--c-primary);
+  backdrop-filter: blur(5px);
 
-    border-radius: 50px;
-    border: none;
-    
-    outline: var(--s-standardOutline);
-    outline-color: rgba(255, 255, 255, 0.6);
-    /* outline-width: 0; */
+  border-radius: 50px;
+  border: none;
 
-    overflow: hidden;
+  outline: var(--s-standardOutline);
+  outline-color: rgba(255, 255, 255, 0.6);
+  /* outline-width: 0; */
+
+  overflow: hidden;
 }
 
 .primaryButton:hover {
-    /* outline-width: 1px; */
-    outline-width: 2px;
+  /* outline-width: 1px; */
+  outline-width: 2px;
 }
 
 .primaryButton div {
-    position: absolute;
-    top: 0;
-    right: 18px;
-    width: 124px;
-    height: 36px;
-    display: flex;
+  position: absolute;
+  top: 0;
+  right: 18px;
+  width: 124px;
+  height: 36px;
+  display: flex;
 
-    transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 .primaryButton:hover div {
-    right: 5px;
-    width: 116px;
+  right: 5px;
+  width: 116px;
 }
 
 .primaryButton img {
-    height: 16px;
-    margin-top: 10px;
-    height: 16px;
+  height: 16px;
+  margin-top: 10px;
+  height: 16px;
 }
 
 .primaryButton p {
-    color: white;
-    width: 100px;
-    height: 30px;
-    margin: 0;
-    margin-top: 8px;
-    margin-left: 15px;
+  color: white;
+  width: 100px;
+  height: 30px;
+  margin: 0;
+  margin-top: 8px;
+  margin-left: 15px;
 
-    font-family: "span", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.11em;
+  font-family: "span", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.11em;
 
-    transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 .primaryButton:hover p {
-    margin-left: 0px;
+  margin-left: 0px;
 }
-
-
-
 
 /* - - - - - Headings - - - - -*/
 .headingDecoration {
-    overflow: hidden;
-    text-align: center;
-    position: relative;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
 }
 
 .headingDecoration h1 {
-    font-size: xx-large;
+  font-size: xx-large;
 }
 
 .headingDecoration h1::before,
 .headingDecoration h1::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 175px;
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 175px;
 }
 
 .headingDecoration h1::before {
-    top: 41px;
-    margin-left: -208px;
-    background: linear-gradient(to left, #ffffff,  rgba(255, 255, 255, 0));
+  top: 41px;
+  margin-left: -208px;
+  background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
 }
 
 .headingDecoration h1::after {
-    top: 41px;
-    margin-left: 40px;
-    background: linear-gradient(to right, #ffffff,  rgba(255, 255, 255, 0));
+  top: 41px;
+  margin-left: 40px;
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
 }
 
 .headingDecoration span {
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    position: absolute;
-    z-index: 10000;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  z-index: 10000;
 }

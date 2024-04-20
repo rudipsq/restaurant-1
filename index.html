@@ -1,272 +1,364 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flammaurant</title>
 
-    <link rel="icon" href="img/logo/tiny.png">
+    <link rel="icon" href="img/logo/tiny.png" />
 
     <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="stylesheets/global.css">
-    <link rel="stylesheet" href="stylesheets/index.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+      integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="stylesheets/global.css" />
+    <link rel="stylesheet" href="stylesheets/index.css" />
 
     <!-- <link rel="stylesheet" href="https://use.typekit.net/tit6hxu.css"> -->
 
     <!-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/2.0.4/lottie-player.min.js" integrity="sha512-vffrQl+sWXz8NVN0DaWjp9WQGbVDb9PxQQd17MKhnwIqhBhV8/X3hxYYrdlyNPJis4ERqkzzA1wdS2u5GaV1Tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/2.0.4/lottie-player.min.js"
+      integrity="sha512-vffrQl+sWXz8NVN0DaWjp9WQGbVDb9PxQQd17MKhnwIqhBhV8/X3hxYYrdlyNPJis4ERqkzzA1wdS2u5GaV1Tw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
-        <div id="hDark">
-            <div class="hWrapper">
-                <a id="hLogo" href="index.html">
-                    <img src="img/logo/tiny.png" alt="Logo">
-                    <img src="img/logo/medium.png" alt="Logo" id="hLogoMedium">
-                </a>
-            </div>
-            <nav>
-                <a href="#willkommen">Willkommen</a>
-                <a href="#speisen">Speisen</a>
-                <a href="#standorte">Standorte</a>
-                <a href="#infos">Infos</a>
-            </nav>
-            <div id="underline"></div>
-            <div class="hWrapper">
-            </div>
+      <div id="hDark">
+        <div class="hWrapper">
+          <a id="hLogo" href="index.html">
+            <img src="img/logo/tiny.png" alt="Logo" />
+            <img src="img/logo/medium.png" alt="Logo" id="hLogoMedium" />
+          </a>
         </div>
+        <nav>
+          <a href="#willkommen">Willkommen</a>
+          <a href="#speisen">Speisen</a>
+          <a href="#standorte">Standorte</a>
+          <a href="#infos">Infos</a>
+        </nav>
+        <div id="underline"></div>
+        <div class="hWrapper"></div>
+      </div>
     </header>
 
     <div id="startScreen">
-        <!-- <img style="z-index: 1; position: fixed; bottom: -800px; left: -200px; width: 800px; height: 1000px;" src="img/pic/start_flour.png" alt=""> -->
-        <a id="ssMid" href="#willkommen">
-            <img src="img/icon/arrowDown.png" alt="arrow down">
+      <!-- <img style="z-index: 1; position: fixed; bottom: -800px; left: -200px; width: 800px; height: 1000px;" src="img/pic/start_flour.png" alt=""> -->
+      <a id="ssMid" href="#willkommen">
+        <img src="img/icon/arrowDown.png" alt="arrow down" />
+      </a>
+      <div id="darkOverlay"></div>
+      <div id="startOverlay"></div>
+      <div id="ssCenter1">
+        <a href="index.html">
+          <lottie-player
+            id="animationPlayer"
+            src="data/animation.json"
+            background="transparent"
+            speed="1"
+            autoplay
+          ></lottie-player>
         </a>
-        <div id="darkOverlay"></div>
-        <div id="startOverlay"></div>
-        <div id="ssCenter1">
-            <a href="index.html">
-                <lottie-player id="animationPlayer" src="data/animation.json" background="transparent" speed="1" autoplay></lottie-player>
-            </a>
-        </div>
-        <div id="ssCorner">
-            <div id="ssBackground" class="parallax"></div>
-            <div id="ssForeground" class="parallax"></div>
-        </div>
+      </div>
+      <div id="ssCorner">
+        <div id="ssBackground" class="parallax"></div>
+        <div id="ssForeground" class="parallax"></div>
+      </div>
     </div>
 
     <main class="mainPage">
-
-        <section id="willkommen">
-            <div id="wiGrid">
-                <div class="wiGridItem" style="grid-column: span 3;">
-                    <img class="wiGridImg" src="img/pic/flammbiert.webp" data-speed="0.15">
-                </div>
-                <div class="wiGridItem" style="grid-column: span 2;">
-                    <img class="wiGridIcon" src="img/gif/fireIcon.gif">
-                    <div class="glow-overlay"></div>
-                    <div class="textContainer">
-                        <p>„Unsere Flammaurants sind berühmt für die einzigartigen Flammkuchenspezialitäten, die nach unseren eigenen geheimen Rezepten zubereitet werden.“</p>
-                    </div>
-                </div>
-                <div class="wiGridItem" id="wiGridItem3" style="grid-column: span 2;">
-                    <img class="wiGridIcon" src="img/gif/fireIcon.gif">
-                    <div class="glow-overlay"></div>
-                    <div class="textContainer">
-                        <p>„Von traditionellen Favoriten bis hin zu kreativen Neuinterpretationen bieten wir eine vielfältige Auswahl in unseren gemütlichen Restaurants.“</p>
-                    </div>
-                </div>
-                <div class="wiGridItem" style="grid-column: span 3;">
-                    <img class="wiGridImg" src="img/pic/lampe.webp" data-speed="0.15">
-                </div>
+      <section id="willkommen">
+        <div id="wiGrid">
+          <div class="wiGridItem" style="grid-column: span 3">
+            <img
+              class="wiGridImg"
+              src="img/pic/flammbiert.webp"
+              data-speed="0.15"
+            />
+          </div>
+          <div class="wiGridItem" style="grid-column: span 2">
+            <img class="wiGridIcon" src="img/gif/fireIcon.gif" />
+            <div class="glow-overlay"></div>
+            <div class="textContainer">
+              <p>
+                „Unsere Flammaurants sind berühmt für die einzigartigen
+                Flammkuchenspezialitäten, die nach unseren eigenen geheimen
+                Rezepten zubereitet werden.“
+              </p>
             </div>
-        </section>
-        
-        <div id="mainBackgroundImg">
-        <div id="mainBackgroundDark">
+          </div>
+          <div class="wiGridItem" id="wiGridItem3" style="grid-column: span 2">
+            <img class="wiGridIcon" src="img/gif/fireIcon.gif" />
+            <div class="glow-overlay"></div>
+            <div class="textContainer">
+              <p>
+                „Von traditionellen Favoriten bis hin zu kreativen
+                Neuinterpretationen bieten wir eine vielfältige Auswahl in
+                unseren gemütlichen Restaurants.“
+              </p>
+            </div>
+          </div>
+          <div class="wiGridItem" style="grid-column: span 3">
+            <img class="wiGridImg" src="img/pic/lampe.webp" data-speed="0.15" />
+          </div>
+        </div>
+      </section>
 
-        <section id="speisen">
+      <div id="mainBackgroundImg">
+        <div id="mainBackgroundDark">
+          <section id="speisen">
             <div id="spImageLayer">
-                <div id="spImageTrigger" style="bottom: 450px; left: 1500px; position: absolute;"></div>
-                <img src="img/pic/onion.png" class="hideSpImage" style="left: 480px;" data-defer="0">
+              <div
+                id="spImageTrigger"
+                style="bottom: 450px; left: 1500px; position: absolute"
+              ></div>
+              <img
+                src="img/pic/onion.png"
+                class="hideSpImage"
+                style="left: 480px"
+                data-defer="0"
+              />
             </div>
             <div id="spWrapper" class="scHiddenRight">
-            <img src="img/pic/speisen_brett.png" id="spBrett">
-            <div id="spText">
+              <img src="img/pic/speisen_brett.png" id="spBrett" />
+              <div id="spText">
                 <div>
-                    <h1>Speisen</h1>
-                    <p>Lassen Sie sich von unserer kulinarischen Vielfalt überraschen und entdecken Sie die köstlichen Aromen unserer abwechslungsreichen Flammkuchenkreationen! Warum nicht einfach mal vorbeischauen und probieren? Ab 4 Personen kannst du dich mit 23€ pro Person an so vielen „Flammes“ wie du möchtest in Gaggenau & Rheinstetten satt essen.</p>
+                  <h1>Speisen</h1>
+                  <p>
+                    Lassen Sie sich von unserer kulinarischen Vielfalt
+                    überraschen und entdecken Sie die köstlichen Aromen unserer
+                    abwechslungsreichen Flammkuchenkreationen! Warum nicht
+                    einfach mal vorbeischauen und probieren? Ab 4 Personen
+                    kannst du dich mit 23€ pro Person an so vielen „Flammes“ wie
+                    du möchtest in Gaggenau & Rheinstetten satt essen.
+                  </p>
                 </div>
-            </div>
-            
-            <div id="spGrid">
+              </div>
+
+              <div id="spGrid">
                 <div>
-                    <div class="spGridItem spSwiperContainer" >
-                        <div id="spHswiper" class="spGridDisplay">
-
-                            <div class="swiper-wrapper"></div>
-                            <div class="swiper-button-next" id="spHnext"></div>
-                            <div class="swiper-button-prev" id="spHprev"></div>
-
-                        </div>
+                  <div class="spGridItem spSwiperContainer">
+                    <div id="spHswiper" class="spGridDisplay">
+                      <div class="swiper-wrapper"></div>
+                      <div class="swiper-button-next" id="spHnext"></div>
+                      <div class="swiper-button-prev" id="spHprev"></div>
                     </div>
+                  </div>
                 </div>
                 <div class="spTextContainer">
-                    <div class="spGridItem">
-                        <div class="spGridText">
-                            <h1>Herzhafter Genuss</h1>
-                            <p>Entdecken Sie die Vielfalt unserer herzhaften Flammkuchen! Von klassisch Elsässer bis zu kreativen Variationen – knuspriger Teig, würzige Beläge und cremiger Käse garantieren unvergesslichen Genuss.</p>
-                        </div>
+                  <div class="spGridItem">
+                    <div class="spGridText">
+                      <h1>Herzhafter Genuss</h1>
+                      <p>
+                        Entdecken Sie die Vielfalt unserer herzhaften
+                        Flammkuchen! Von klassisch Elsässer bis zu kreativen
+                        Variationen – knuspriger Teig, würzige Beläge und
+                        cremiger Käse garantieren unvergesslichen Genuss.
+                      </p>
                     </div>
+                  </div>
                 </div>
                 <div class="spTextContainer">
-                    <div class="spGridItem" style="margin-left: auto;">
-                        <div class="spGridText">
-                            <h1>Süßes für die Seele</h1>
-                            <p>Verführen Sie Ihren Gaumen mit unseren süßen Flammkuchen, teilweise flammbiert für ein unverwechselbares Aroma! Von fruchtig-frisch bis verführerisch-schokoladig.</p>
-                        </div>
+                  <div class="spGridItem" style="margin-left: auto">
+                    <div class="spGridText">
+                      <h1>Süßes für die Seele</h1>
+                      <p>
+                        Verführen Sie Ihren Gaumen mit unseren süßen
+                        Flammkuchen, teilweise flammbiert für ein
+                        unverwechselbares Aroma! Von fruchtig-frisch bis
+                        verführerisch-schokoladig.
+                      </p>
                     </div>
+                  </div>
                 </div>
                 <div>
-                    <div class="spGridItem spSwiperContainer">
-                        <div id="spSswiper" class="spGridDisplay">
-                        
-                            <div class="swiper-wrapper"></div>
-                            <div class="swiper-button-next" id="spSnext"></div>
-                            <div class="swiper-button-prev" id="spSprev"></div>
-                        
-                        </div>
+                  <div class="spGridItem spSwiperContainer">
+                    <div id="spSswiper" class="spGridDisplay">
+                      <div class="swiper-wrapper"></div>
+                      <div class="swiper-button-next" id="spSnext"></div>
+                      <div class="swiper-button-prev" id="spSprev"></div>
                     </div>
+                  </div>
                 </div>
-            </div>
-            <a href="speisen.html">
+              </div>
+              <a href="speisen.html">
                 <button id="spButton">
-                    <div>
-                        <img src="img/icon/arrowDown.png" alt="arrow right">
-                        <p>alle ansehen</p>
-                    </div>
+                  <div>
+                    <img src="img/icon/arrowDown.png" alt="arrow right" />
+                    <p>alle ansehen</p>
+                  </div>
                 </button>
-            </a>
+              </a>
             </div>
-        </section>
+          </section>
 
-
-        <section id="standorte">
+          <section id="standorte">
             <h1>Standorte</h1>
             <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="stImgWrapper"></div>
-                        <img src="img/icon/stTraube.png" alt="Icon Traube" class="stIcon" style="left: 52%;">
-                        <h2>Zur Traube</h2>
-                        <div class="stTextWrapper">
-                            <p>Lindenstr. 10</p>
-                            <p>76571 Gaggenau Michelbach</p>
-                            <p>07225 / 981 808</p>
-                            <p>RESERVIERUNG EMPFOHLEN</p>
-                        </div>
-                        <button class="primaryButton" onclick="openMaps(`FLAMMAURANT 'Zur Traube'`)">
-                            <div>
-                                <img src="img/icon/pin.png" alt="Map Pin" style="height: 16px;">
-                                <p>Standort</p>
-                            </div>
-                        </button>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="stImgWrapper"></div>
+                  <img
+                    src="img/icon/stTraube.png"
+                    alt="Icon Traube"
+                    class="stIcon"
+                    style="left: 52%"
+                  />
+                  <h2>Zur Traube</h2>
+                  <div class="stTextWrapper">
+                    <p>Lindenstr. 10</p>
+                    <p>76571 Gaggenau Michelbach</p>
+                    <p>07225 / 981 808</p>
+                    <p>RESERVIERUNG EMPFOHLEN</p>
+                  </div>
+                  <button
+                    class="primaryButton"
+                    onclick="openMaps(`FLAMMAURANT 'Zur Traube'`)"
+                  >
+                    <div>
+                      <img
+                        src="img/icon/pin.png"
+                        alt="Map Pin"
+                        style="height: 16px"
+                      />
+                      <p>Standort</p>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="stImgWrapper"></div>
-                        <img src="img/icon/stEngele.png" alt="Icon Engele" class="stIcon">
-                        <h2>Zum Engele</h2>
-                        <div class="stTextWrapper">
-                            <p>Kronenstr. 13</p>
-                            <p>76275 Ettlingen Stadt</p>
-                            <p>07243 / 94 94 194</p>
-                            <p>RESERVIERUNG erst ab 10 Personen möglich</p>
-                        </div>
-                        <button class="primaryButton" onclick="openMaps(`FLAMMAURANT 'Zum Engele'`)">
-                            <div>
-                                <img src="img/icon/pin.png" alt="Map Pin" style="height: 16px;">
-                                <p>Standort</p>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="stImgWrapper"></div>
-                        <img src="img/icon/stRose.png" alt="Icon Rose" class="stIcon" style="left: 52%; top: 25px;">
-                        <h2>Zur Rose</h2>
-                        <div class="stTextWrapper">
-                            <p>Fränznickstr. 1</p>
-                            <p>76287 Rheinstetten Mörsch</p>
-                            <p>07242 / 953 2 679</p>
-                            <p>RESERVIERUNG EMPFOHLEN</p>
-                        </div>
-                        <button class="primaryButton" onclick="openMaps(`FLAMMAURANT 'Zur Rose'`)">
-                            <div>
-                                <img src="img/icon/pin.png" alt="Map Pin" style="height: 16px;">
-                                <p>Standort</p>
-                            </div>
-                        </button>
-                    </div>
+                  </button>
                 </div>
-                <!-- <div class="swiper-pagination"></div> -->
+                <div class="swiper-slide">
+                  <div class="stImgWrapper"></div>
+                  <img
+                    src="img/icon/stEngele.png"
+                    alt="Icon Engele"
+                    class="stIcon"
+                  />
+                  <h2>Zum Engele</h2>
+                  <div class="stTextWrapper">
+                    <p>Kronenstr. 13</p>
+                    <p>76275 Ettlingen Stadt</p>
+                    <p>07243 / 94 94 194</p>
+                    <p>RESERVIERUNG erst ab 10 Personen möglich</p>
+                  </div>
+                  <button
+                    class="primaryButton"
+                    onclick="openMaps(`FLAMMAURANT 'Zum Engele'`)"
+                  >
+                    <div>
+                      <img
+                        src="img/icon/pin.png"
+                        alt="Map Pin"
+                        style="height: 16px"
+                      />
+                      <p>Standort</p>
+                    </div>
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <div class="stImgWrapper"></div>
+                  <img
+                    src="img/icon/stRose.png"
+                    alt="Icon Rose"
+                    class="stIcon"
+                    style="left: 52%; top: 25px"
+                  />
+                  <h2>Zur Rose</h2>
+                  <div class="stTextWrapper">
+                    <p>Fränznickstr. 1</p>
+                    <p>76287 Rheinstetten Mörsch</p>
+                    <p>07242 / 953 2 679</p>
+                    <p>RESERVIERUNG EMPFOHLEN</p>
+                  </div>
+                  <button
+                    class="primaryButton"
+                    onclick="openMaps(`FLAMMAURANT 'Zur Rose'`)"
+                  >
+                    <div>
+                      <img
+                        src="img/icon/pin.png"
+                        alt="Map Pin"
+                        style="height: 16px"
+                      />
+                      <p>Standort</p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <!-- <div class="swiper-pagination"></div> -->
             </div>
             <div id="stMobil" class="scHiddenBottom">
-                <div id="stDescription">
-                    <h2>Sie sind mehr als 50 Personen?</h2>
-                    <p>
-                        Kein Problem, dann bringen wir die Köstlichkeit direkt zu Ihnen. Unser Team präsentiert eine Auswahl unserer beliebtesten
-                        Flammkuchen und zaubert sie frisch vor Ort. Und ja, unser hausgemachtes Knoblauchöl darf dabei natürlich nicht fehlen!
-                    </p>
-                    <div id="stAnleitung">
-                        <div>-------------------</div>
-                        <p>Und das Beste daran: Es ist ganz einfach!</p>
-                        <p>1) Rufen Sie uns an um einen Termin zu vereinbaren.</p>
-                        <p>2) Teilen Sie uns die Anzahl Ihrer Gäste und den Ort mit.</p>
-                        <p>3) Wir kommen mit dem „La Flamme“ Anhänger vorbei.</p>
-                    </div>
-                    <img src="img/pic/haenger.png" alt="Flammkuchen Anhaenger">
+              <div id="stDescription">
+                <h2>Sie sind mehr als 50 Personen?</h2>
+                <p>
+                  Kein Problem, dann bringen wir die Köstlichkeit direkt zu
+                  Ihnen. Unser Team präsentiert eine Auswahl unserer
+                  beliebtesten Flammkuchen und zaubert sie frisch vor Ort. Und
+                  ja, unser hausgemachtes Knoblauchöl darf dabei natürlich nicht
+                  fehlen!
+                </p>
+                <div id="stAnleitung">
+                  <div>-------------------</div>
+                  <p>Und das Beste daran: Es ist ganz einfach!</p>
+                  <p>1) Rufen Sie uns an um einen Termin zu vereinbaren.</p>
+                  <p>
+                    2) Teilen Sie uns die Anzahl Ihrer Gäste und den Ort mit.
+                  </p>
+                  <p>3) Wir kommen mit dem „La Flamme“ Anhänger vorbei.</p>
                 </div>
+                <img src="img/pic/haenger.png" alt="Flammkuchen Anhaenger" />
+              </div>
             </div>
-        </section>
+          </section>
 
-
-        <section id="infos">
+          <section id="infos">
             <div class="headingDecoration">
-                <span></span>
-                <h1>Infos</h1>
-                <span></span>
+              <span></span>
+              <h1>Infos</h1>
+              <span></span>
             </div>
+          </section>
+        </div>
+      </div>
 
-        </section>
-
-        </div>
-        </div>
-        
-        <div class="fire-container">
-            <video autoplay loop muted src="img/video/footer_fire.mp4"></video>
-            <video autoplay loop muted src="img/video/footer_fire.mp4" style="transform: scaleX(-1);"></video>
-        </div>
+      <div class="fire-container">
+        <video autoplay loop muted src="img/video/footer_fire.mp4"></video>
+        <video
+          autoplay
+          loop
+          muted
+          src="img/video/footer_fire.mp4"
+          style="transform: scaleX(-1)"
+        ></video>
+      </div>
     </main>
 
     <footer class="mainPage">
-        <div>
-            <a href="jobs.html">Jobs</a>
-        </div>
-        <div>
-            <a href="impressum.html">Impressum & Datenschutz</a>
-        </div>
-        <div>
-            <a href="franchise.html">Franchise</a>
-        </div>
+      <div>
+        <a href="jobs.html">Jobs</a>
+      </div>
+      <div>
+        <a href="impressum.html">Impressum & Datenschutz</a>
+      </div>
+      <div>
+        <a href="franchise.html">Franchise</a>
+      </div>
     </footer>
 
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+      integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script src="scripts/global.js"></script>
     <script src="scripts/index.js"></script>
-</body>
+  </body>
 </html>

@@ -1,260 +1,254 @@
 .mFix {
-    min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
 }
 
 /* - - - - Back Arrow - - - - */
 #back {
-    position: fixed;
-    bottom: 5vh;
-    left: calc(50% - 50px);
+  position: fixed;
+  bottom: 5vh;
+  left: calc(50% - 50px);
 
-    
-    text-align: center;
-    height: 100px;
-    width: 100px;
-    
-    z-index: 99;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    
-    border-radius: 50%;
-    
-    transition: all 0.1s linear;
-    overflow: hidden;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+
+  z-index: 99;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  border-radius: 50%;
+
+  transition: all 0.1s linear;
+  overflow: hidden;
 }
 
 #back img {
-    margin-top: 20px;
-    margin-right: 10px;
-    width: 60px;
-    transition: all 0.1s linear;
-    transform: rotate(90deg)
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 60px;
+  transition: all 0.1s linear;
+  transform: rotate(90deg);
 }
 
 /* @media (min-width: 721px) { */
-    #back:hover {
-        outline-color: white;
-        outline-style: solid;
-    }
+#back:hover {
+  outline-color: white;
+  outline-style: solid;
+}
 
-    #back:hover img {
-        margin-right: 20px;
-    }
+#back:hover img {
+  margin-right: 20px;
+}
 /* } */
 
 /* - - - - Speisen - - - - */
 #mainContainer {
-    width: calc(100% - 40px);
+  width: calc(100% - 40px);
 
-    padding: 20px;
+  padding: 20px;
 }
-
-
 
 /* - - - - Heading Decoration - - - - */
 .headingDecoration span:nth-child(1) {
-    translate: 185px 37px;
+  translate: 185px 37px;
 }
 
 .headingDecoration span:nth-child(3) {
-    translate: -190px -43px;
+  translate: -190px -43px;
 }
 
-
-
-
 @media (min-width: 761px) {
-    #mainContainer {
-        margin-top: 100px;
-    }
+  #mainContainer {
+    margin-top: 100px;
+  }
 }
 
 .hFix {
-    position: fixed;
-    top: 0px;
+  position: fixed;
+  top: 0px;
 
-    margin-top: 100px;
-    height: calc(100vh - 199px);
+  margin-top: 100px;
+  height: calc(100vh - 199px);
 }
 
 .mainGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
 }
 
-.mainGrid>div {
-    height: 120px;
-    background-color: var(--c-secondary);
-    transition: transform 0.3s ease;
-    cursor: pointer;
+.mainGrid > div {
+  height: 120px;
+  background-color: var(--c-secondary);
+  transition: transform 0.3s ease;
+  cursor: pointer;
 
-    border-radius: 10px;
+  border-radius: 10px;
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    overflow: hidden;
-    margin: 0;
+  overflow: hidden;
+  margin: 0;
 
-    outline-color: rgba(255, 255, 255, 0.2);
-    outline-style: dashed;
-    outline-width: 1px;
-    outline-offset: -5px;
+  outline-color: rgba(255, 255, 255, 0.2);
+  outline-style: dashed;
+  outline-width: 1px;
+  outline-offset: -5px;
 }
 
-.mainGrid>div:hover {
-    transform: scale(1.05);
+.mainGrid > div:hover {
+  transform: scale(1.05);
 }
 
 .spText {
-    margin: 5px;
+  margin: 5px;
 }
 
-.mainGrid>div h3 {
-    /* margin-bottom: 5px; */
-    text-decoration: underline;
+.mainGrid > div h3 {
+  /* margin-bottom: 5px; */
+  text-decoration: underline;
 }
 
-.mainGrid div>div:nth-child(1) {
-    display: flex;
-    flex-direction: column;
+.mainGrid div > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
 
-    width: 60%;
-    padding: 7px;
+  width: 60%;
+  padding: 7px;
 }
 
-.mainGrid div>div:nth-child(2) {
-    width: 40%;
-    position: relative;
+.mainGrid div > div:nth-child(2) {
+  width: 40%;
+  position: relative;
 }
 
-.mainGrid div>div:nth-child(2) img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* transform: translate(-50%, -50%);  */
+.mainGrid div > div:nth-child(2) img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%);  */
 }
 
-.mainGrid div>div:nth-child(2) img:nth-child(1) {
-    height: 90%;
+.mainGrid div > div:nth-child(2) img:nth-child(1) {
+  height: 90%;
 }
 .mainGrid div:hover img:nth-child(1) {
-    /* background-color: black; */
-    transform: translate(-42%, -50%);
+  /* background-color: black; */
+  transform: translate(-42%, -50%);
 }
 
-.mainGrid div>div:nth-child(2) img:nth-child(2) {
-    height: 80%;
+.mainGrid div > div:nth-child(2) img:nth-child(2) {
+  height: 80%;
 }
 .mainGrid div:hover img:nth-child(2) {
-    /* background-color: black; */
-    transform: translate(-36%, -50%);
+  /* background-color: black; */
+  transform: translate(-36%, -50%);
 }
 
 .mainGrid h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .mainGrid p {
-    margin: 0;
+  margin: 0;
 }
 
 .mainGrid img {
-    height: 100%;
-    position: relative;
-    top: 50%;
-    left: 60%;
-    transform: translate(-50%, -50%);
+  height: 100%;
+  position: relative;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
 
-    transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 /* - - - - Overlay - - - - */
 #overlay {
-    visibility: hidden;
-    opacity: 0;
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(3px);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    transition: visibility 0.2s, opacity 0.2s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: visibility 0.2s, opacity 0.2s ease-in-out;
 }
 
 #overlay.active {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 #overlay-content {
-    position: relative;
-    background: var(--c-secondary);
-    /* padding: 20px; */
-    border-radius: 20px;
-    width: 450px;
-    max-width: 90%;
-    height: 520px;
-    max-height: 90%;
+  position: relative;
+  background: var(--c-secondary);
+  /* padding: 20px; */
+  border-radius: 20px;
+  width: 450px;
+  max-width: 90%;
+  height: 520px;
+  max-height: 90%;
 
-    background-image: url('/img/pic/main_background.webp');
-    background-size: cover;
-    background-position-x: 30%;
-    background-position-y: 20px;
+  background-image: url("/img/pic/main_background.webp");
+  background-size: cover;
+  background-position-x: 30%;
+  background-position-y: 20px;
 
-    overflow: hidden;
-    
-    margin-top: 150vh;
-    transition: margin-top 0.25s ease;
+  overflow: hidden;
+
+  margin-top: 150vh;
+  transition: margin-top 0.25s ease;
 }
 
 #overlay.active #overlay-content {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 #ocClose {
-    position: absolute;
-    background-color: transparent;
-    border: none;
-    right: 0;
-    top: 0;
-    margin: 2px;
-    width: 34px;
-    height: 34px;
-    cursor: pointer;
-    opacity: 1; /* change if wanted */
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  right: 0;
+  top: 0;
+  margin: 2px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  opacity: 1; /* change if wanted */
 
-    transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 #ocCont1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
-    height: 280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  height: 280px;
 
-    margin: 25px;
+  margin: 25px;
 
-    translate: 2000px;
-    transition: all 0.48s ease;
+  translate: 2000px;
+  transition: all 0.48s ease;
 }
 
 #overlay.active #ocCont1 {
-    translate: 6px;
+  translate: 6px;
 }
 
 #ocBrett {
-    height: 100%;
-    position: absolute;
+  height: 100%;
+  position: absolute;
 
-    /* translate: 600px;
+  /* translate: 600px;
     transition: all 0.35s ease-out; */
 }
 
@@ -263,11 +257,11 @@
 } */
 
 #ocImg {
-    height: 90%;
-    position: absolute;
-    top: 5%;
+  height: 90%;
+  position: absolute;
+  top: 5%;
 
-    /* translate: 0 -800px;
+  /* translate: 0 -800px;
     transition: all 0.5s ease-in-out; */
 }
 
@@ -276,34 +270,34 @@
 } */
 
 #ocCont2 {
-    background: var(--c-secondary);
+  background: var(--c-secondary);
 
-    height: 140px;
-    border-radius: 20px;
-    padding: 25px 0;
+  height: 140px;
+  border-radius: 20px;
+  padding: 25px 0;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.9);
-    text-align: center;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.9);
+  text-align: center;
 
-    outline-color: rgba(255, 255, 255, 0.2);
-    outline-style: dashed;
-    outline-offset: -8px;
-    outline-width: 2px;
+  outline-color: rgba(255, 255, 255, 0.2);
+  outline-style: dashed;
+  outline-offset: -8px;
+  outline-width: 2px;
 }
 
 #ocHead {
-    margin-top: 6px;
-    margin-bottom: 14px;
-    font-size: x-large;
-    text-decoration: underline;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  font-size: x-large;
+  text-decoration: underline;
 }
 
 #ocDesc {
-    margin: 0 0 16px 0;
-    padding: 0 8px 0 8px;
-    font-size: larger;
+  margin: 0 0 16px 0;
+  padding: 0 8px 0 8px;
+  font-size: larger;
 }
