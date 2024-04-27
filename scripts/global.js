@@ -12,3 +12,35 @@ async function getSpeisen() {
     // return null
   }
 }
+
+// - - Mobile Nav
+
+// close if links clicked
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll("#hDark nav a");
+
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      toggleMobileMenu();
+    });
+  });
+});
+
+// close if opened overlay clicked
+let overlay = document.getElementById("hDark");
+overlay.addEventListener("click", function (event) {
+  if (event.target === overlay) {
+    toggleMobileMenu();
+  }
+});
+
+function toggleMobileMenu() {
+  if (window.innerWidth > 760) return;
+
+  const mobileMenu = document.getElementById("hDark");
+  if (mobileMenu.style.display == "flex") {
+    mobileMenu.style.display = "none";
+  } else {
+    mobileMenu.style.display = "flex";
+  }
+}
