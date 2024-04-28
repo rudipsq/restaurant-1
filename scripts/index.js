@@ -102,16 +102,19 @@ function setStartImage() {
 
 //* HEADER
 function showHideHeader() {
-  var header = document.querySelector("header");
+  let header = document.querySelector("header");
+  let mobileMenu = document.getElementById("mobileMenu");
 
-  var scrollDistance = window.scrollY;
+  let scrollDistance = window.scrollY;
 
-  var threshold = window.innerHeight - 25;
+  let threshold = window.innerHeight - 25;
 
   if (scrollDistance > threshold) {
     header.style.top = "0";
+    mobileMenu.style.top = "20px";
   } else {
     header.style.top = "-100px";
+    mobileMenu.style.top = "-50px";
   }
 }
 

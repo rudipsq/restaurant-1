@@ -34,13 +34,18 @@ overlay.addEventListener("click", function (event) {
   }
 });
 
+// show/hide link overlay
 function toggleMobileMenu() {
   if (window.innerWidth > 760) return;
 
   const mobileMenu = document.getElementById("hDark");
-  if (mobileMenu.style.display == "flex") {
-    mobileMenu.style.display = "none";
+  if (mobileMenu.style.visibility != "visible") {
+    // mobileMenu.style.display = "none";
+    mobileMenu.style.visibility = "visible";
+    mobileMenu.style.opacity = "1";
   } else {
-    mobileMenu.style.display = "flex";
+    // mobileMenu.style.display = "flex";
+    mobileMenu.style.visibility = "hidden";
+    mobileMenu.style.opacity = "0";
   }
 }

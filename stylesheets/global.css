@@ -57,6 +57,11 @@ a:hover {
   text-underline-offset: 2px;
 }
 
+/* .active {
+  visibility: visible;
+  opacity: 1;
+} */
+
 /* - - - - - Mobile - - - - -*/
 @media (max-width: 760px) {
   #mobileMenu {
@@ -67,10 +72,10 @@ a:hover {
 
     position: fixed;
     right: 20px;
-    top: 20px;
+    top: -50px;
     z-index: 1000;
 
-    /* background-color: black; */
+    transition: top 0.1s ease;
   }
 
   #underline {
@@ -90,10 +95,14 @@ a:hover {
     right: 0;
     top: 0;
 
-    display: none;
+    display: flex;
     justify-content: center;
 
-    background-color: rgba(0, 0, 0, 0.65);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s ease-in-out;
+
+    background-color: var(--c-background);
     backdrop-filter: blur(20px);
   }
 
