@@ -6,7 +6,6 @@ let speisen;
 let loaded = false;
 
 document.addEventListener("DOMContentLoaded", async function () {
-  console.log(1);
   if (!loaded) {
     setStartImage();
     loaded = true;
@@ -64,10 +63,8 @@ window.addEventListener("load", async function () {
   // Show the content
   let elements = document.querySelectorAll(".mainPage");
   elements.forEach(function (element) {
-    console.log(element);
     element.classList.remove("mainPage"); // Remove the 'hidden' class
     //element.style.display = '';
-    console.log(element);
   });
 
   checkWindowWidth();
@@ -165,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //* SCROLL ANIMATION
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    //console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("scShow");
 
@@ -285,28 +281,6 @@ async function addSpeisen() {
         .getElementsByClassName("swiper-wrapper")[0]
         .appendChild(productDiv);
     }
-  });
-
-  //fixPosition()
-}
-
-function fixPosition() {
-  //todo: used???
-  var container = document
-    .getElementById("spSswiper")
-    .getElementsByClassName("swiper-wrapper")[0];
-
-  // Get the first three elements inside the container
-  var firstThree = [];
-  for (var i = 0; i < 6; i++) {
-    firstThree.push(container.children[i]);
-    i += 1;
-  }
-
-  // Move the first three elements to the end of the container
-  firstThree.forEach(function (element) {
-    console.log(element);
-    container.appendChild(element);
   });
 }
 

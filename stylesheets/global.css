@@ -76,6 +76,20 @@ a:hover {
     z-index: 1000;
 
     transition: top 0.1s ease;
+
+    background-image: url("/img/icon/menu.png");
+    background-position: center center;
+    background-size: contain;
+
+    /* background-color: var(--c-accent); */
+    /* outline: var(--s-standardOutline); */
+
+    background-color: #ffffff21;
+    backdrop-filter: blur(10px);
+
+    border: solid rgba(255, 255, 255, 0.1) 1px;
+    /* border: none; */
+    border-radius: 7px;
   }
 
   #underline {
