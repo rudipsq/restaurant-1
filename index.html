@@ -55,13 +55,15 @@
       <div id="startOverlay"></div>
       <div id="ssCenter1">
         <a href="index.html">
+          <div id="player-shadow"></div>
           <lottie-player
             id="animationPlayer"
             src="data/animation.json"
             background="transparent"
             speed="1"
             autoplay
-          ></lottie-player>
+          >
+          </lottie-player>
         </a>
       </div>
       <div id="ssCorner">
@@ -143,6 +145,15 @@
                 </div>
               </div>
 
+              <a href="speisen.html">
+                <button id="spButton">
+                  <div>
+                    <img src="img/icon/arrowDown.png" alt="arrow right" />
+                    <p>alle ansehen</p>
+                  </div>
+                </button>
+              </a>
+
               <div id="spGrid">
                 <div>
                   <div class="spGridItem spSwiperContainer">
@@ -189,14 +200,6 @@
                   </div>
                 </div>
               </div>
-              <a href="speisen.html">
-                <button id="spButton">
-                  <div>
-                    <img src="img/icon/arrowDown.png" alt="arrow right" />
-                    <p>alle ansehen</p>
-                  </div>
-                </button>
-              </a>
             </div>
           </section>
 
@@ -295,7 +298,7 @@
                   </button>
                 </div>
               </div>
-              <!-- <div class="swiper-pagination"></div> -->
+              <div class="swiper-pagination"></div>
             </div>
             <div id="stMobil" class="scHiddenBottom">
               <div id="stDescription">

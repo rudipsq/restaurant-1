@@ -11,15 +11,11 @@
 
 html {
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
-  /* overflow: hidden; */
 }
 
 body {
   color: var(--c-text);
   background-color: black;
-  /* overflow-x: hidden; */
-  /* overflow: hidden; */
 
   margin: 0;
   padding: 0;
@@ -193,13 +189,13 @@ a:hover {
     display: flex;
     gap: 20px;
 
-    /* background-color: rgba(26, 13, 0, 0.55); */
-    background-color: var(--c-background);
+    background-color: rgba(18, 3, 20, 0.5);
+    /* background-color: var(--c-background); */
     border-radius: 10px;
 
     font-size: large;
 
-    outline-color: rgba(26, 13, 0, 0.45);
+    outline-color: rgba(23, 13, 2, 0.45);
     /* outline-color: var(--c-background); */
     outline-width: 3px;
     outline-style: inset;

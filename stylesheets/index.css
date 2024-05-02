@@ -139,6 +139,22 @@ header {
   transition: opacity 0.5s ease-in-out;
 }
 
+#player-shadow {
+  position: absolute;
+
+  width: 150%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center center,
+    rgba(33, 24, 12, 0.8) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background-size: 100% 100%;
+  background-position: center center;
+  translate: -50% 20%;
+  left: 50%;
+}
+
 #ssCorner {
   position: absolute;
   bottom: 0px;
@@ -151,6 +167,8 @@ header {
   #ssCorner {
     bottom: -10vh;
     right: calc(90vw - 0px);
+
+    scale: 0.8;
   }
 
   #ssCenter1 {
@@ -390,7 +408,7 @@ section {
   }
 
   #spWrapper {
-    padding-top: 20px;
+    padding-top: 60px;
   }
 
   .swiper-button-next,
@@ -753,6 +771,19 @@ section {
   #stMobil img {
     display: none;
   }
+
+  .swiper-pagination {
+    color: white;
+    translate: 0px 8px;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: var(--c-text);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--c-text);
+  }
 }
 
 @media (min-width: 951px) {
@@ -797,6 +828,10 @@ section {
     float: right;
     transform: translate(250px, -150px);
     z-index: 1;
+  }
+
+  .swiper-pagination {
+    display: none;
   }
 }
 
