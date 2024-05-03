@@ -803,22 +803,22 @@ section {
   }
 
   #stDescription {
-    width: calc(600px + calc(10% - 20px));
+    width: calc(800px + calc(10% - 40px));
 
     border-radius: 10px;
     /* max-height: 150px; */
 
-    padding: 20px;
-    padding-right: 220px;
+    padding: 20px 40px 20px 40px;
+    /* padding-right: 220px; */
   }
 
-  #stMobil h2 {
+  /* #stMobil h2 {
     margin-left: 200px;
-  }
+  } */
 
-  #stMobil p {
+  /* #stMobil p {
     text-align: end;
-  }
+  } */
 
   #stMobil img {
     width: 300px;
@@ -826,8 +826,10 @@ section {
     top: 50%;
     left: 50%;
     float: right;
-    transform: translate(250px, -150px);
+    transform: translate(50px, -150px);
     z-index: 1;
+
+    /* display: none; */
   }
 
   .swiper-pagination {
@@ -886,7 +888,7 @@ section {
 
 #standorte .swiper-slide h2 {
   margin-top: 100px;
-  text-decoration: var(--c-primary) solid underline 5px;
+  /* text-decoration: var(--c-primary) solid underline 5px; */
   text-underline-offset: 0px;
   /* 
     background-color: var(--c-primary);
