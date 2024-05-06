@@ -805,7 +805,7 @@ section {
   }
 
   #stDescription {
-    width: calc(800px + calc(10% - 40px));
+    width: calc(800px + calc(10% - 60px));
 
     height: calc(100% - 800px);
 
@@ -926,13 +926,13 @@ section {
 
 #stAnleitung span {
   content: "";
-  height: 2px;
+  height: 1px;
   width: 300px;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 0),
-    var(--c-primary),
-    var(--c-primary),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2),
     rgba(255, 255, 255, 0)
   );
 
@@ -948,11 +948,70 @@ section {
 
 /* - - - - INFOS - - - - */
 #infos {
-  height: calc(100vh - 100px);
+  /* height: calc(100vh - 100px); */
   margin-bottom: 0;
   text-align: center;
 
   background: linear-gradient(to bottom, transparent 20%, rgba(0, 0, 0, 0.7));
+
+  display: flex;
+  flex-direction: column;
+}
+
+#inGridContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+#inGrid {
+  display: grid;
+  gap: 15px;
+
+  width: calc(800px + calc(10% + 20px));
+  height: calc(100vh - 310px);
+  padding-bottom: 50px;
+
+  z-index: 10;
+}
+
+.inGridItem {
+  background-color: var(--c-secondary);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+
+  outline: var(--s-standardOutline);
+  outline-offset: -8px;
+
+  border-radius: 10px;
+}
+
+@media (max-width: 950px) {
+  .inGridItem {
+    display: none;
+  }
+}
+
+@media (min-width: 951px) {
+  #inGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  #inGridItem1 {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 1;
+  }
+  #inGridItem2 {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+  }
+  #inGridItem3 {
+  }
+  #inGridItem4 {
+  }
 }
 
 /* - - - - TEST - - - - */
