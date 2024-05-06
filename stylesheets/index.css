@@ -836,7 +836,7 @@ section {
   height: 340px;
 
   background-color: var(--c-secondary);
-  border-radius: 10px;
+  border-radius: 12px;
 
   outline: var(--s-standardOutline);
   outline-offset: -8px;
@@ -909,7 +909,7 @@ section {
 }
 
 #stDescription {
-  border-radius: 10px;
+  border-radius: 12px;
   outline: var(--s-standardOutline);
   outline-offset: -8px;
 
@@ -924,18 +924,7 @@ section {
   padding: 0;
 }
 
-#stAnleitung span {
-  content: "";
-  height: 1px;
-  width: 300px;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0)
-  );
-
+#stAnleitung .separationLine {
   position: absolute;
   left: calc(50% - 150px);
   top: -20px;
@@ -948,7 +937,6 @@ section {
 
 /* - - - - INFOS - - - - */
 #infos {
-  /* height: calc(100vh - 100px); */
   margin-bottom: 0;
   text-align: center;
 
@@ -972,7 +960,7 @@ section {
   gap: 15px;
 
   width: calc(800px + calc(10% + 20px));
-  height: calc(100vh - 310px);
+  height: calc(100vh - 320px);
   padding-bottom: 50px;
 
   z-index: 10;
@@ -985,7 +973,48 @@ section {
   outline: var(--s-standardOutline);
   outline-offset: -8px;
 
-  border-radius: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#inFlImage {
+  position: absolute;
+
+  transform: scale(0.6);
+
+  left: -780px;
+  bottom: -400px;
+}
+
+.inGridItemDescription {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inGridItemDescription p {
+  padding: 0 10%;
+  margin: 14px 0;
+
+  font-size: large;
+  line-height: 1.6rem;
+}
+
+.inGridItemDescription .separationLine {
+  position: relative;
+}
+
+.inGridItem .primaryButton img {
+  transform: rotate(-90deg);
+  margin-top: 10px;
 }
 
 @media (max-width: 950px) {
@@ -1008,10 +1037,22 @@ section {
     grid-column: 2 / span 2;
     grid-row: 1 / span 1;
   }
-  #inGridItem3 {
-  }
-  #inGridItem4 {
-  }
+}
+
+/* - - - - STYLE - - - - */
+.separationLine {
+  content: "";
+  height: 1px;
+  width: 300px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+
+  left: calc(50% - 150px);
 }
 
 /* - - - - TEST - - - - */

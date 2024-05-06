@@ -231,11 +231,7 @@
                     onclick="openMaps(`FLAMMAURANT 'Zur Traube'`)"
                   >
                     <div>
-                      <img
-                        src="img/icon/pin.png"
-                        alt="Map Pin"
-                        style="height: 16px"
-                      />
+                      <img src="img/icon/pin.png" alt="Map Pin" />
                       <p>Standort</p>
                     </div>
                   </button>
@@ -259,11 +255,7 @@
                     onclick="openMaps(`FLAMMAURANT 'Zum Engele'`)"
                   >
                     <div>
-                      <img
-                        src="img/icon/pin.png"
-                        alt="Map Pin"
-                        style="height: 16px"
-                      />
+                      <img src="img/icon/pin.png" alt="Map Pin" />
                       <p>Standort</p>
                     </div>
                   </button>
@@ -288,11 +280,7 @@
                     onclick="openMaps(`FLAMMAURANT 'Zur Rose'`)"
                   >
                     <div>
-                      <img
-                        src="img/icon/pin.png"
-                        alt="Map Pin"
-                        style="height: 16px"
-                      />
+                      <img src="img/icon/pin.png" alt="Map Pin" />
                       <p>Standort</p>
                     </div>
                   </button>
@@ -311,7 +299,7 @@
                   fehlen!
                 </p>
                 <div id="stAnleitung">
-                  <span></span>
+                  <span class="separationLine"></span>
                   <p>Und das Beste daran: Es ist ganz einfach!</p>
                   <p>1) Rufen Sie uns an um einen Termin zu vereinbaren.</p>
                   <p>
@@ -322,6 +310,8 @@
                 <!-- <div id="stAnhaenger"> -->
                 <img src="img/pic/haenger.png" alt="Flammkuchen Anhaenger" />
                 <!-- </div> -->
+                <!-- TODO -->
+                <!-- <div class="cardBackgroundGradient"></div> -->
               </div>
             </div>
           </section>
@@ -334,18 +324,81 @@
             </div>
 
             <div id="inGridContainer">
+              <!-- 1 -->
               <div id="inGrid">
                 <div class="inGridItem" id="inGridItem1">
-                  <!-- 1 -->
+                  <h2>Kontakt</h2>
+
+                  <img id="inFlImage" src="img/pic/fl9.webp" />
+                  <div class="cardBackgroundGradient"></div>
                 </div>
+
+                <!-- 2 -->
                 <div class="inGridItem" id="inGridItem2">
-                  <!-- 2 -->
+                  <h2>Preise & Angebote</h2>
+                  <div
+                    class="inGridItemDescription"
+                    style="margin-bottom: 40px"
+                  >
+                    <span class="separationLine"></span>
+                    <p>
+                      Bei uns gibt es so viele „Flammes“ wie Du willst für 23€
+                      pro Person ab 4 Personen in Gaggenau & Rheinstetten.
+                      Unsere Filiale in Ettlingen öffnet ausschließlich für
+                      Veranstaltungen ab 10 Personen zum Flammkuchen „SATT“
+                      essen.
+                    </p>
+                    <span class="separationLine"></span>
+                  </div>
+                  <div class="cardBackgroundGradient"></div>
                 </div>
+
+                <!-- 3 -->
                 <div class="inGridItem" id="inGridItem3">
-                  <!-- 3 -->
+                  <h2>Jobs</h2>
+
+                  <div
+                    class="inGridItemDescription"
+                    style="margin-bottom: 80px"
+                  >
+                    <p>
+                      Du suchst einen Minijob als Servicemitarbeiter/in? Dann
+                      findest du bei uns genau das richtige!
+                    </p>
+                  </div>
+
+                  <a href="jobs.html">
+                    <button class="primaryButton">
+                      <div>
+                        <img src="img/icon/arrowDown.png" alt="Arrow" />
+                        <p>ansehen</p>
+                      </div>
+                    </button>
+                  </a>
+                  <div class="cardBackgroundGradient"></div>
                 </div>
+
+                <!-- 4 -->
                 <div class="inGridItem" id="inGridItem4">
-                  <!-- 4 -->
+                  <h2>Gedicht</h2>
+
+                  <div
+                    class="inGridItemDescription"
+                    style="margin-bottom: 80px"
+                  >
+                    <p>
+                      Du suchst einen Minijob als Servicemitarbeiter/in? Dann
+                      findest du bei uns genau das richtige!
+                    </p>
+                  </div>
+
+                  <button class="primaryButton">
+                    <div>
+                      <img src="img/icon/arrowDown.png" alt="Arrow" />
+                      <p>ansehen</p>
+                    </div>
+                  </button>
+                  <div class="cardBackgroundGradient"></div>
                 </div>
               </div>
             </div>
@@ -367,13 +420,14 @@
 
     <footer class="mainPage">
       <div>
-        <a href="jobs.html">Jobs</a>
+        <a href="jobs.html">Jobs & Franchise</a>
       </div>
       <div>
         <a href="impressum.html">Impressum & Datenschutz</a>
       </div>
-      <div>
-        <a href="jobs.html#franchise">Franchise</a>
+      <div class="gradient-container">
+        <a href="http://quicksite.me">Made by Quicksite</a>
+        <div class="gradient"></div>
       </div>
     </footer>
 

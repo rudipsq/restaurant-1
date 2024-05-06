@@ -151,7 +151,7 @@ a:hover {
     background-repeat: no-repeat;
     width: 100%;
 
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
   }
 
   #hDark {
@@ -289,6 +289,10 @@ footer div {
   justify-content: center;
 }
 
+footer a {
+  padding: 6px;
+}
+
 /* - - - - - Button - - - - -*/
 .primaryButton {
   position: absolute;
@@ -340,7 +344,6 @@ footer div {
 .primaryButton img {
   height: 16px;
   margin-top: 10px;
-  height: 16px;
 }
 
 .primaryButton p {
@@ -402,4 +405,70 @@ footer div {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   position: absolute;
+}
+
+/* - - - - - Style - - - - - */
+/* Quicksite gradient */
+.gradient-container {
+  position: relative;
+}
+.gradient {
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(
+    to right,
+    #4fe3ff,
+    #d1baff,
+    #fffd3e,
+    #ff4e49,
+    #ff9136,
+    #4fe3ff
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.gradient-container:hover .gradient {
+  opacity: 1;
+  animation: shiftGradient 1.5s linear infinite;
+}
+
+@keyframes shiftGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* card hover background */
+.cardBackgroundGradient {
+  background-image: radial-gradient(var(--c-primary), transparent);
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  transition: opacity 0.22s ease;
+}
+
+/* div:has(> .cardBackgroundGradient) {
+  position: relative;
+} */
+
+div:has(> .cardBackgroundGradient):hover .cardBackgroundGradient {
+  opacity: 0.4;
 }
