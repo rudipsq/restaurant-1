@@ -24,6 +24,10 @@ header {
   transition: top 0.2s ease;
 }
 
+#mobileMenu {
+  top: -50px;
+}
+
 #underline {
   position: absolute;
   bottom: calc(var(--s-headerHeight) / 5);
@@ -959,8 +963,8 @@ section {
   display: grid;
   gap: 15px;
 
-  width: calc(800px + calc(10% + 20px));
-  height: calc(100vh - 320px);
+  /* width: calc(800px + calc(10% + 20px));
+  height: calc(100vh - 320px); */
   padding-bottom: 50px;
 
   z-index: 10;
@@ -997,14 +1001,6 @@ section {
   justify-content: center;
 }
 
-.inGridItemDescription p {
-  padding: 0 10%;
-  margin: 14px 0;
-
-  font-size: large;
-  line-height: 1.6rem;
-}
-
 .inGridItemDescription .separationLine {
   position: relative;
 }
@@ -1015,8 +1011,35 @@ section {
 }
 
 @media (max-width: 950px) {
-  .inGridItem {
-    display: none;
+  #inGridContainer {
+    padding: 0 20px;
+
+    width: calc(100% - 40px);
+    height: 100%;
+  }
+
+  .inGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    height: 100vh;
+  }
+
+  #inGridItem1 {
+    grid-row: 2 / span 2;
+    grid-column: 1 / span 1;
+  }
+  #inGridItem2 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+  }
+
+  .inGridItemDescription p {
+    padding: 0 5%;
+    margin: 10px 0;
+
+    font-size: medium;
+    line-height: 1.6rem;
   }
 }
 
@@ -1024,6 +1047,9 @@ section {
   #inGrid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
+    width: calc(800px + calc(10% + 20px));
+    height: calc(100vh - 320px);
   }
 
   #inGridItem1 {
@@ -1034,22 +1060,14 @@ section {
     grid-column: 2 / span 2;
     grid-row: 1 / span 1;
   }
-}
 
-/* - - - - STYLE - - - - */
-.separationLine {
-  content: "";
-  height: 1px;
-  width: 300px;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0)
-  );
+  .inGridItemDescription p {
+    padding: 0 10%;
+    margin: 14px 0;
 
-  left: calc(50% - 150px);
+    font-size: large;
+    line-height: 1.6rem;
+  }
 }
 
 /* - - - - Fire Test - - - - */

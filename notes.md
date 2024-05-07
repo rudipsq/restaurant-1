@@ -10,7 +10,6 @@
 - ladezeit test (code minimalisierung und image compression)
 - speisen.html: add "mehr in restaurants" field
 - finish footer fire
-- footer decoration?
 - footer fire positioning, loop, height
 - sp formatierung
 - add decoration?

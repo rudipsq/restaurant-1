@@ -68,7 +68,7 @@ a:hover {
 
     position: fixed;
     right: 20px;
-    top: -50px;
+    top: 20px;
     z-index: 1000;
 
     transition: top 0.1s ease;
@@ -86,6 +86,8 @@ a:hover {
     border: solid rgba(255, 255, 255, 0.1) 1px;
     /* border: none; */
     border-radius: 7px;
+
+    cursor: pointer;
   }
 
   #underline {
@@ -474,6 +476,26 @@ div:has(> .cardBackgroundGradientNoHover) {
   z-index: 1;
 }
 
+.cardBackgroundGradientNoHover {
+  opacity: 0.5;
+}
+
 div:has(> .cardBackgroundGradient):hover .cardBackgroundGradient {
   opacity: 0.5;
+}
+
+/* separationLine */
+.separationLine {
+  content: "";
+  height: 1px;
+  width: 300px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+
+  left: calc(50% - 150px);
 }

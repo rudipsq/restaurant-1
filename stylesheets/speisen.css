@@ -178,7 +178,7 @@
   backdrop-filter: blur(3px);
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 900;
   transition: visibility 0.2s, opacity 0.2s ease-in-out;
 }
 
