@@ -73,7 +73,7 @@ a:hover {
 
     transition: top 0.1s ease;
 
-    background-image: url("/img/icon/menu.png");
+    background-image: url("../img/icon/menu.png");
     background-position: center center;
     background-size: contain;
 

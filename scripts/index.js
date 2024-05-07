@@ -91,7 +91,7 @@ function setStartImage() {
     randomNumber = Math.floor(Math.random() * 4) + 6;
   }
 
-  let imageUrl = `../img/pic/fl${randomNumber}.webp`;
+  let imageUrl = `img/pic/fl${randomNumber}.webp`;
   document.getElementById(
     "ssForeground"
   ).style.backgroundImage = `url(${imageUrl})`;
