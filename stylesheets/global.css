@@ -292,7 +292,9 @@ footer div {
 }
 
 footer a {
-  padding: 6px;
+  margin: 6px;
+  position: relative;
+  z-index: 2;
 }
 
 /* - - - - - Button - - - - -*/
@@ -413,6 +415,7 @@ footer a {
 /* Quicksite gradient */
 .gradient-container {
   position: relative;
+  z-index: 0;
 }
 .gradient {
   border-radius: 50px;
@@ -420,21 +423,20 @@ footer a {
   background: linear-gradient(
     -70deg,
     #e81200,
-    #ffe800,
-    #00e80d,
-    #0006ff,
+    /* #ffe800,
+    #00e80d, */ #0006ff,
     #c100ff,
     #e81200
   );
   background-size: 400% 100%;
   opacity: 0;
-  transition: opacity 0.12s ease-in;
+  transition: opacity 0.05s ease-in;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 
 .gradient-container:hover .gradient {
@@ -448,6 +450,120 @@ footer a {
   }
   100% {
     background-position: 400% 50%;
+  }
+}
+
+/* animate-gradient */
+.animation-gradient {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  /* background: conic-gradient(
+    from var(--a) at 50% 50%,
+    transparent 0%,
+    white 0%,
+    white 25%,
+    transparent 25%,
+    transparent 50%,
+    white 50%,
+    white 75%,
+    transparent 75%
+  ); */
+  background: conic-gradient(
+    from var(--a) at 50% 50%,
+    rgba(238, 235, 130, 0) 0%,
+    #ffffffb0 0%,
+    #ffffffb0 15%,
+    rgba(238, 235, 130, 0) 40%,
+    rgba(238, 235, 130, 0) 50%,
+    #ffffffb0 50%,
+    #ffffffb0 65%,
+    rgba(238, 235, 130, 0) 90%,
+    rgba(156, 39, 176, 0) 100%
+  );
+  opacity: 0;
+
+  border-radius: 50px;
+  padding: 2px;
+  translate: -2px -2px;
+
+  transform: scaleX(-1);
+
+  transition: opacity 0.05s ease-in;
+
+  animation: animate-gradient 0.4s linear infinite;
+}
+
+.gradient-container:hover .animation-gradient {
+  opacity: 1;
+}
+
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes animate-gradient {
+  /* 0% {
+    --a: -90deg;
+  }
+  100% {
+    --a: -270deg;
+  } */
+  /* 0% {
+    --a: -90deg;
+  }
+  20% {
+    --a: -110deg;
+  }
+  40% {
+    --a: -135deg;
+  }
+  60% {
+    --a: -225deg;
+  }
+  80% {
+    --a: -250deg;
+  }
+  100% {
+    --a: -270deg;
+  } */
+
+  0% {
+    --a: 0deg;
+  }
+  4% {
+    --a: -18deg;
+  }
+  10% {
+    --a: -36deg;
+  }
+  21% {
+    --a: -54deg;
+  }
+  36% {
+    --a: -72deg;
+  }
+  50% {
+    --a: -90deg;
+  }
+  64% {
+    --a: -108deg;
+  }
+  79% {
+    --a: -126deg;
+  }
+  90% {
+    --a: -144deg;
+  }
+  96% {
+    --a: -162deg;
+  }
+  100% {
+    --a: -180deg;
   }
 }
 
