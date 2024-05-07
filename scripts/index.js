@@ -268,6 +268,7 @@ async function addSpeisen() {
      
         <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
       <p>${product.description}</p>
+      <div class="cardBackgroundGradientNoHover"></div>
     `;
 
     if (product.type) {

@@ -19,15 +19,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
-  // let gtGrid = document.getElementById('gtGrid');
-  // gtGrid.addEventListener('click', function(event) {
-  //   let product = event.target.closest('#gtGrid>div')
-
-  //   if (product) {
-  //     showSpeise(product.getAttribute('data-id'))
-  //   }
-  // });
-
   // overlay closing event
   let overlay = document.getElementById("overlay");
   overlay.addEventListener("click", function (event) {
@@ -77,6 +68,7 @@ function addSpeisen() {
         <img src="img/pic/flammkuchen/brett.webp">
         <img src="img/pic/flammkuchen/${product.id}.webp">
       </div>
+      <div class="cardBackgroundGradientNoHover"></div>
     `;
 
     // if (product.type) {
@@ -87,45 +79,8 @@ function addSpeisen() {
   });
 }
 
-// function addGetraenke() {
-//   //const getraenke = speisen[1];
-
-//   const flammkuchen = speisen[0];
-
-//   flammkuchen.forEach(product => {
-//     const productDiv = document.createElement('div');
-//     productDiv.setAttribute('data-id', product.id);
-//     productDiv.innerHTML = `
-//       <div class="spText">
-//         <h3>${product.name}</h3>
-//         <p>${product.description}</p>
-//       </div>
-//       <div>
-//         <img src="img/pic/fl_temp1.png">
-//       </div>
-//     `;
-
-//     //<img src="img/pic/fl_${product.id}.jpg">
-
-//     // if (product.type) {
-//     // } else {
-//     // }
-
-//     document.getElementById('gtGrid').appendChild(productDiv);
-//   });
-// }
-
 function showSpeise(speiseId) {
   let speise;
-
-  // for (let i = 0; i < speisen.length; i++) {
-  //   for (let j = 0; j < speisen[i].length; j++) {
-  //     if (speisen[i][j].id === speiseId) {
-  //       speise = speisen[i][j];
-  //       break;
-  //     }
-  //   }
-  // }
 
   for (let i = 0; i < speisen.length; i++) {
     if (speisen[i].id === speiseId) {

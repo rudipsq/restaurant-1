@@ -416,17 +416,17 @@ footer a {
   border-radius: 50px;
   color: white;
   background: linear-gradient(
-    to right,
-    #4fe3ff,
-    #d1baff,
-    #fffd3e,
-    #ff4e49,
-    #ff9136,
-    #4fe3ff
+    -70deg,
+    #e81200,
+    #ffe800,
+    #00e80d,
+    #0006ff,
+    #c100ff,
+    #e81200
   );
-  background-size: 200% 100%;
+  background-size: 400% 100%;
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.12s ease-in;
   position: absolute;
   top: 0;
   left: 0;
@@ -437,7 +437,7 @@ footer a {
 
 .gradient-container:hover .gradient {
   opacity: 1;
-  animation: shiftGradient 1.5s linear infinite;
+  animation: shiftGradient 3s linear infinite;
 }
 
 @keyframes shiftGradient {
@@ -445,30 +445,35 @@ footer a {
     background-position: 0% 50%;
   }
   100% {
-    background-position: 200% 50%;
+    background-position: 400% 50%;
   }
 }
 
 /* card hover background */
-.cardBackgroundGradient {
+.cardBackgroundGradient,
+.cardBackgroundGradientNoHover {
   background-image: radial-gradient(var(--c-primary), transparent);
 
   width: 100%;
   height: 100%;
 
-  opacity: 0;
+  opacity: 0.25;
 
   position: absolute;
+
+  left: 0;
   top: 0;
   z-index: -1;
 
   transition: opacity 0.22s ease;
 }
 
-/* div:has(> .cardBackgroundGradient) {
+div:has(> .cardBackgroundGradient),
+div:has(> .cardBackgroundGradientNoHover) {
   position: relative;
-} */
+  z-index: 1;
+}
 
 div:has(> .cardBackgroundGradient):hover .cardBackgroundGradient {
-  opacity: 0.4;
+  opacity: 0.5;
 }
