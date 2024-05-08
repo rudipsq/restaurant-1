@@ -424,7 +424,7 @@ footer a {
     -70deg,
     #e81200,
     /* #ffe800,
-    #00e80d, */ #0006ff,
+    #00e80d, */ #ff8800,
     #c100ff,
     #e81200
   );
@@ -441,7 +441,7 @@ footer a {
 
 .gradient-container:hover .gradient {
   opacity: 1;
-  animation: shiftGradient 3s linear infinite;
+  animation: shiftGradient 2.5s linear infinite;
 }
 
 @keyframes shiftGradient {
