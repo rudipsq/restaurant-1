@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   spGrid.addEventListener("click", function (event) {
     let product = event.target.closest("#spGrid>div");
 
-    if (product) {
+    if (product && product.getAttribute("data-id")) {
       showSpeise(product.getAttribute("data-id"));
     }
   });
@@ -75,7 +75,9 @@ function addSpeisen() {
     // } else {
     // }
 
-    document.getElementById("spGrid").appendChild(productDiv);
+    document
+      .getElementById("spGrid")
+      .insertBefore(productDiv, document.getElementById("moreSpeisen"));
   });
 }
 
