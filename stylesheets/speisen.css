@@ -30,22 +30,23 @@
   transform: rotate(90deg);
 }
 
-/* @media (min-width: 721px) { */
-#back:hover {
-  outline-color: white;
-  outline-style: solid;
-}
+@media (hover: hover) {
+  #back:hover {
+    outline-color: white;
+    outline-style: solid;
+  }
 
-#back:hover img {
-  margin-right: 20px;
+  #back:hover img {
+    margin-right: 20px;
+  }
 }
-/* } */
 
 /* - - - - Speisen - - - - */
 #mainContainer {
   width: calc(100% - 40px);
 
   padding: 20px;
+  margin-top: 100px;
 }
 
 /* - - - - Heading Decoration - - - - */
@@ -57,9 +58,9 @@
   translate: -190px -43px;
 }
 
-@media (min-width: 761px) {
+@media (max-width: 760px) {
   #mainContainer {
-    margin-top: 100px;
+    margin-top: 30px;
   }
 }
 
@@ -97,8 +98,14 @@
   outline-offset: -5px;
 }
 
-.mainGrid > div:hover {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .mainGrid > div:not(#moreSpeisen):hover {
+    transform: scale(1.05);
+  }
+}
+
+#moreSpeisen {
+  cursor: default;
 }
 
 .spText {
@@ -133,17 +140,21 @@
 .mainGrid div > div:nth-child(2) img:nth-child(1) {
   height: 90%;
 }
-.mainGrid div:hover img:nth-child(1) {
-  /* background-color: black; */
-  transform: translate(-42%, -50%);
-}
 
 .mainGrid div > div:nth-child(2) img:nth-child(2) {
   height: 80%;
 }
-.mainGrid div:hover img:nth-child(2) {
-  /* background-color: black; */
-  transform: translate(-36%, -50%);
+
+@media (hover: hover) {
+  .mainGrid > div:not(#moreSpeisen):hover img:nth-child(1) {
+    /* background-color: black; */
+    transform: translate(-42%, -50%);
+  }
+
+  .mainGrid > div:not(#moreSpeisen):hover img:nth-child(2) {
+    /* background-color: black; */
+    transform: translate(-36%, -50%);
+  }
 }
 
 .mainGrid h3 {

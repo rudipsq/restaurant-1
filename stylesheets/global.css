@@ -48,15 +48,12 @@ a {
   text-underline-offset: 2px;
   color: white;
 }
-a:hover {
-  text-decoration: underline 2px;
-  text-underline-offset: 2px;
+@media (hover: hover) {
+  a:hover {
+    text-decoration: underline 2px;
+    text-underline-offset: 2px;
+  }
 }
-
-/* .active {
-  visibility: visible;
-  opacity: 1;
-} */
 
 /* - - - - - Mobile - - - - -*/
 @media (max-width: 760px) {
@@ -220,10 +217,12 @@ a:hover {
     transition: font-size 0.11s ease-out;
   }
 
-  header nav a:hover {
-    font-size: 1.1em;
+  @media (hover: hover) {
+    header nav a:hover {
+      font-size: 1.1em;
 
-    text-decoration: none;
+      text-decoration: none;
+    }
   }
 
   #mobileMenu {
@@ -324,11 +323,6 @@ footer a {
   overflow: hidden;
 }
 
-.primaryButton:hover {
-  /* outline-width: 1px; */
-  outline-width: 2px;
-}
-
 .primaryButton div {
   position: absolute;
   top: 0;
@@ -338,11 +332,6 @@ footer a {
   display: flex;
 
   transition: all 0.1s ease-out;
-}
-
-.primaryButton:hover div {
-  right: 5px;
-  width: 116px;
 }
 
 .primaryButton img {
@@ -366,8 +355,18 @@ footer a {
   transition: all 0.1s ease-out;
 }
 
-.primaryButton:hover p {
-  margin-left: 0px;
+@media (hover: hover) {
+  .primaryButton:hover {
+    /* outline-width: 1px; */
+    outline-width: 2px;
+  }
+  .primaryButton:hover div {
+    right: 5px;
+    width: 116px;
+  }
+  .primaryButton:hover p {
+    margin-left: 0px;
+  }
 }
 
 /* - - - - - Headings - - - - -*/
@@ -439,9 +438,11 @@ footer a {
   z-index: 1;
 }
 
-.gradient-container:hover .gradient {
-  opacity: 1;
-  animation: shiftGradient 2.5s linear infinite;
+@media (hover: hover) {
+  .gradient-container:hover .gradient {
+    opacity: 1;
+    animation: shiftGradient 2.5s linear infinite;
+  }
 }
 
 @keyframes shiftGradient {
@@ -496,8 +497,10 @@ footer a {
   animation: animate-gradient 0.4s linear infinite;
 }
 
-.gradient-container:hover .animation-gradient {
-  opacity: 1;
+@media (hover: hover) {
+  .gradient-container:hover .animation-gradient {
+    opacity: 1;
+  }
 }
 
 @property --a {
@@ -596,8 +599,10 @@ div:has(> .cardBackgroundGradientNoHover) {
   opacity: 0.5;
 }
 
-div:has(> .cardBackgroundGradient):hover .cardBackgroundGradient {
-  opacity: 0.5;
+@media (hover: hover) {
+  div:has(> .cardBackgroundGradient):hover .cardBackgroundGradient {
+    opacity: 0.5;
+  }
 }
 
 /* separationLine */

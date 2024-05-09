@@ -211,16 +211,16 @@ header {
   transition: all 0.1s linear;
 }
 
-/* @media (min-width: 721px) { */
-#ssMid:hover {
-  outline-color: white;
-  outline-style: solid;
-}
+@media (hover: hover) {
+  #ssMid:hover {
+    outline-color: white;
+    outline-style: solid;
+  }
 
-#ssMid:hover img {
-  margin-top: 30px;
+  #ssMid:hover img {
+    margin-top: 30px;
+  }
 }
-/* } */
 
 .parallax {
   position: absolute;
@@ -423,10 +423,6 @@ section {
     transition: transform 0.1s;
   }
 
-  /* .swiper-button-next:hover, .swiper-button-prev:hover {
-        transform: scale(1);
-    } */
-
   #spBrett {
     position: absolute;
     top: 25px;
@@ -508,69 +504,6 @@ section {
     padding: 20px;
     overflow: hidden;
   }
-
-  /* #spButton {
-        width: 130px;
-        height: 36px;
-        padding: 0;
-
-        cursor: pointer;
-        overflow: hidden;
-
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-    
-        border-radius: 50px;
-        border: solid 1px white;
-    
-        overflow: hidden;
-    }
-
-    #spButton:hover {
-        outline: solid 1px white;
-    }
-
-    #spButton div {
-        position: absolute;
-        top: 0;
-        right: 18px;
-        width: 124px;
-        height: 36px;
-        display: flex;
-
-        transition: all 0.1s ease-out;
-    }
-
-    #spButton:hover div {
-        right: 5px;
-        width: 116px;
-    }
-
-    #spButton img {
-        height: 16px;
-        transform: rotate(-90deg);
-        margin-top: 10px;
-    }
-
-    #spButton p {
-        color: white;
-        width: 100px;
-        height: 30px;
-        margin: 0;
-        margin-top: 8px;
-        margin-left: 15px;
-
-        font-family: "span", serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.11em;
-
-        transition: all 0.1s ease-out;
-    }
-
-    #spButton:hover p {
-        margin-left: 0px;
-    } */
 }
 
 #spButton {
@@ -590,8 +523,19 @@ section {
   overflow: hidden;
 }
 
-#spButton:hover {
-  outline: solid 1px white;
+@media (hover: hover) {
+  #spButton:hover {
+    outline: solid 1px white;
+  }
+
+  #spButton:hover div {
+    right: 5px;
+    width: 116px;
+  }
+
+  #spButton:hover p {
+    margin-left: 0px;
+  }
 }
 
 #spButton div {
@@ -603,11 +547,6 @@ section {
   display: flex;
 
   transition: all 0.1s ease-out;
-}
-
-#spButton:hover div {
-  right: 5px;
-  width: 116px;
 }
 
 #spButton img {
@@ -630,10 +569,6 @@ section {
   font-size: 1.11em;
 
   transition: all 0.1s ease-out;
-}
-
-#spButton:hover p {
-  margin-left: 0px;
 }
 
 #speisen .swiper-slide {
@@ -660,8 +595,10 @@ section {
   transition: all 0.12s ease-out;
 }
 
-.spSwiperImgContainer:hover {
-  transform: scale(1.07);
+@media (hover: hover) {
+  .spSwiperImgContainer:hover {
+    transform: scale(1.07);
+  }
 }
 
 .spSwiperImg1 {
@@ -744,8 +681,10 @@ section {
     overflow: hidden;
   }
 
-  .spSwiperImgContainer:hover {
-    width: 244px;
+  @media (hover: hover) {
+    .spSwiperImgContainer:hover {
+      width: 244px;
+    }
   }
 
   #speisen .swiper-slide h3 {
@@ -820,12 +759,12 @@ section {
   #stMobil img {
     position: absolute;
 
-    width: 300px;
+    width: 420px;
     height: auto;
     top: 50%;
     left: 50%;
     float: right;
-    transform: translate(150px, -30px);
+    transform: translate(130px, -70px);
     z-index: 1;
   }
 
@@ -865,12 +804,14 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-#standorte .swiper-slide:hover .stImgWrapper {
-  height: 90px;
-  width: 90px;
+@media (hover: hover) {
+  #standorte .swiper-slide:hover .stImgWrapper {
+    height: 90px;
+    width: 90px;
 
-  position: absolute;
-  top: 20px;
+    position: absolute;
+    top: 20px;
+  }
 }
 
 #standorte .swiper-slide .stIcon {
