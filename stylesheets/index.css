@@ -386,6 +386,8 @@ section {
   text-align: center;
   display: flex;
   justify-content: center;
+
+  /* height: calc(100vh - 100px); */
 }
 
 .hideSpImage {
@@ -393,16 +395,13 @@ section {
 }
 
 @media (min-width: 951px) {
-  #speisen {
-    height: 1000px;
-  }
-
   #spImageLayer {
-    height: 1100px;
     width: 3000px;
     position: absolute;
     transform: translateY(-100px);
     overflow: hidden;
+
+    height: calc(100vh - 100px);
   }
 
   #spImageLayer img {
@@ -412,7 +411,7 @@ section {
   }
 
   #spWrapper {
-    padding-top: 60px;
+    padding: 60px 0 30px 0;
   }
 
   .swiper-button-next,
@@ -515,7 +514,7 @@ section {
   overflow: hidden;
 
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
 
   border-radius: 50px;
   border: solid 1px white;
