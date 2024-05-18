@@ -419,14 +419,14 @@ footer a {
 .gradient {
   border-radius: 50px;
   color: white;
-  background: linear-gradient(
+  /* background: linear-gradient(
     -70deg,
     #e81200,
-    /* #ffe800,
-    #00e80d, */ #ff8800,
+    #ff8800,
     #c100ff,
     #e81200
-  );
+  ); */
+  background: linear-gradient(-70deg, #e507f9, #3706f9, #ab06db, #e507f9);
   background-size: 400% 100%;
   opacity: 0;
   transition: opacity 0.05s ease-in;
@@ -487,14 +487,15 @@ footer a {
   opacity: 0;
 
   border-radius: 50px;
-  padding: 2px;
-  translate: -2px -2px;
+  padding: 1px;
+  translate: -1px -1px;
 
   transform: scaleX(-1);
 
   transition: opacity 0.05s ease-in;
 
-  animation: animate-gradient 0.4s linear infinite;
+  /* animation: animate-gradient 0.4s linear infinite; */
+  animation: animate-gradient 0.8s linear infinite;
 }
 
 @media (hover: hover) {
