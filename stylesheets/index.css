@@ -31,16 +31,16 @@ header {
 #underline {
   position: absolute;
   bottom: calc(var(--s-headerHeight) / 5);
-  left: 15px;
+  /* left: 15px; */
   z-index: 1;
 
-  height: 58px;
-  width: 150px;
+  height: 60px;
+  width: 130px;
   opacity: 0;
 
-  background-image: url("../img/pic/header_underline.png");
+  background-image: url("../img/pic/header_underline.webp");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   transition: transform 0.2s linear;
 }
@@ -198,6 +198,7 @@ header {
   z-index: 110;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   border-radius: 50%;
 
@@ -326,6 +327,7 @@ section {
 
 #willkommen .wiGridItem {
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
   min-width: 300px;
   min-height: 300px;
@@ -515,6 +517,7 @@ section {
 
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
   border-radius: 50px;
   border: solid 1px white;
@@ -797,6 +800,7 @@ section {
   opacity: 0.5;
   border-radius: 50%;
   backdrop-filter: blur(10%);
+  -webkit-backdrop-filter: blur(10%);
 
   text-align: center;
 

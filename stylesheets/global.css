@@ -79,6 +79,7 @@ a {
 
     background-color: #ffffff21;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     border: solid rgba(255, 255, 255, 0.1) 1px;
     /* border: none; */
@@ -113,6 +114,7 @@ a {
 
     background-color: var(--c-background);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   #hDark nav {
@@ -312,6 +314,7 @@ footer a {
 
   background-color: var(--c-primary);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
   border-radius: 50px;
   border: none;
