@@ -498,7 +498,7 @@ footer a {
   transition: opacity 0.05s ease-in;
 
   /* animation: animate-gradient 0.4s linear infinite; */
-  animation: animate-gradient 0.8s linear infinite;
+  animation: animate-gradient 0.7s linear infinite;
 }
 
 @media (hover: hover) {

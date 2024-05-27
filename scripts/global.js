@@ -17,8 +17,13 @@ async function getSpeisen() {
 
 // close if links clicked
 document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll("#hDark nav a");
+  // check if user has mobile device
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    document.body.classList.add("mobile");
+  }
 
+  // add functionality to close mobile overlay if mobile link is clicked
+  const navLinks = document.querySelectorAll("#hDark nav a");
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
       toggleMobileMenu();
