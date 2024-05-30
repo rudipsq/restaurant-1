@@ -208,7 +208,10 @@ function handleMove(event) {
   if (event.type === "mousemove") {
     clientX = event.clientX;
     clientY = event.clientY;
-  } else if (event.type === "touchmove" && event.touches.length === 1) {
+
+    // todo: check if it works better with the changed line
+    // } else if (event.type === "touchmove" && event.touches.length === 1) {
+  } else if (event.type === "touchmove") {
     clientX = event.touches[0].clientX;
     clientY = event.touches[0].clientY;
   } else {
