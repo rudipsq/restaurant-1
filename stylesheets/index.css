@@ -508,6 +508,7 @@ section {
 }
 
 #spButton {
+  position: relative;
   width: 130px;
   height: 36px;
   padding: 0;
@@ -710,7 +711,7 @@ section {
   }
 
   #stDescription {
-    width: calc(100% - 120px);
+    width: calc(100% - 80px);
 
     padding: 20px;
   }
@@ -720,17 +721,18 @@ section {
   }
 
   .swiper-pagination {
+    display: none; /* todo: remove if fixed */
     color: white;
     translate: 0px 8px;
   }
 
-  .swiper-pagination-bullet {
+  /* .swiper-pagination-bullet {
     background-color: var(--c-text);
   }
 
   .swiper-pagination-bullet-active {
     background-color: var(--c-text);
-  }
+  } */
 }
 
 @media (min-width: 951px) {
@@ -840,6 +842,11 @@ section {
 
 .stTextWrapper p {
   margin: 0;
+}
+
+body:not(.mobile) .stTextWrapper a {
+  pointer-events: none;
+  text-decoration: none;
 }
 
 .stTextWrapper > :nth-child(2) {
