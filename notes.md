@@ -1,6 +1,7 @@
 # BUGS:
 
 - arrow cant be accessed when scrolled down a bit: padding of #willkommen over arrow button
+- alle speisen button on mobile on wrong location
 
 # TODO:
 
@@ -9,12 +10,10 @@
 - test verschiedene geraete
 - ladezeit test (code minimalisierung und image compression)
 - speisen.html: add "mehr in restaurants" field
-- finish footer fire
-- footer fire positioning, loop, height
-- sp formatierung
-- add decoration?
-- info section grid: infos/ueber uns?, mit gedicht, gutscheine?
-- mobile smaller heding deco
+- finish footer fire: positioning, loop, height
+- add decoration like other food or tools?
+- jobs grid auf eigener seite
+- mobile smaller heding decoration
 
 # INFO
 
