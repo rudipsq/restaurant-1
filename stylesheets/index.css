@@ -810,6 +810,16 @@ section {
   }
 }
 
+@media (hover: none) {
+  #standorte .swiper-slide .stImgWrapper {
+    height: 90px;
+    width: 90px;
+
+    position: absolute;
+    top: 20px;
+  }
+}
+
 #standorte .swiper-slide .stIcon {
   height: 76px;
   width: 76px;

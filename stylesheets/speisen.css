@@ -44,9 +44,9 @@
 
 /* - - - - Speisen - - - - */
 #mainContainer {
-  width: calc(100% - 40px);
+  width: calc(100% - 60px);
 
-  padding: 20px;
+  padding: 30px;
   margin-top: 100px;
 }
 
@@ -57,12 +57,6 @@
 
 .headingDecoration span:nth-child(3) {
   translate: -190px -43px;
-}
-
-@media (max-width: 760px) {
-  #mainContainer {
-    margin-top: 30px;
-  }
 }
 
 .hFix {
@@ -76,7 +70,17 @@
 .mainGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
+  gap: 14px;
+}
+
+@media (max-width: 760px) {
+  #mainContainer {
+    margin-top: 0px;
+  }
+
+  .mainGrid {
+    gap: 10px;
+  }
 }
 
 .mainGrid > div {

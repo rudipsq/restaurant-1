@@ -99,7 +99,7 @@ a {
   }
 
   #hDark {
-    height: 100lvh;
+    height: 100dvh;
     width: 100%;
 
     position: fixed;
