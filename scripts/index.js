@@ -15,24 +15,28 @@ document.addEventListener("DOMContentLoaded", async function () {
   document.getElementById("underline").style.opacity = "1";
 
   // start screen
-  parallax(
-    background,
-    window.innerWidth / 2 / 25,
-    window.innerHeight / 2 / 25,
-    0.35
-  );
-  parallax(
-    foreground,
-    window.innerWidth / 2 / 25,
-    window.innerHeight / 2 / 25,
-    0.5
-  );
+  if (!document.body.classList.contains("mobile")) {
+    parallax(
+      background,
+      window.innerWidth / 2 / 25,
+      window.innerHeight / 2 / 25,
+      0.35
+    );
+    parallax(
+      foreground,
+      window.innerWidth / 2 / 25,
+      window.innerHeight / 2 / 25,
+      0.5
+    );
+  }
 
   document.getElementById("animationPlayer").style.opacity = "1";
   document.getElementById("animationPlayer").style.transform = "scale(1)";
 
   // willkommen section
   willkommenParallaxElements = document.querySelectorAll(".wiGridImg");
+
+  // if (!document.body.classList.contains("mobile")) {
   updateWillkommenParallax();
 
   // scroll eventListener
@@ -44,6 +48,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     },
     { passive: true }
   );
+  // }
 
   setTimeout(function () {
     // document.getElementById('startOverlay').style.opacity = '0';
@@ -200,7 +205,7 @@ let lastX = 0;
 let lastY = 0;
 
 document.addEventListener("mousemove", handleMove);
-document.addEventListener("touchmove", handleMove);
+// document.addEventListener("touchmove", handleMove);
 
 function handleMove(event) {
   let clientX, clientY;
@@ -209,11 +214,9 @@ function handleMove(event) {
     clientX = event.clientX;
     clientY = event.clientY;
 
-    // todo: check if it works better with the changed line
-    // } else if (event.type === "touchmove" && event.touches.length === 1) {
-  } else if (event.type === "touchmove") {
-    clientX = event.touches[0].clientX;
-    clientY = event.touches[0].clientY;
+    // } else if (event.type === "touchmove") {
+    // clientX = event.touches[0].clientX;
+    // clientY = event.touches[0].clientY;
   } else {
     return;
   }
@@ -234,7 +237,7 @@ function handleMove(event) {
 }
 
 document.addEventListener("mouseup", handleEnd);
-document.addEventListener("touchend", handleEnd);
+// document.addEventListener("touchend", handleEnd);
 
 function handleEnd() {
   lastX = 0;
@@ -249,11 +252,13 @@ function parallax(element, xAxis, yAxis, speed) {
 
 //* WILLKOMMEN
 function updateWillkommenParallax() {
-  willkommenParallaxElements.forEach(function (element) {
-    var speed = parseFloat(element.getAttribute("data-speed")) || 1;
-    var yOffset = window.pageYOffset * speed;
-    element.style.transform = "translate3d(0, " + yOffset + "px, 0)";
-  });
+  if (!document.body.classList.contains("mobile")) {
+    willkommenParallaxElements.forEach(function (element) {
+      var speed = parseFloat(element.getAttribute("data-speed")) || 1;
+      var yOffset = window.pageYOffset * speed;
+      element.style.transform = "translate3d(0, " + yOffset + "px, 0)";
+    });
+  }
 }
 
 //* SPEISEN

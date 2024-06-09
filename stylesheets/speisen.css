@@ -1,11 +1,11 @@
 .mFix {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100dvh - 100px);
 }
 
 /* - - - - Back Arrow - - - - */
 #back {
   position: fixed;
-  bottom: 5vh;
+  bottom: 5dvh;
   left: calc(50% - 50px);
 
   text-align: center;
@@ -70,7 +70,7 @@
   top: 0px;
 
   margin-top: 100px;
-  height: calc(100vh - 199px);
+  height: calc(100dvh - 199px);
 }
 
 .mainGrid {
@@ -217,7 +217,7 @@
 
   overflow: hidden;
 
-  margin-top: 150vh;
+  margin-top: 150dvh;
   transition: margin-top 0.25s ease;
 }
 
