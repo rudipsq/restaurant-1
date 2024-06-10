@@ -9,6 +9,10 @@
   --s-standardOutline: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+* {
+  overscroll-behavior: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -284,7 +288,19 @@ footer {
   outline-style: dashed;
   outline-width: 1px;
   outline-offset: -5px;
+
+  position: relative;
 }
+
+/* .footer:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--c-secondary);
+  top: -100px;
+  width: calc(100% - 40px);
+  height: 100vh;
+} */
 
 footer div {
   min-width: 70px;
