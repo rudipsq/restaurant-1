@@ -42,6 +42,13 @@
   }
 }
 
+/* - - - - Heading - - - - */
+@media (max-width: 760px) {
+  h1 {
+    margin-top: 30px;
+  }
+}
+
 /* - - - - Speisen - - - - */
 #mainContainer {
   width: calc(100% - 60px);
@@ -188,8 +195,10 @@
   display: flex;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -197,6 +206,12 @@
   align-items: center;
   z-index: 900;
   transition: visibility 0.2s, opacity 0.2s ease-in-out;
+}
+@media (min-width: 761px) {
+  #overlay {
+    height: calc(100% - var(--s-headerHeight));
+    padding-top: var(--s-headerHeight);
+  }
 }
 
 #overlay.active {
@@ -229,19 +244,27 @@
   margin-top: 0;
 }
 
-#ocClose {
-  position: absolute;
-  background-color: transparent;
-  border: none;
-  right: 0;
-  top: 0;
-  margin: 2px;
-  width: 34px;
-  height: 34px;
-  cursor: pointer;
-  opacity: 1; /* change if wanted */
+@media (min-width: 761px) {
+  #ocClose {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    left: 0;
+    top: 0;
+    margin: 2px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0.8;
 
-  transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+  }
+}
+
+@media (max-width: 760px) {
+  #ocClose {
+    display: none;
+  }
 }
 
 #ocCont1 {
@@ -302,7 +325,8 @@
   margin-top: 6px;
   margin-bottom: 14px;
   font-size: x-large;
-  text-decoration: underline;
+  font-weight: 700;
+  /* text-decoration: underline; */
 }
 
 #ocDesc {

@@ -61,7 +61,7 @@ a {
   }
 }
 
-/* - - - - - Mobile - - - - -*/
+/* - - - - - Mobile Header - - - - -*/
 @media (max-width: 760px) {
   #mobileMenu {
     width: 50px;
@@ -217,8 +217,8 @@ a {
     margin-bottom: 19px;
 
     text-align: center;
-
     text-decoration: none;
+    font-weight: 600;
 
     width: 115px;
 
@@ -227,7 +227,7 @@ a {
 
   @media (hover: hover) {
     header nav a:hover {
-      font-size: 1.1em;
+      font-size: 1.08em;
 
       text-decoration: none;
     }
@@ -292,16 +292,6 @@ footer {
   position: relative;
 }
 
-/* .footer:after {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: var(--c-secondary);
-  top: -100px;
-  width: calc(100% - 40px);
-  height: 100vh;
-} */
-
 footer div {
   min-width: 70px;
 
@@ -360,20 +350,28 @@ footer a {
   margin-top: 10px;
 }
 
-.primaryButton p {
-  color: white;
+.primaryButton span {
   width: 100px;
-  height: 30px;
+  height: calc(100% - 1px);
   margin: 0;
-  margin-top: 8px;
   margin-left: 15px;
+
+  transition: all 0.1s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.primaryButton span p {
+  color: white;
+
+  margin: 0;
 
   font-family: "span", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.11em;
-
-  transition: all 0.1s ease-out;
 }
 
 @media (hover: hover) {
@@ -385,7 +383,17 @@ footer a {
     right: 5px;
     width: 116px;
   }
-  .primaryButton:hover p {
+  .primaryButton:hover span {
+    margin-left: 0px;
+  }
+}
+
+@media (hover: none) {
+  .primaryButton div {
+    right: 5px;
+    width: 116px;
+  }
+  .primaryButton span {
     margin-left: 0px;
   }
 }

@@ -523,21 +523,6 @@ section {
   overflow: hidden;
 }
 
-@media (hover: hover) {
-  #spButton:hover {
-    outline: solid 1px white;
-  }
-
-  #spButton:hover div {
-    right: 5px;
-    width: 116px;
-  }
-
-  #spButton:hover p {
-    margin-left: 0px;
-  }
-}
-
 #spButton div {
   position: absolute;
   top: 0;
@@ -555,20 +540,53 @@ section {
   margin-top: 10px;
 }
 
-#spButton p {
-  color: white;
+#spButton span {
   width: 100px;
-  height: 30px;
+  height: calc(100% - 2px);
   margin: 0;
-  margin-top: 8px;
   margin-left: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: all 0.1s ease-out;
+}
+
+#spButton span p {
+  color: white;
+  margin: 0;
 
   font-family: "span", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.11em;
+}
 
-  transition: all 0.1s ease-out;
+@media (hover: hover) {
+  #spButton:hover {
+    outline: solid 1px white;
+  }
+
+  #spButton:hover div {
+    right: 5px;
+    width: 116px;
+  }
+
+  #spButton:hover span {
+    margin-left: 0px;
+  }
+}
+
+@media (hover: none) {
+  #spButton div {
+    right: 5px;
+    width: 116px;
+  }
+
+  #spButton span {
+    margin-left: 0px;
+  }
 }
 
 #speisen .swiper-slide {

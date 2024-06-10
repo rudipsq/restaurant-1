@@ -13,10 +13,8 @@ async function getSpeisen() {
   }
 }
 
-// - - Mobile Nav
-
-// close if links clicked
 document.addEventListener("DOMContentLoaded", function () {
+  // device useragent
   if (navigator.userAgent) {
     var md = new MobileDetect(window.navigator.userAgent);
 
@@ -44,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // add functionality to close mobile overlay if mobile link is clicked
+  // mobile menu
   const navLinks = document.querySelectorAll("#hDark nav a");
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
@@ -61,17 +59,15 @@ overlay.addEventListener("click", function (event) {
   }
 });
 
-// show/hide link overlay
+// show/hide mobile menu link overlay
 function toggleMobileMenu() {
   if (window.innerWidth > 760) return;
 
   const mobileMenu = document.getElementById("hDark");
   if (mobileMenu.style.visibility != "visible") {
-    // mobileMenu.style.display = "none";
     mobileMenu.style.visibility = "visible";
     mobileMenu.style.opacity = "1";
   } else {
-    // mobileMenu.style.display = "flex";
     mobileMenu.style.visibility = "hidden";
     mobileMenu.style.opacity = "0";
   }

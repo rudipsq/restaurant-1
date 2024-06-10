@@ -95,16 +95,41 @@ function showSpeise(speiseId) {
 }
 
 function openOverlay(id, name, description) {
-  const overlay = document.getElementById("overlay");
-
   document.getElementById("ocImg").src = "img/pic/flammkuchen/" + id + ".webp";
   document.getElementById("ocHead").innerHTML = "Flammkuchen „" + name + "“";
   document.getElementById("ocDesc").innerHTML = description;
 
-  overlay.classList.add("active");
+  document.getElementById("overlay").classList.add("active");
+
+  changeMobileButtonIcon("../img/icon/cross.png");
 }
 
 function closeOverlay() {
-  const overlay = document.getElementById("overlay");
-  overlay.classList.remove("active");
+  document.getElementById("overlay").classList.remove("active");
+
+  changeMobileButtonIcon("../img/icon/menu.png");
+}
+
+// overide toggleMobileMenu() function ?
+function toggleMobileMenu() {
+  if (window.innerWidth > 760) return;
+
+  if (document.getElementById("overlay").classList.contains("active")) {
+    closeOverlay();
+  } else {
+    const mobileMenu = document.getElementById("hDark");
+    if (mobileMenu.style.visibility != "visible") {
+      mobileMenu.style.visibility = "visible";
+      mobileMenu.style.opacity = "1";
+    } else {
+      mobileMenu.style.visibility = "hidden";
+      mobileMenu.style.opacity = "0";
+    }
+  }
+}
+
+// change mobile menu icon
+function changeMobileButtonIcon(url) {
+  if (window.innerWidth > 760) return;
+  document.getElementById("mobileMenu").style.backgroundImage = `url('${url}')`;
 }
