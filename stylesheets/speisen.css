@@ -214,7 +214,7 @@
   height: 520px;
   max-height: 90%;
 
-  background-image: url("/img/pic/main_background.webp");
+  background-image: url("../img/pic/main_background.webp");
   background-size: cover;
   background-position-x: 30%;
   background-position-y: 20px;
@@ -269,10 +269,6 @@
     transition: all 0.35s ease-out; */
 }
 
-/* #overlay.active #ocBrett {
-    translate: 0;
-} */
-
 #ocImg {
   height: 90%;
   position: absolute;
@@ -281,10 +277,6 @@
   /* translate: 0 -800px;
     transition: all 0.5s ease-in-out; */
 }
-
-/* #overlay.active #ocImg {
-    translate: 0 0;
-} */
 
 #ocCont2 {
   background: var(--c-secondary);
