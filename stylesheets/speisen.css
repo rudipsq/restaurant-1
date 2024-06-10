@@ -51,10 +51,18 @@
 
 /* - - - - Speisen - - - - */
 #mainContainer {
-  width: calc(100% - 60px);
+  width: calc(100% - 36px);
 
-  padding: 30px;
+  padding: 18px;
   margin-top: 100px;
+}
+
+@media (min-width: 761px) {
+  #mainContainer {
+    width: calc(100% - 60px);
+
+    padding: 30px;
+  }
 }
 
 /* - - - - Heading Decoration - - - - */
