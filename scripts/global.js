@@ -17,9 +17,31 @@ async function getSpeisen() {
 
 // close if links clicked
 document.addEventListener("DOMContentLoaded", function () {
-  // check if user has mobile device
-  if (/Mobi|Android/i.test(navigator.userAgent)) {
-    document.body.classList.add("mobile");
+  if (navigator.userAgent) {
+    var md = new MobileDetect(window.navigator.userAgent);
+
+    console.warn(md);
+
+    // Check if the device is a tablet
+    var isTablet = md.tablet() !== null;
+    // Check if the device is a mobile
+    var isMobile = md.mobile() !== null && !isTablet;
+
+    if (isTablet) {
+      document.body.classList.add("tablet");
+    } else if (isMobile) {
+      document.body.classList.add("mobile");
+    } else {
+      // Additional check for iPad in desktop mode
+      if (
+        navigator.userAgent.includes("Macintosh") &&
+        "ontouchend" in document
+      ) {
+        document.body.classList.add("tablet");
+      } else {
+        document.body.classList.add("desktop");
+      }
+    }
   }
 
   // add functionality to close mobile overlay if mobile link is clicked

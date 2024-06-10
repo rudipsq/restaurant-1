@@ -340,6 +340,12 @@ section {
   transform: translate3d(0, 10vh, 0);
 }
 
+.tablet #willkommen .wiGridImg {
+  height: 95vh;
+
+  transform: translate3d(0, 15vh, 0);
+}
+
 #willkommen .glow-overlay {
   position: absolute;
   top: 0;

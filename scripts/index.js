@@ -15,7 +15,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   document.getElementById("underline").style.opacity = "1";
 
   // start screen
-  if (!document.body.classList.contains("mobile")) {
+  if (
+    !(
+      document.body.classList.contains("mobile") ||
+      document.body.classList.contains("tablet")
+    )
+  ) {
     parallax(
       background,
       window.innerWidth / 2 / 25,
@@ -36,7 +41,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   // willkommen section
   willkommenParallaxElements = document.querySelectorAll(".wiGridImg");
 
-  // if (!document.body.classList.contains("mobile")) {
   updateWillkommenParallax();
 
   // scroll eventListener
@@ -48,7 +52,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     },
     { passive: true }
   );
-  // }
 
   setTimeout(function () {
     // document.getElementById('startOverlay').style.opacity = '0';
@@ -252,7 +255,12 @@ function parallax(element, xAxis, yAxis, speed) {
 
 //* WILLKOMMEN
 function updateWillkommenParallax() {
-  if (!document.body.classList.contains("mobile")) {
+  if (
+    !(
+      document.body.classList.contains("mobile") ||
+      document.body.classList.contains("tablet")
+    )
+  ) {
     willkommenParallaxElements.forEach(function (element) {
       var speed = parseFloat(element.getAttribute("data-speed")) || 1;
       var yOffset = window.pageYOffset * speed;
