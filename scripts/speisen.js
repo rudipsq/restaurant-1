@@ -97,17 +97,17 @@ function showSpeise(speiseId) {
 function openOverlay(id, name, description) {
   document.getElementById("ocImg").src = "img/pic/flammkuchen/" + id + ".webp";
   document.getElementById("ocHead").innerHTML = "Flammkuchen „" + name + "“";
-  document.getElementById("ocDesc").innerHTML = description;
+  document.getElementById("ocDesc").innerHTML = "mit " + description;
 
   document.getElementById("overlay").classList.add("active");
 
-  changeMobileButtonIcon("../img/icon/cross.png");
+  changeMobileButtonIcon("img/icon/cross.png");
 }
 
 function closeOverlay() {
   document.getElementById("overlay").classList.remove("active");
 
-  changeMobileButtonIcon("../img/icon/menu.png");
+  changeMobileButtonIcon("img/icon/menu.png");
 }
 
 // overide toggleMobileMenu() function ?

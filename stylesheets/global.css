@@ -130,8 +130,6 @@ a {
     align-items: center;
     gap: 30px;
 
-    padding: 40px;
-
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -139,6 +137,12 @@ a {
 
   #hDark nav a {
     font-size: x-large;
+    text-decoration: none;
+  }
+
+  #hDark nav .separationLine {
+    width: 200px;
+    margin: 14px;
   }
 }
 /* - - - - - Header - - - - -*/
@@ -234,6 +238,10 @@ a {
   }
 
   #mobileMenu {
+    display: none;
+  }
+
+  #hDark nav .separationLine {
     display: none;
   }
 }
