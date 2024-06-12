@@ -48,7 +48,7 @@ header {
 /* - - - - - START SCREEN - - - - - */
 #startScreen {
   z-index: -1;
-  height: 100dvh;
+  height: 100lvh;
   width: 100%;
 
   position: fixed;
@@ -75,10 +75,10 @@ header {
 
 #darkOverlay {
   position: fixed;
-  top: 0;
+  top: -10lvh;
   left: 0;
   width: 100%;
-  height: 100lvh;
+  height: 120lvh;
   background: rgba(27, 15, 0, 0.65);
 }
 
@@ -98,29 +98,10 @@ header {
 #ssCenter1 {
   position: absolute;
   max-width: 80vw;
-  top: 5dvh;
+  top: 5lvh;
 
   z-index: 109;
 }
-
-/* #ssCenter2 {
-    position: absolute;
-    text-align: center;
-    margin-top: 25px;
-    margin-bottom: 600px; edit later ?
-    max-width: 121vw;
-
-    z-index: 3;
-}
-
-#ssLabel {
-    width: 650px;
-    max-width: 121vw;
-
-    opacity: 0;
-    transform: scale(0);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-} */
 
 #animationPlayer {
   z-index: 4;
@@ -151,12 +132,12 @@ header {
   bottom: 0px;
   right: 600px;
 
-  height: 66dvh;
+  height: 66lvh;
 }
 
 @media (max-width: 740px) {
   #ssCorner {
-    bottom: -10dvh;
+    bottom: -10lvh;
     right: calc(90vw - 0px);
 
     scale: 0.8;
@@ -164,7 +145,7 @@ header {
 
   #ssCenter1 {
     max-width: 90vw;
-    top: 10dvh;
+    top: 10lvh;
   }
 }
 
@@ -176,7 +157,7 @@ header {
 
 #ssMid {
   position: absolute;
-  bottom: 5dvh;
+  bottom: 5lvh;
 
   text-align: center;
   height: 100px;
@@ -239,7 +220,7 @@ header {
 }
 
 main {
-  margin-top: 100dvh;
+  margin-top: 100lvh;
   background: none;
   overflow: hidden;
   z-index: 9;
@@ -270,7 +251,6 @@ section {
 
 /* - - - - WILLKOMMEN - - - - */
 #willkommen {
-  /* margin-top: 100vh; */
   overflow: hidden;
 }
 
@@ -998,7 +978,7 @@ body:not(.mobile) .stTextWrapper a {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
-    height: 100dvh;
+    min-height: 100lvh;
   }
 
   #inGridItem1 {
