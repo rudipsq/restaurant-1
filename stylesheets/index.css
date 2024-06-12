@@ -5,12 +5,12 @@
     transform: translateX(75%);
     transition: all 0.7s ease-out;
   }
-}
 
-.scHiddenBottom {
-  opacity: 0.5;
-  transform: translateY(50%);
-  transition: all 0.5s ease;
+  .scHiddenBottom {
+    opacity: 0.5;
+    transform: translateY(50%);
+    transition: all 0.5s ease;
+  }
 }
 
 .scShow {
@@ -158,7 +158,7 @@ header {
 
 #ssMid {
   position: absolute;
-  bottom: 5lvh;
+  top: calc(95svh - 100px);
 
   text-align: center;
   height: 100px;
@@ -262,7 +262,7 @@ section {
 
 @media (min-width: 741px) {
   #willkommen {
-    height: calc(100vh - var(--s-headerHeight));
+    height: calc(100lvh - var(--s-headerHeight));
   }
 
   #wiGrid {
@@ -286,7 +286,7 @@ section {
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: 1fr;
     /* height: calc(200vh - 200px); */
-    height: 200dvh;
+    height: 200lvh;
   }
   #wiGridItem3 {
     grid-row: 4;
@@ -309,22 +309,22 @@ section {
 }
 
 #willkommen .wiGridImg {
-  height: 110vh;
+  height: 110lvh;
   object-fit: cover;
 
   transform: translate3d(0, 0, 0);
 }
 
 .mobile #willkommen .wiGridImg {
-  height: 70vh;
+  height: 70lvh;
 
-  transform: translate3d(0, 10vh, 0);
+  transform: translate3d(0, 10lvh, 0);
 }
 
 .tablet #willkommen .wiGridImg {
-  height: 95vh;
+  height: 95lvh;
 
-  transform: translate3d(0, 15vh, 0);
+  transform: translate3d(0, 15lvh, 0);
 }
 
 #willkommen .glow-overlay {
@@ -381,7 +381,7 @@ section {
     transform: translateY(-100px);
     overflow: hidden;
 
-    height: calc(100vh - 100px);
+    height: calc(100lvh - 100px);
   }
 
   #spImageLayer img {
@@ -710,25 +710,25 @@ section {
     width: calc(100% - 80px);
 
     padding: 20px;
+    padding-bottom: 120px;
   }
 
   #stMobil img {
-    display: none;
+    position: absolute;
+
+    width: auto;
+    height: 150px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 55px);
+    z-index: 1;
+
+    content: url("../img/pic/anhaenger_seite.webp");
   }
 
   .swiper-pagination {
-    display: none; /* todo: remove if fixed */
-    color: white;
-    translate: 0px 8px;
+    display: none;
   }
-
-  /* .swiper-pagination-bullet {
-    background-color: var(--c-text);
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: var(--c-text);
-  } */
 }
 
 @media (min-width: 951px) {
@@ -766,6 +766,8 @@ section {
     float: right;
     transform: translate(130px, -70px);
     z-index: 1;
+
+    content: url("../img/pic/anhaenger_schraeg.webp");
   }
 
   .swiper-pagination {
@@ -1017,7 +1019,7 @@ body:not(.mobile) .stTextWrapper a {
     grid-template-rows: repeat(2, 1fr);
 
     width: calc(800px + calc(10% + 20px));
-    height: calc(100vh - 320px);
+    height: calc(100lvh - 320px);
   }
 
   #inGridItem1 {

@@ -19,6 +19,7 @@ html {
 
 body {
   height: 100lvh;
+  top: env(safe-area-inset-top, 0);
 
   color: var(--c-text);
   background-color: black;

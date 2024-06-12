@@ -115,6 +115,18 @@
       "description": "Süßer Schmand, Apfel, Zimt, Zucker & Calvados flambiert"
     },
     {
+      "id": "schokolinze",
+      "name": "Schokolinze",
+      "type": true,
+      "description": "Süßer Schmand, Smarties & Dessertsauce Schoko"
+    },
+    {
+      "id": "banatella",
+      "name": "Banatella",
+      "type": true,
+      "description": "Süßer Schmand, Bananen & Nutella"
+    },
+    {
       "id": "himmel_ehre",
       "name": "Himmel & Ehre",
       "type": true,
@@ -125,18 +137,6 @@
       "name": "OSCHO",
       "type": true,
       "description": "Süßer Schmand, Oreo & Dessertsauce Schoko"
-    },
-    {
-      "id": "banatella",
-      "name": "Banatella",
-      "type": true,
-      "description": "Süßer Schmand, Bananen & Nutella"
-    },
-    {
-      "id": "schokolinze",
-      "name": "Schokolinze",
-      "type": true,
-      "description": "Süßer Schmand, Smarties & Dessertsauce Schoko"
     },
     {
       "id": "schwarzwaelder",

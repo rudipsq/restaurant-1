@@ -97,7 +97,8 @@ function showSpeise(speiseId) {
 function openOverlay(id, name, description) {
   document.getElementById("ocImg").src = "img/pic/flammkuchen/" + id + ".webp";
   document.getElementById("ocHead").innerHTML = "Flammkuchen „" + name + "“";
-  document.getElementById("ocDesc").innerHTML = "mit " + description;
+  document.getElementById("ocDesc").innerHTML =
+    "mit " + description.replace(new RegExp("Süßer", "g"), "süßem");
 
   document.getElementById("overlay").classList.add("active");
 
@@ -110,7 +111,6 @@ function closeOverlay() {
   changeMobileButtonIcon("img/icon/menu.png");
 }
 
-// overide toggleMobileMenu() function ?
 function toggleMobileMenu() {
   if (window.innerWidth > 760) return;
 
