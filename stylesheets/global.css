@@ -19,7 +19,6 @@ html {
 
 body {
   height: 100lvh;
-  top: env(safe-area-inset-top, 0);
 
   color: var(--c-text);
   background-color: black;
@@ -255,7 +254,7 @@ a {
 
 /* - - - - - Main - - - - -*/
 main {
-  min-height: 100dvh;
+  /* min-height: 100vh; */
 
   background-color: rgb(56, 27, 0);
   background-image: url("../img/pic/main_background.webp");

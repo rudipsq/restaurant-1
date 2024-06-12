@@ -52,8 +52,7 @@ header {
   width: 100%;
 
   position: fixed;
-  /* top: 0; */
-  top: env(safe-area-inset-top, 0);
+  bottom: calc(0lvh - env(safe-area-inset-top, 0px));
   left: 0;
 
   background-image: url("../img/pic/start_background.jpg");
@@ -158,7 +157,8 @@ header {
 
 #ssMid {
   position: absolute;
-  top: calc(95svh - 100px);
+  /* top: calc(95svh - 100px); */
+  bottom: 5svh;
 
   text-align: center;
   height: 100px;

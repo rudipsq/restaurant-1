@@ -5,8 +5,11 @@
 /* - - - - Back Arrow - - - - */
 #back {
   position: fixed;
-  top: calc(95svh - 100px);
+  /* top: calc(95svh - 100px); */
   left: calc(50% - 50px);
+  bottom: 5svh;
+
+  z-index: 1000;
 
   text-align: center;
   height: 100px;
