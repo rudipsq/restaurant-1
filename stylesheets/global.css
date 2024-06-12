@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  height: 100dvh;
+  height: 100lvh;
 
   color: var(--c-text);
   background-color: black;
