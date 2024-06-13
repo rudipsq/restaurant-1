@@ -24,11 +24,6 @@ header {
   transition: top 0.2s ease;
 }
 
-#mobileMenu {
-  /* todo: uncomment if needed: */
-  /* top: -50px; */
-}
-
 #underline {
   position: absolute;
   bottom: calc(var(--s-headerHeight) / 5);
@@ -146,7 +141,7 @@ header {
 
   #ssCenter1 {
     max-width: 90vw;
-    top: 10lvh;
+    top: 10svh;
   }
 }
 
@@ -604,8 +599,14 @@ section {
   height: 148px;
 
   margin-top: 13px;
-  margin-left: 8px;
+  /* margin-left: 8px; */
   transition: all 0.12s ease-out;
+}
+
+@media (min-width: 951px) {
+  .spSwiperImgContainer {
+    margin-left: 8px;
+  }
 }
 
 @media (hover: hover) {
@@ -675,23 +676,23 @@ section {
   }
 
   .spGridDisplay {
-    width: 354px;
+    width: 306px;
     overflow: hidden;
   }
 
   #speisen .swiper-slide {
-    padding: 20px;
-    width: 240px;
-    height: 320px;
+    width: 245px;
+    height: 340px;
 
-    /* outline: var(--s-standardOutline); */
-    outline-offset: -8px;
+    outline-offset: -10px;
   }
 
   .spSwiperImgContainer {
-    height: 170px;
-    width: 252px;
+    height: 175px;
+    width: 245px;
     overflow: hidden;
+    margin-left: 3px;
+    margin-top: 15px;
   }
 
   @media (hover: hover) {
@@ -701,7 +702,12 @@ section {
   }
 
   #speisen .swiper-slide h3 {
-    margin-top: 20px;
+    margin-top: 14px;
+    font-size: x-large;
+  }
+  #speisen .swiper-slide p {
+    margin: 10px 16px 0px 16px;
+    font-size: large;
   }
 
   .swiper-button-next,
@@ -716,6 +722,11 @@ section {
 }
 
 @media (max-width: 950px) {
+  #standorte .swiper-slide {
+    outline: var(--s-standardOutline);
+    outline-offset: -10px;
+  }
+
   #stMobil {
     margin-top: 40px;
   }
@@ -725,6 +736,10 @@ section {
 
     padding: 20px;
     padding-bottom: 120px;
+  }
+
+  #stDescription {
+    outline: none;
   }
 
   #stMobil img {
@@ -755,6 +770,9 @@ section {
 
   #standorte .swiper-slide {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+
+    outline: var(--s-standardOutline);
+    outline-offset: -8px;
   }
 
   #stMobil {
@@ -796,9 +814,6 @@ section {
 
   background-color: var(--c-secondary);
   border-radius: 12px;
-
-  outline: var(--s-standardOutline);
-  outline-offset: -8px;
 }
 
 #standorte .swiper-slide .stImgWrapper {
@@ -811,7 +826,7 @@ section {
   transform: translateX(-50%);
 
   background-color: var(--c-primary);
-  opacity: 0.5;
+  opacity: 0.4;
   border-radius: 50%;
   backdrop-filter: blur(10%);
   -webkit-backdrop-filter: blur(10%);

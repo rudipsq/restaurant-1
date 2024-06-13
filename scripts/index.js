@@ -116,11 +116,8 @@ function showHideHeader() {
 
   if (scrollDistance > threshold) {
     header.style.top = "0";
-    mobileMenu.style.top = "20px";
   } else {
-    // todo: uncomment if needed:
-    // header.style.top = "-100px";
-    // mobileMenu.style.top = "-50px";
+    header.style.top = "-100px";
   }
 }
 
@@ -358,6 +355,83 @@ function initializeSpSwiper() {
   });
 }
 
+// todo: make swipers more efficient
+// function initializeSpSwiper() {
+//   spHswiper = new Swiper("#spHswiper", {
+//     effect: "coverflow",
+//     grabCursor: true,
+//     centeredSlides: true,
+//     slidesPerView: "auto",
+//     initialSlide: 1,
+//     coverflowEffect: {
+//       rotate: 0,
+//       stretch: 0,
+//       depth: 150,
+//       modifier: 10,
+//       slideShadows: true,
+//     },
+//     keyboard: {
+//       enabled: true,
+//     },
+//     mousewheel: {
+//       forceToAxis: true,
+//       thresholdDelta: 70,
+//       eventsTarget: "#spSswiper",
+//       passiveListeners: true,
+//     },
+//     spaceBetween: -100,
+//     // navigation: {
+//     //   nextEl: "#spHnext",
+//     //   prevEl: "#spHprev",
+//     // },
+//     loop: true,
+//   });
+
+//   let spSwipes = Array.from(
+//     document.querySelector("#spSswiper .swiper-wrapper").children
+//   ).map((child) => child.outerHTML);
+//   console.log(spSwipes);
+
+//   spSswiper = new Swiper("#spSswiper", {
+//     effect: "coverflow",
+//     grabCursor: true,
+//     centeredSlides: true,
+//     slidesPerView: "auto",
+//     initialSlide: 1,
+//     coverflowEffect: {
+//       rotate: 0,
+//       stretch: 0,
+//       depth: 150,
+//       modifier: 10,
+//       slideShadows: true,
+//     },
+//     keyboard: {
+//       enabled: true,
+//     },
+//     mousewheel: {
+//       forceToAxis: true,
+//       thresholdDelta: 70,
+//       eventsTarget: "#spSswiper",
+//       passiveListeners: true,
+//     },
+//     spaceBetween: -100,
+//     // navigation: {
+//     //   nextEl: "#spSnext",
+//     //   prevEl: "#spSprev",
+//     // },
+//     loop: true,
+//     virtual: {
+//       slides: spSwipes,
+//       addSlidesBefore: 2, // Number of slides to render before the current slide
+//       addSlidesAfter: 2, // Number of slides to render after the current slide
+//       renderExternal: function (data) {
+//         const wrapper = document.querySelector("#spSswiper .swiper-wrapper");
+//         wrapper.innerHTML = data.slides.map((slide) => `${slide}`).join("");
+//       },
+//     },
+//   });
+// }
+
 //* STANDORTE
 function openMaps(locationName) {
   // Check if the user is on an Apple device
@@ -376,6 +450,12 @@ function openMaps(locationName) {
 }
 
 function initializeSwiper() {
+  let screenWidth = window.innerWidth;
+
+  let space = 50;
+  if (screenWidth < 741) {
+    space = 0;
+  }
   swiper = new Swiper(".swiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -384,7 +464,7 @@ function initializeSwiper() {
     coverflowEffect: {
       rotate: 10,
       stretch: 0,
-      depth: 100,
+      depth: 120,
       modifier: 2,
       slideShadows: true,
     },
@@ -397,7 +477,7 @@ function initializeSwiper() {
       eventsTarget: ".swiper",
       passiveListeners: true,
     },
-    spaceBetween: 60,
+    spaceBetween: space,
     loop: false,
     pagination: {
       el: ".swiper-pagination",
