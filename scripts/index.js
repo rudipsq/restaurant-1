@@ -118,8 +118,9 @@ function showHideHeader() {
     header.style.top = "0";
     mobileMenu.style.top = "20px";
   } else {
-    header.style.top = "-100px";
-    mobileMenu.style.top = "-50px";
+    // todo: uncomment if needed:
+    // header.style.top = "-100px";
+    // mobileMenu.style.top = "-50px";
   }
 }
 
@@ -208,7 +209,6 @@ let lastX = 0;
 let lastY = 0;
 
 document.addEventListener("mousemove", handleMove);
-// document.addEventListener("touchmove", handleMove);
 
 function handleMove(event) {
   let clientX, clientY;
@@ -216,10 +216,6 @@ function handleMove(event) {
   if (event.type === "mousemove") {
     clientX = event.clientX;
     clientY = event.clientY;
-
-    // } else if (event.type === "touchmove") {
-    // clientX = event.touches[0].clientX;
-    // clientY = event.touches[0].clientY;
   } else {
     return;
   }
@@ -240,7 +236,6 @@ function handleMove(event) {
 }
 
 document.addEventListener("mouseup", handleEnd);
-// document.addEventListener("touchend", handleEnd);
 
 function handleEnd() {
   lastX = 0;

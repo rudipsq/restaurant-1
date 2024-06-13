@@ -1,3 +1,20 @@
+window.onload = function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const linkParam = urlParams.get("link");
+
+  if (!linkParam) {
+    // Remove the hash from the URL if the 'link' parameter is not present
+    history.replaceState(null, null, window.location.pathname);
+  } else {
+    // Remove the 'link' parameter from the URL
+    urlParams.delete("link");
+    const newUrl = `${window.location.pathname}${
+      window.location.hash ? window.location.hash : ""
+    }`;
+    history.replaceState(null, null, newUrl);
+  }
+};
+
 async function getSpeisen() {
   try {
     // console.warn("version uses direct links")
