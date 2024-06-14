@@ -263,6 +263,8 @@ function updateWillkommenParallax() {
 //* SPEISEN
 async function addSpeisen() {
   const flammkuchen = speisen;
+  let sIndex = 0;
+  let hIndex = 0;
 
   flammkuchen.forEach((product) => {
     const productDiv = document.createElement("div");
@@ -279,15 +281,21 @@ async function addSpeisen() {
     `;
 
     if (product.type) {
-      document
-        .getElementById("spSswiper")
-        .getElementsByClassName("swiper-wrapper")[0]
-        .appendChild(productDiv);
+      if (!(document.body.classList.contains("mobile") && sIndex >= 5)) {
+        document
+          .getElementById("spSswiper")
+          .getElementsByClassName("swiper-wrapper")[0]
+          .appendChild(productDiv);
+        sIndex++;
+      }
     } else {
-      document
-        .getElementById("spHswiper")
-        .getElementsByClassName("swiper-wrapper")[0]
-        .appendChild(productDiv);
+      if (!(document.body.classList.contains("mobile") && hIndex >= 5)) {
+        document
+          .getElementById("spHswiper")
+          .getElementsByClassName("swiper-wrapper")[0]
+          .appendChild(productDiv);
+        hIndex++;
+      }
     }
   });
 }
