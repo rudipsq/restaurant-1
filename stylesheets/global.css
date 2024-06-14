@@ -103,16 +103,18 @@ a {
   }
 
   #hDark {
-    height: 120lvh;
+    height: 100lvh;
     width: 120%;
 
     position: fixed;
     z-index: 999;
     left: -10%;
-    top: -10lvh;
+    bottom: 0;
 
     display: flex;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
     visibility: hidden;
     opacity: 0;
@@ -124,6 +126,7 @@ a {
   }
 
   #hDark nav {
+    margin-top: calc(calc(100lvh - 100svh) / 4);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -254,7 +257,7 @@ a {
 
 /* - - - - - Main - - - - -*/
 main {
-  /* min-height: 100vh; */
+  min-height: 100lvh;
 
   background-color: rgb(56, 27, 0);
   background-image: url("../img/pic/main_background.webp");
@@ -448,10 +451,28 @@ footer a {
   position: absolute;
 }
 
-.mobile .headingDecoration span,
+/* mobile heading decoration */
+.mobile .headingDecoration span {
+  display: none;
+}
+
 .mobile .headingDecoration h1::after,
 .mobile .headingDecoration h1::before {
-  display: none;
+  transform: scaleX(0.4);
+  background: linear-gradient(
+    to right,
+    transparent,
+    #ffffff99,
+    #ffffff,
+    #ffffff99,
+    transparent
+  );
+}
+.mobile .headingDecoration h1::before {
+  translate: 40%;
+}
+.mobile .headingDecoration h1::after {
+  translate: -45%;
 }
 
 /* - - - - - Style - - - - - */
@@ -463,13 +484,6 @@ footer a {
 .gradient {
   border-radius: 50px;
   color: white;
-  /* background: linear-gradient(
-    -70deg,
-    #e81200,
-    #ff8800,
-    #c100ff,
-    #e81200
-  ); */
   background: linear-gradient(-70deg, #e507f9, #3706f9, #ab06db, #e507f9);
   background-size: 400% 100%;
   opacity: 0;
@@ -505,17 +519,6 @@ footer a {
   height: 100%;
   position: absolute;
   z-index: 0;
-  /* background: conic-gradient(
-    from var(--a) at 50% 50%,
-    transparent 0%,
-    white 0%,
-    white 25%,
-    transparent 25%,
-    transparent 50%,
-    white 50%,
-    white 75%,
-    transparent 75%
-  ); */
   background: conic-gradient(
     from var(--a) at 50% 50%,
     rgba(238, 235, 130, 0) 0%,
@@ -555,31 +558,6 @@ footer a {
 }
 
 @keyframes animate-gradient {
-  /* 0% {
-    --a: -90deg;
-  }
-  100% {
-    --a: -270deg;
-  } */
-  /* 0% {
-    --a: -90deg;
-  }
-  20% {
-    --a: -110deg;
-  }
-  40% {
-    --a: -135deg;
-  }
-  60% {
-    --a: -225deg;
-  }
-  80% {
-    --a: -250deg;
-  }
-  100% {
-    --a: -270deg;
-  } */
-
   0% {
     --a: 0deg;
   }

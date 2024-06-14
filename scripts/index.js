@@ -35,13 +35,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     );
   }
 
-  document.getElementById("animationPlayer").style.opacity = "1";
-  document.getElementById("animationPlayer").style.transform = "scale(1)";
+  // document.getElementById("animationPlayer").style.opacity = "1";
+  // document.getElementById("animationPlayer").style.transform = "scale(1)";
 
   // willkommen section
   willkommenParallaxElements = document.querySelectorAll(".wiGridImg");
 
   updateWillkommenParallax();
+  highlightMenu();
 
   // scroll eventListener
   window.addEventListener(
@@ -54,12 +55,14 @@ document.addEventListener("DOMContentLoaded", async function () {
   );
 
   setTimeout(function () {
-    // document.getElementById('startOverlay').style.opacity = '0';
     showHideHeader();
+
+    document.getElementById("animationPlayer").style.opacity = "1";
+    document.getElementById("animationPlayer").style.transform = "scale(1)";
   }, 300);
   setTimeout(function () {
+    document.getElementById("animationPlayer").play();
     document.getElementById("startOverlay").style.opacity = "0";
-    // showHideHeader()
   }, 600);
 });
 
@@ -71,8 +74,7 @@ window.addEventListener("load", async function () {
   // Show the content
   let elements = document.querySelectorAll(".mainPage");
   elements.forEach(function (element) {
-    element.classList.remove("mainPage"); // Remove the 'hidden' class
-    //element.style.display = '';
+    element.classList.remove("mainPage");
   });
 
   checkWindowWidth();
@@ -86,24 +88,31 @@ window.addEventListener("load", async function () {
   }
 });
 
-function setStartImage() {
-  let firstRandom = Math.floor(Math.random() * 7) + 1; // Change range to 1-7
-
-  let randomNumber;
-
-  if (firstRandom <= 5) {
-    // For the first five cases (1 to 5), choose random number between 1 and 5
-    randomNumber = Math.floor(Math.random() * 5) + 1;
-  } else {
-    // For the remaining cases (6 and 7), choose random number between 6 and 9
-    randomNumber = Math.floor(Math.random() * 4) + 6;
-  }
-
-  let imageUrl = `img/pic/fl${randomNumber}.webp`;
-  document.getElementById(
-    "ssForeground"
-  ).style.backgroundImage = `url(${imageUrl})`;
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
 }
+
+// Use debounce for the resize event
+window.addEventListener(
+  "resize",
+  debounce(function () {
+    checkWindowWidth();
+    highlightMenu();
+
+    // Ensure that Swiper is updated after resize
+    if (swiper !== null) {
+      swiper.update();
+    }
+  }, 200)
+);
 
 //* HEADER
 function showHideHeader() {
@@ -121,48 +130,43 @@ function showHideHeader() {
 }
 
 // underline
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("scroll", highlightMenu);
+
+function highlightMenu() {
   const menuLinks = document.querySelectorAll("header nav a");
   const underline = document.getElementById("underline");
   const sections = document.querySelectorAll("section");
+  let currentSectionId = "";
 
-  function highlightMenu() {
-    let currentSectionId = "";
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 400 && rect.bottom >= 50) {
+      currentSectionId = section.id;
+    }
+  });
 
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= 400 && rect.bottom >= 50) {
-        currentSectionId = section.id;
+  if (currentSectionId !== "") {
+    menuLinks.forEach((link) => {
+      if (link.getAttribute("href") === `#${currentSectionId}`) {
+        const rect = link.getBoundingClientRect();
+        const underlinePosition =
+          rect.left + rect.width / 2 - underline.offsetWidth / 2;
+        underline.style.transform = `translateX(${underlinePosition}px)`;
       }
     });
-
-    if (currentSectionId !== "") {
-      menuLinks.forEach((link) => {
-        if (link.getAttribute("href") === `#${currentSectionId}`) {
-          const rect = link.getBoundingClientRect();
-          const underlinePosition =
-            rect.left + rect.width / 2 - underline.offsetWidth / 2;
-          underline.style.transform = `translateX(${underlinePosition}px)`;
-        }
-      });
-    } else {
-      // If no section is active, set underline to the #willkommen section
-      const willkommenLink = document.querySelector(
-        "header nav a[href='#willkommen']"
-      );
-      const willkommenRect = willkommenLink.getBoundingClientRect();
-      const underlinePosition =
-        willkommenRect.left +
-        willkommenRect.width / 2 -
-        underline.offsetWidth / 2;
-      underline.style.transform = `translateX(${underlinePosition}px)`;
-    }
+  } else {
+    // If no section is active, set underline to the #willkommen section
+    const willkommenLink = document.querySelector(
+      "header nav a[href='#willkommen']"
+    );
+    const willkommenRect = willkommenLink.getBoundingClientRect();
+    const underlinePosition =
+      willkommenRect.left +
+      willkommenRect.width / 2 -
+      underline.offsetWidth / 2;
+    underline.style.transform = `translateX(${underlinePosition}px)`;
   }
-
-  window.addEventListener("scroll", highlightMenu);
-  window.addEventListener("resize", highlightMenu);
-  highlightMenu(); // Call it once on page load
-});
+}
 
 //* SCROLL ANIMATION
 const observer = new IntersectionObserver((entries) => {
@@ -198,13 +202,39 @@ function speisenAnimation() {
 }
 
 //* START SCREEN
+function setStartImage() {
+  let firstRandom = Math.floor(Math.random() * 7) + 1; // Change range to 1-7
+
+  let randomNumber;
+
+  if (firstRandom <= 5) {
+    // For the first five cases (1 to 5), choose random number between 1 and 5
+    randomNumber = Math.floor(Math.random() * 5) + 1;
+  } else {
+    // For the remaining cases (6 and 7), choose random number between 6 and 9
+    randomNumber = Math.floor(Math.random() * 4) + 6;
+  }
+
+  let imageUrl = `img/pic/fl${randomNumber}.webp`;
+  document.getElementById(
+    "ssForeground"
+  ).style.backgroundImage = `url(${imageUrl})`;
+}
+
 const background = document.getElementById("ssBackground");
 const foreground = document.getElementById("ssForeground");
-
 let lastX = 0;
 let lastY = 0;
 
-document.addEventListener("mousemove", handleMove);
+if (
+  !(
+    document.body.classList.contains("mobile") ||
+    document.body.classList.contains("tablet")
+  )
+) {
+  document.addEventListener("mousemove", handleMove);
+  document.addEventListener("mouseup", handleEnd);
+}
 
 function handleMove(event) {
   let clientX, clientY;
@@ -230,8 +260,6 @@ function handleMove(event) {
   lastX = clientX;
   lastY = clientY;
 }
-
-document.addEventListener("mouseup", handleEnd);
 
 function handleEnd() {
   lastX = 0;
@@ -286,21 +314,17 @@ async function addSpeisen() {
     `;
 
     if (product.type) {
-      // if (!(document.body.classList.contains("mobile") && sIndex >= 5)) {
       document
         .getElementById("spSswiper")
         .getElementsByClassName("swiper-wrapper")[0]
         .appendChild(productDiv);
       sIndex++;
-      // }
     } else {
-      // if (!(document.body.classList.contains("mobile") && hIndex >= 5)) {
       document
         .getElementById("spHswiper")
         .getElementsByClassName("swiper-wrapper")[0]
         .appendChild(productDiv);
       hIndex++;
-      // }
     }
   });
 }
@@ -429,9 +453,55 @@ function destroySwiper() {
 }
 
 // Check window width initially and on resize
+function initializeSwiper() {
+  let screenWidth = window.innerWidth;
+
+  let space = 50;
+  if (screenWidth < 741) {
+    space = 0;
+  }
+  swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 10,
+      stretch: 0,
+      depth: 120,
+      modifier: 2,
+      slideShadows: true,
+    },
+    // keyboard: {
+    //   enabled: true,
+    // },
+    mousewheel: {
+      forceToAxis: true,
+      thresholdDelta: 70,
+      eventsTarget: ".swiper",
+      passiveListeners: true,
+    },
+    spaceBetween: space,
+    loop: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+}
+
+function destroySwiper() {
+  if (swiper !== null) {
+    swiper.destroy(true, true);
+    swiper = null;
+  }
+}
+
+// Check window width initially and on resize
 function checkWindowWidth() {
   if (window.innerWidth < 951) {
     // If the window width is under 941, initialize Swiper
+    if (swiper) return;
     initializeSwiper();
   } else {
     // If the window width is not under 941, destroy Swiper if it exists
@@ -439,32 +509,6 @@ function checkWindowWidth() {
   }
 }
 
-function debounce(func, wait) {
-  let timeout;
-  return function () {
-    const context = this;
-    const args = arguments;
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      func.apply(context, args);
-    }, wait);
-  };
-}
-
-// Use debounce for the resize event
-window.addEventListener(
-  "resize",
-  debounce(function () {
-    checkWindowWidth();
-
-    // Ensure that Swiper is updated after resize
-    if (swiper !== null) {
-      swiper.update();
-    }
-  }, 200)
-);
-
-//<button onclick="callNumber('+123456789')">Call Us</button>
 function callNumber(number) {
   window.location.href = "tel:" + number;
 }

@@ -94,7 +94,7 @@ header {
 #ssCenter1 {
   position: absolute;
   max-width: 80vw;
-  top: 5lvh;
+  top: 10lvh;
 
   z-index: 109;
 }
@@ -141,7 +141,8 @@ header {
 
   #ssCenter1 {
     max-width: 90vw;
-    top: 10svh;
+    position: fixed;
+    top: 6lvh;
   }
 }
 
@@ -703,11 +704,11 @@ section {
 
   #speisen .swiper-slide h3 {
     margin-top: 14px;
-    font-size: x-large;
+    font-size: 1.5rem;
   }
   #speisen .swiper-slide p {
     margin: 10px 16px 0px 16px;
-    font-size: large;
+    font-size: 1rem;
   }
 
   .swiper-button-next,
