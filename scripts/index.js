@@ -108,7 +108,6 @@ function setStartImage() {
 //* HEADER
 function showHideHeader() {
   let header = document.querySelector("header");
-  let mobileMenu = document.getElementById("mobileMenu");
 
   let scrollDistance = window.scrollY;
 
