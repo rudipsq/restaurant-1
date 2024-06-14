@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 window.addEventListener("load", async function () {
   speisen = await getSpeisen();
   addSpeisen();
-  initializeSpSwiper();
 
   // Show the content
   let elements = document.querySelectorAll(".mainPage");
@@ -264,41 +263,13 @@ function updateWillkommenParallax() {
 async function addSpeisen() {
   const flammkuchen = speisen;
 
-  flammkuchen.forEach((product) => {
-    const productDiv = document.createElement("div");
-    productDiv.classList.add("swiper-slide");
-    productDiv.innerHTML = `
-      
-        <a class="spSwiperImgContainer" href="speisen.html?id=${product.id}">
-        <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.webp">
-        <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.webp"></a>
-     
-        <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
-      <p>${product.description}</p>
-      <div class="cardBackgroundGradientNoHover"></div>
-    `;
-
-    if (product.type) {
-      document
-        .getElementById("spSswiper")
-        .getElementsByClassName("swiper-wrapper")[0]
-        .appendChild(productDiv);
-    } else {
-      document
-        .getElementById("spHswiper")
-        .getElementsByClassName("swiper-wrapper")[0]
-        .appendChild(productDiv);
-    }
-  });
-}
-
-function initializeSpSwiper() {
-  spHswiper = new Swiper("#spHswiper", {
+  // Initialize Swiper with virtual slides
+  spSswiper = new Swiper("#spHswiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: "auto",
-    initialSlide: 1,
+    slidesPerView: 1,
+    initialSlide: 0,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
@@ -306,13 +277,10 @@ function initializeSpSwiper() {
       modifier: 10,
       slideShadows: true,
     },
-    keyboard: {
-      enabled: true,
-    },
     mousewheel: {
       forceToAxis: true,
       thresholdDelta: 70,
-      eventsTarget: "#spSswiper",
+      eventsTarget: "#spHswiper",
       passiveListeners: true,
     },
     spaceBetween: -100,
@@ -321,23 +289,41 @@ function initializeSpSwiper() {
       prevEl: "#spHprev",
     },
     loop: true,
+    virtual: {
+      enabled: true,
+      slides: flammkuchen
+        .filter((product) => product.type == false)
+        .map(
+          (product) => `
+        <div class="swiper-slide">
+          <a class="spSwiperImgContainer" href="speisen.html?id=${product.id}">
+            <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.webp">
+            <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.webp">
+          </a>
+          <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
+          <p>${product.description}</p>
+          <div class="cardBackgroundGradientNoHover"></div>
+        </div>
+      `
+        ),
+      addSlidesBefore: 1,
+      addSlidesAfter: -1,
+    },
   });
 
+  // Initialize Swiper with virtual slides
   spSswiper = new Swiper("#spSswiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: "auto",
-    initialSlide: 1,
+    slidesPerView: 1,
+    initialSlide: 6,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
       depth: 150,
       modifier: 10,
       slideShadows: true,
-    },
-    keyboard: {
-      enabled: true,
     },
     mousewheel: {
       forceToAxis: true,
@@ -351,85 +337,28 @@ function initializeSpSwiper() {
       prevEl: "#spSprev",
     },
     loop: true,
+    virtual: {
+      enabled: true,
+      slides: flammkuchen
+        .filter((product) => product.type == true)
+        .map(
+          (product) => `
+        <div class="swiper-slide">
+          <a class="spSwiperImgContainer" href="speisen.html?id=${product.id}">
+            <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.webp">
+            <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.webp">
+          </a>
+          <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
+          <p>${product.description}</p>
+          <div class="cardBackgroundGradientNoHover"></div>
+        </div>
+      `
+        ),
+      // addSlidesBefore: 1,
+      // addSlidesAfter: 1,
+    },
   });
 }
-
-// todo: make swipers more efficient
-// function initializeSpSwiper() {
-//   spHswiper = new Swiper("#spHswiper", {
-//     effect: "coverflow",
-//     grabCursor: true,
-//     centeredSlides: true,
-//     slidesPerView: "auto",
-//     initialSlide: 1,
-//     coverflowEffect: {
-//       rotate: 0,
-//       stretch: 0,
-//       depth: 150,
-//       modifier: 10,
-//       slideShadows: true,
-//     },
-//     keyboard: {
-//       enabled: true,
-//     },
-//     mousewheel: {
-//       forceToAxis: true,
-//       thresholdDelta: 70,
-//       eventsTarget: "#spSswiper",
-//       passiveListeners: true,
-//     },
-//     spaceBetween: -100,
-//     // navigation: {
-//     //   nextEl: "#spHnext",
-//     //   prevEl: "#spHprev",
-//     // },
-//     loop: true,
-//   });
-
-//   let spSwipes = Array.from(
-//     document.querySelector("#spSswiper .swiper-wrapper").children
-//   ).map((child) => child.outerHTML);
-//   console.log(spSwipes);
-
-//   spSswiper = new Swiper("#spSswiper", {
-//     effect: "coverflow",
-//     grabCursor: true,
-//     centeredSlides: true,
-//     slidesPerView: "auto",
-//     initialSlide: 1,
-//     coverflowEffect: {
-//       rotate: 0,
-//       stretch: 0,
-//       depth: 150,
-//       modifier: 10,
-//       slideShadows: true,
-//     },
-//     keyboard: {
-//       enabled: true,
-//     },
-//     mousewheel: {
-//       forceToAxis: true,
-//       thresholdDelta: 70,
-//       eventsTarget: "#spSswiper",
-//       passiveListeners: true,
-//     },
-//     spaceBetween: -100,
-//     // navigation: {
-//     //   nextEl: "#spSnext",
-//     //   prevEl: "#spSprev",
-//     // },
-//     loop: true,
-//     virtual: {
-//       slides: spSwipes,
-//       addSlidesBefore: 2, // Number of slides to render before the current slide
-//       addSlidesAfter: 2, // Number of slides to render after the current slide
-//       renderExternal: function (data) {
-//         const wrapper = document.querySelector("#spSswiper .swiper-wrapper");
-//         wrapper.innerHTML = data.slides.map((slide) => `${slide}`).join("");
-//       },
-//     },
-//   });
-// }
 
 //* STANDORTE
 function openMaps(locationName) {
