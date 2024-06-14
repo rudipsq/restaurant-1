@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 window.addEventListener("load", async function () {
   speisen = await getSpeisen();
   addSpeisen();
-  initializeSpSwiper();
+  initializeSpSwipers();
 
   // Show the content
   let elements = document.querySelectorAll(".mainPage");
@@ -267,40 +267,45 @@ async function addSpeisen() {
   let hIndex = 0;
 
   flammkuchen.forEach((product) => {
+    if (
+      document.body.classList.contains("mobile") &&
+      ((product.type && sIndex >= 5) || (!product.type && hIndex >= 5))
+    ) {
+      return;
+    }
+
     const productDiv = document.createElement("div");
     productDiv.classList.add("swiper-slide");
     productDiv.innerHTML = `
-      
         <a class="spSwiperImgContainer" href="speisen.html?id=${product.id}">
         <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.webp">
         <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.webp"></a>
-     
         <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
       <p>${product.description}</p>
       <div class="cardBackgroundGradientNoHover"></div>
     `;
 
     if (product.type) {
-      if (!(document.body.classList.contains("mobile") && sIndex >= 5)) {
-        document
-          .getElementById("spSswiper")
-          .getElementsByClassName("swiper-wrapper")[0]
-          .appendChild(productDiv);
-        sIndex++;
-      }
+      // if (!(document.body.classList.contains("mobile") && sIndex >= 5)) {
+      document
+        .getElementById("spSswiper")
+        .getElementsByClassName("swiper-wrapper")[0]
+        .appendChild(productDiv);
+      sIndex++;
+      // }
     } else {
-      if (!(document.body.classList.contains("mobile") && hIndex >= 5)) {
-        document
-          .getElementById("spHswiper")
-          .getElementsByClassName("swiper-wrapper")[0]
-          .appendChild(productDiv);
-        hIndex++;
-      }
+      // if (!(document.body.classList.contains("mobile") && hIndex >= 5)) {
+      document
+        .getElementById("spHswiper")
+        .getElementsByClassName("swiper-wrapper")[0]
+        .appendChild(productDiv);
+      hIndex++;
+      // }
     }
   });
 }
 
-function initializeSpSwiper() {
+function initializeSpSwipers() {
   spHswiper = new Swiper("#spHswiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -314,9 +319,9 @@ function initializeSpSwiper() {
       modifier: 10,
       slideShadows: true,
     },
-    keyboard: {
-      enabled: true,
-    },
+    // keyboard: {
+    //   enabled: true,
+    // },
     mousewheel: {
       forceToAxis: true,
       thresholdDelta: 70,
@@ -344,9 +349,9 @@ function initializeSpSwiper() {
       modifier: 10,
       slideShadows: true,
     },
-    keyboard: {
-      enabled: true,
-    },
+    // keyboard: {
+    //   enabled: true,
+    // },
     mousewheel: {
       forceToAxis: true,
       thresholdDelta: 70,
@@ -361,83 +366,6 @@ function initializeSpSwiper() {
     loop: true,
   });
 }
-
-// todo: make swipers more efficient
-// function initializeSpSwiper() {
-//   spHswiper = new Swiper("#spHswiper", {
-//     effect: "coverflow",
-//     grabCursor: true,
-//     centeredSlides: true,
-//     slidesPerView: "auto",
-//     initialSlide: 1,
-//     coverflowEffect: {
-//       rotate: 0,
-//       stretch: 0,
-//       depth: 150,
-//       modifier: 10,
-//       slideShadows: true,
-//     },
-//     keyboard: {
-//       enabled: true,
-//     },
-//     mousewheel: {
-//       forceToAxis: true,
-//       thresholdDelta: 70,
-//       eventsTarget: "#spSswiper",
-//       passiveListeners: true,
-//     },
-//     spaceBetween: -100,
-//     // navigation: {
-//     //   nextEl: "#spHnext",
-//     //   prevEl: "#spHprev",
-//     // },
-//     loop: true,
-//   });
-
-//   let spSwipes = Array.from(
-//     document.querySelector("#spSswiper .swiper-wrapper").children
-//   ).map((child) => child.outerHTML);
-//   console.log(spSwipes);
-
-//   spSswiper = new Swiper("#spSswiper", {
-//     effect: "coverflow",
-//     grabCursor: true,
-//     centeredSlides: true,
-//     slidesPerView: "auto",
-//     initialSlide: 1,
-//     coverflowEffect: {
-//       rotate: 0,
-//       stretch: 0,
-//       depth: 150,
-//       modifier: 10,
-//       slideShadows: true,
-//     },
-//     keyboard: {
-//       enabled: true,
-//     },
-//     mousewheel: {
-//       forceToAxis: true,
-//       thresholdDelta: 70,
-//       eventsTarget: "#spSswiper",
-//       passiveListeners: true,
-//     },
-//     spaceBetween: -100,
-//     // navigation: {
-//     //   nextEl: "#spSnext",
-//     //   prevEl: "#spSprev",
-//     // },
-//     loop: true,
-//     virtual: {
-//       slides: spSwipes,
-//       addSlidesBefore: 2, // Number of slides to render before the current slide
-//       addSlidesAfter: 2, // Number of slides to render after the current slide
-//       renderExternal: function (data) {
-//         const wrapper = document.querySelector("#spSswiper .swiper-wrapper");
-//         wrapper.innerHTML = data.slides.map((slide) => `${slide}`).join("");
-//       },
-//     },
-//   });
-// }
 
 //* STANDORTE
 function openMaps(locationName) {
@@ -475,9 +403,9 @@ function initializeSwiper() {
       modifier: 2,
       slideShadows: true,
     },
-    keyboard: {
-      enabled: true,
-    },
+    // keyboard: {
+    //   enabled: true,
+    // },
     mousewheel: {
       forceToAxis: true,
       thresholdDelta: 70,
