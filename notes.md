@@ -13,5 +13,6 @@
 - header color fix
 - add decoration like other food or tools?
 - script defer needed?
+- speisen button bold
 
 # info
