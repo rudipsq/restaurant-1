@@ -16,7 +16,7 @@
       "id": "etaly",
       "name": "Etaly",
       "type": false,
-      "description": "Tomatisierter Schmand, Zwiebeln, Salami, Champignons, Goudakäse & frische Petersilie"
+      "description": "Tomatisierter Schmand, Zwiebel, Salami, Champignons, Goudakäse & frische Petersilie"
     },
     {
       "id": "champignons_league",
@@ -94,7 +94,7 @@
       "id": "feige_feta",
       "name": "Feige & Feta",
       "type": false,
-      "description": "Schmand, Zwiebeln, Schafskäse, Feigen & Waldhonig"
+      "description": "Schmand, Zwiebel, Schafskäse, Feigen & Waldhonig"
     },
     {
       "id": "ei_thunes",
