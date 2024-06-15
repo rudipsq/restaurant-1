@@ -1,18 +1,18 @@
 # TODO:
 
+## updates
+
 - footer fire
-- info section: jobs zu gutscheine
-- jobs seite
-- gedicht seite
-- gutscheine seite: gutscheine 20 50 100 plus porto 1,50
-- impressum seite
+- gutscheine update
+
+## updates
+
+- header color fix
+- script defer needed?
+- speisen section: background, order, button larger?
+- "enable js to use this site" message
+
+## tests
 
 - rechtschreibung kontrolle
 - logo/ img royalty kontrolle
-
-- header color fix
-- add decoration like other food or tools?
-- script defer needed?
-- speisen button bold
-
-# info

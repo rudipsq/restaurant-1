@@ -187,7 +187,7 @@ hiddenRightElements.forEach((el) => observer.observe(el));
 const hiddenBottomElements = document.querySelectorAll(".scHiddenBottom");
 hiddenBottomElements.forEach((el) => observer.observe(el));
 
-observer.observe(document.querySelector("#spImageTrigger"));
+// observer.observe(document.querySelector("#spImageTrigger"));
 
 function speisenAnimation() {
   const elements = document.querySelectorAll("#spImageLayer img");

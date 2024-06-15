@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (navigator.userAgent) {
     var md = new MobileDetect(window.navigator.userAgent);
 
-    console.warn(md);
+    // console.warn(md);
 
     // Check if the device is a tablet
     var isTablet = md.tablet() !== null;
