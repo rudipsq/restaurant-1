@@ -1,0 +1,50 @@
+#contentWrapper {
+  min-height: calc(100lvh - calc(var(--s-headerHeight) + 60px));
+  overflow: hidden;
+  justify-content: start;
+}
+
+@media (max-width: 760px) {
+  #contentWrapper {
+    min-height: 100svh;
+    overflow: hidden;
+    justify-content: center;
+  }
+}
+
+.contentGrid h2 {
+  font-size: xx-large;
+  margin-bottom: 0;
+}
+
+.contentGridItem {
+  outline: var(--s-standardOutline);
+  outline-style: dashed;
+  border-radius: 25px;
+  outline-offset: -15px;
+}
+
+.contentGridItem p {
+  transition: transform 0.14s ease-out;
+}
+
+@media (hover: hover) {
+  .contentGridItem:hover p {
+    transform: scale(1.1);
+    margin-top: 16px;
+  }
+}
+
+#gutscheinImg {
+  position: absolute;
+  height: auto;
+  width: 650px;
+  translate: 0 -75px;
+  left: calc(50% - 325px);
+}
+
+@media (max-width: 950px) {
+  #gutscheinImg {
+    display: none;
+  }
+}

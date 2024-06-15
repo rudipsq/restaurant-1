@@ -71,10 +71,6 @@ function addSpeisen() {
       <div class="cardBackgroundGradientNoHover"></div>
     `;
 
-    // if (product.type) {
-    // } else {
-    // }
-
     document
       .getElementById("spGrid")
       .insertBefore(productDiv, document.getElementById("moreSpeisen"));

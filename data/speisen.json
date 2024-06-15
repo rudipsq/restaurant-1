@@ -43,10 +43,10 @@
       "description": "Tomatisierter Schmand, Zwiebel, Goudakäse & Pizzagewürz"
     },
     {
-      "id": "chilli_cheesinger",
-      "name": "Chilli Cheesinger",
+      "id": "chili_cheesinger",
+      "name": "Chili Cheesinger",
       "type": false,
-      "description": "Schmand, Zwiebel, Chester Schmelzkäse, scharfe Jalapenos & geschrotete Chillis"
+      "description": "Schmand, Zwiebel, Chester Schmelzkäse, scharfe Jalapenos & geschrotete Chilis"
     },
     {
       "id": "kreuzberg4",
@@ -58,13 +58,13 @@
       "id": "heisshuhner",
       "name": "Heißhuhner",
       "type": false,
-      "description": "Tomatisierter Schmand, Zwiebel, Hähnchenbruststreifen, Gouda & Chilliöl"
+      "description": "Tomatisierter Schmand, Zwiebel, Hähnchenbruststreifen, Gouda & Chiliöl"
     },
     {
       "id": "mexico",
       "name": "Mexico",
       "type": false,
-      "description": "Schmand, Zwiebel, Tortillas, milde Peperoni, Goudakäse & Chilli geschrotet"
+      "description": "Schmand, Zwiebel, Tortillas, milde Peperoni, Goudakäse & Chili geschrotet"
     },
     {
       "id": "papadopoulos",
@@ -130,7 +130,7 @@
       "id": "himmel_ehre",
       "name": "Himmel & Ehre",
       "type": true,
-      "description": "Süßer Schmand, Himmbeeren & Himbeergeist flambiert"
+      "description": "Süßer Schmand, Himbeeren & Himbeergeist flambiert"
     },
     {
       "id": "oscho",
