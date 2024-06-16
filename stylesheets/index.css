@@ -409,8 +409,9 @@ section {
     left: -40px;
     z-index: -1;
 
-    width: 1200px;
     height: 850px;
+    width: 1200px;
+    /* width: auto; */ /* todo: fix image to allow this line */
   }
 
   #spText {

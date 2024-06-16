@@ -6,6 +6,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
+    <meta
+      name="description"
+      content="Willkommen in unserem Flammaurant! Probieren Sie unsere köstliche Flammkuchen und genießen Sie die gemütliche Atmosphäre."
+    />
+
     <title>Flammaurant</title>
 
     <link rel="icon" href="img/logo/tiny.png" />
@@ -45,7 +50,11 @@
 
   <body>
     <header>
-      <button id="mobileMenu" onclick="toggleMobileMenu()"></button>
+      <button
+        id="mobileMenu"
+        onclick="toggleMobileMenu()"
+        aria-label="Handy Menü öffnen"
+      ></button>
       <div id="hDark">
         <div class="hWrapper">
           <a id="hLogo" href="index.html">
@@ -69,7 +78,7 @@
     <div id="startScreen">
       <!-- <img style="z-index: 1; position: fixed; bottom: -800px; left: -200px; width: 800px; height: 1000px;" src="img/pic/start_flour.png" alt=""> -->
       <a id="ssMid" href="#willkommen">
-        <img src="img/icon/arrowDown.png" alt="arrow down" />
+        <img src="img/icon/arrowDown.png" alt="Pfeil nach unten" />
       </a>
       <div id="darkOverlay"></div>
       <div id="startOverlay"></div>
@@ -86,8 +95,8 @@
         </a>
       </div>
       <div id="ssCorner">
-        <div id="ssBackground" class="parallax"></div>
-        <div id="ssForeground" class="parallax"></div>
+        <div id="ssBackground" class="parallax" aria-hidden="true"></div>
+        <div id="ssForeground" class="parallax" aria-label="Flammkuchen"></div>
       </div>
     </div>
 
@@ -99,10 +108,15 @@
               class="wiGridImg"
               src="img/pic/flammbiert.webp"
               data-speed="0.15"
+              alt="flammbierter Flammkuchen"
             />
           </div>
           <div class="wiGridItem" style="grid-column: span 2">
-            <img class="wiGridIcon" src="img/gif/fireIcon.gif" />
+            <img
+              class="wiGridIcon"
+              src="img/gif/fireIcon.gif"
+              aria-hidden="true"
+            />
             <div class="glow-overlay"></div>
             <div class="textContainer">
               <p>
@@ -113,7 +127,11 @@
             </div>
           </div>
           <div class="wiGridItem" id="wiGridItem3" style="grid-column: span 2">
-            <img class="wiGridIcon" src="img/gif/fireIcon.gif" />
+            <img
+              class="wiGridIcon"
+              src="img/gif/fireIcon.gif"
+              aria-hidden="true"
+            />
             <div class="glow-overlay"></div>
             <div class="textContainer">
               <p>
@@ -124,7 +142,12 @@
             </div>
           </div>
           <div class="wiGridItem" style="grid-column: span 3">
-            <img class="wiGridImg" src="img/pic/lampe.webp" data-speed="0.15" />
+            <img
+              class="wiGridImg"
+              src="img/pic/lampe.webp"
+              data-speed="0.15"
+              alt="Flammaurant Inneneinrichtung"
+            />
           </div>
         </div>
       </section>
@@ -145,7 +168,11 @@
               />
             </div> -->
             <div id="spWrapper" class="scHiddenRight">
-              <img src="img/pic/speisen_brett.webp" id="spBrett" />
+              <img
+                src="img/pic/speisen_brett.webp"
+                id="spBrett"
+                aria-hidden="true"
+              />
               <div id="spText">
                 <div>
                   <!-- <div class="headingDecoration">
@@ -165,7 +192,10 @@
               <a href="speisen.html">
                 <button id="spButton">
                   <div>
-                    <img src="img/icon/arrowDown.png" alt="arrow right" />
+                    <img
+                      src="img/icon/arrowDown.png"
+                      alt="alle Speisen ansehen"
+                    />
                     <span><p>alle Speisen</p></span>
                   </div>
                 </button>
@@ -235,6 +265,7 @@
                     alt="Icon Traube"
                     class="stIcon"
                     style="left: 51%"
+                    aria-hidden="true"
                   />
                   <h2>Zur Traube</h2>
                   <div class="stTextWrapper">
@@ -248,7 +279,11 @@
                     onclick="openMaps(`FLAMMAURANT 'Zur Traube'`)"
                   >
                     <div>
-                      <img src="img/icon/pin.png" alt="Map Pin" />
+                      <img
+                        src="img/icon/pin.png"
+                        alt="Map Pin"
+                        aria-hidden="true"
+                      />
                       <span><p>Standort</p></span>
                     </div>
                   </button>
@@ -260,6 +295,7 @@
                     src="img/icon/stEngele.png"
                     alt="Icon Engele"
                     class="stIcon"
+                    aria-hidden="true"
                   />
                   <h2>Zum Engele</h2>
                   <div class="stTextWrapper">
@@ -299,7 +335,11 @@
                     onclick="openMaps(`FLAMMAURANT 'Zur Rose'`)"
                   >
                     <div>
-                      <img src="img/icon/pin.png" alt="Map Pin" />
+                      <img
+                        src="img/icon/pin.png"
+                        alt="Map Pin"
+                        aria-hidden="true"
+                      />
                       <span><p>Standort</p></span>
                     </div>
                   </button>
@@ -367,7 +407,11 @@
                     </p>
                   </div>
 
-                  <img id="inFlImage" src="img/pic/fl9.webp" />
+                  <img
+                    id="inFlImage"
+                    src="img/pic/fl9.webp"
+                    aria-hidden="true"
+                  />
                   <div class="cardBackgroundGradient"></div>
                 </div>
 
@@ -408,7 +452,10 @@
                   <a href="gutscheine.html">
                     <button class="primaryButton">
                       <div>
-                        <img src="img/icon/arrowDown.png" alt="Arrow" />
+                        <img
+                          src="img/icon/arrowDown.png"
+                          alt="Gutscheine Ansehen"
+                        />
                         <span><p>ansehen</p></span>
                       </div>
                     </button>
@@ -433,7 +480,10 @@
                   <a href="gedicht.html">
                     <button class="primaryButton">
                       <div>
-                        <img src="img/icon/arrowDown.png" alt="Arrow" />
+                        <img
+                          src="img/icon/arrowDown.png"
+                          alt="Gedicht ansehen"
+                        />
                         <span><p>ansehen</p></span>
                       </div>
                     </button>
