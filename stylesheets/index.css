@@ -27,7 +27,6 @@ header {
 #underline {
   position: absolute;
   bottom: calc(var(--s-headerHeight) / 5);
-  /* left: 15px; */
   z-index: 1;
 
   height: 60px;
