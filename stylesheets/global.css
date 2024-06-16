@@ -148,6 +148,7 @@ a {
     margin: 14px;
   }
 }
+
 /* - - - - - Header - - - - -*/
 @media (min-width: 761px) {
   header {
@@ -174,6 +175,9 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    /* visibility: visible;
+    opacity: 1; */
 
     height: 100%;
   }

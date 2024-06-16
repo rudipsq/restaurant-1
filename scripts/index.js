@@ -35,9 +35,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     );
   }
 
-  // document.getElementById("animationPlayer").style.opacity = "1";
-  // document.getElementById("animationPlayer").style.transform = "scale(1)";
-
   // willkommen section
   willkommenParallaxElements = document.querySelectorAll(".wiGridImg");
 
@@ -58,7 +55,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     showHideHeader();
 
     document.getElementById("animationPlayer").style.opacity = "1";
-    document.getElementById("animationPlayer").style.transform = "scale(1)";
   }, 300);
   setTimeout(function () {
     document.getElementById("animationPlayer").play();
@@ -87,18 +83,6 @@ window.addEventListener("load", async function () {
     }
   }
 });
-
-function debounce(func, wait) {
-  let timeout;
-  return function () {
-    const context = this;
-    const args = arguments;
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      func.apply(context, args);
-    }, wait);
-  };
-}
 
 // Use debounce for the resize event
 window.addEventListener(

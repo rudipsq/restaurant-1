@@ -26,7 +26,7 @@ async function getSpeisen() {
     return fl;
   } catch (error) {
     console.error("Error fetching or parsing JSON:", error);
-    // return null
+    return null;
   }
 }
 
@@ -88,4 +88,29 @@ function toggleMobileMenu() {
     mobileMenu.style.visibility = "hidden";
     mobileMenu.style.opacity = "0";
   }
+}
+
+window.addEventListener(
+  "resize",
+  debounce(function () {
+    const headerDark = document.getElementById("hDark");
+
+    if (window.innerWidth > 760) {
+      headerDark.style.visibility = "visible";
+      headerDark.style.opacity = "1";
+    }
+  }, 200)
+);
+
+// debounce function
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
 }
