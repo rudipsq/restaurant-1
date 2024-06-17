@@ -65,8 +65,8 @@ function addSpeisen() {
         <p>${product.description}</p>
       </div>
       <div>
-        <img src="img/pic/flammkuchen/brett.webp">
-        <img src="img/pic/flammkuchen/${product.id}.webp">
+        <img src="img/pic/flammkuchen/brett.webp" aria-hidden="true">
+        <img src="img/pic/flammkuchen/${product.id}.webp" aria-hidden="true">
       </div>
       <div class="cardBackgroundGradientNoHover"></div>
     `;

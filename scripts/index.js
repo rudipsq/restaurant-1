@@ -290,8 +290,8 @@ async function addSpeisen() {
     productDiv.classList.add("swiper-slide");
     productDiv.innerHTML = `
         <a class="spSwiperImgContainer" href="speisen.html?id=${product.id}">
-        <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.webp">
-        <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.webp"></a>
+        <img class="spSwiperImg1" src="img/pic/flammkuchen/brett.webp" aria-hidden="true">
+        <img class="spSwiperImg2" src="img/pic/flammkuchen/${product.id}.webp" aria-hidden="true"></a>
         <h3><a href="speisen.html?id=${product.id}">${product.name}</a></h3>
       <p>${product.description}</p>
       <div class="cardBackgroundGradientNoHover"></div>
