@@ -2,6 +2,8 @@ window.onload = function () {
   const urlParams = new URLSearchParams(window.location.search);
   const linkParam = urlParams.get("link");
 
+  if (urlParams.get("id")) return;
+
   if (!linkParam) {
     // Remove the hash from the URL if the 'link' parameter is not present
     history.replaceState(null, null, window.location.pathname);

@@ -418,7 +418,9 @@ section {
     display: flex;
     justify-content: center;
     font-size: larger;
+  }
 
+  #spText p {
     background: radial-gradient(
       ellipse farthest-side at center,
       rgba(61, 34, 0, 0.6) 40%,
@@ -640,14 +642,39 @@ section {
     display: none;
   }
 
-  #spText {
+  #spText p {
     display: none;
   }
 
+  #spWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  #alleSpeisen {
+    position: relative;
+    order: 1;
+    transform: scale(1.25);
+    margin-top: 50px;
+    align-self: center;
+  }
+
   #spGrid {
-    display: grid;
+    /* display: grid;
     grid-template-rows: 4fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; */
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spGridText p {
+    margin: 0 10px 0 10px;
   }
 
   #spBrett {
@@ -668,7 +695,7 @@ section {
 
   .spGridItem {
     margin-top: 30px;
-    width: 400px;
+    max-width: 400px;
 
     display: flex;
     flex-direction: row;
