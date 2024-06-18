@@ -50,7 +50,7 @@ header {
   bottom: calc(0lvh - env(safe-area-inset-top, 0px));
   left: 0;
 
-  background-image: url("../img/pic/start_background.jpg");
+  background-image: url("../img/pic/start_background.webp");
   background-size: cover;
   background-position: center top;
 
