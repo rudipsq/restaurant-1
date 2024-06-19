@@ -11,6 +11,7 @@
 
 * {
   overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -48,6 +49,54 @@ img {
   /* Prevent pointer events */
 }
 
+/* a,
+button,
+input {
+  position: relative;
+}
+
+a:before,
+button:before,
+input:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+a:active:before,
+button:active:before,
+input:active:before {
+  opacity: 1;
+} */
+
+button {
+  position: relative;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+button:active:before {
+  opacity: 1;
+}
+
 /* - - - - - A Tags - - - - -*/
 a {
   text-decoration: underline 1px;
@@ -80,15 +129,11 @@ a {
     background-position: center center;
     background-size: contain;
 
-    /* background-color: var(--c-accent); */
-    /* outline: var(--s-standardOutline); */
-
     background-color: #ffffff21;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
     border: solid rgba(255, 255, 255, 0.1) 1px;
-    /* border: none; */
     border-radius: 7px;
 
     cursor: pointer;
@@ -121,6 +166,8 @@ a {
     transition: visibility 0.2s, opacity 0.2s ease-in-out;
 
     background-color: var(--c-background);
+    transition: background-color 0.5s ease-out;
+
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
@@ -170,7 +217,7 @@ a {
   }
 
   #hDark {
-    background: var(--c-background);
+    background-color: var(--c-background);
     background-blend-mode: color;
     display: flex;
     flex-direction: row;
@@ -178,6 +225,8 @@ a {
 
     /* visibility: visible;
     opacity: 1; */
+
+    transition: background-color 0.5s ease-out;
 
     height: 100%;
   }

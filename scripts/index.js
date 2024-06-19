@@ -101,15 +101,21 @@ window.addEventListener(
 //* HEADER
 function showHideHeader() {
   let header = document.querySelector("header");
+  let hDark = document.getElementById("hDark");
 
   let scrollDistance = window.scrollY;
-
   let threshold = window.innerHeight - 25;
 
-  if (scrollDistance > threshold) {
+  if (scrollDistance >= threshold) {
     header.style.top = "0";
   } else {
     header.style.top = "-100px";
+  }
+
+  if (scrollDistance >= threshold * 2) {
+    hDark.style.backgroundColor = "var(--c-background)";
+  } else {
+    hDark.style.backgroundColor = "rgba(35, 17, 1, 0.4)";
   }
 }
 

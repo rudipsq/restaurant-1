@@ -10,7 +10,6 @@
 
 ## fixes
 
-- header color fix
 - "enable js to use this site" message
 - minimalisierung
 

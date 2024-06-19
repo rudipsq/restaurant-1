@@ -98,13 +98,13 @@ function openOverlay(id, name, description) {
 
   document.getElementById("overlay").classList.add("active");
 
-  changeMobileButtonIcon("img/icon/cross.png");
+  changeMobileButtonIcon("img/icon/cross.webp");
 }
 
 function closeOverlay() {
   document.getElementById("overlay").classList.remove("active");
 
-  changeMobileButtonIcon("img/icon/menu.png");
+  changeMobileButtonIcon("img/icon/menu.webp");
 }
 
 function toggleMobileMenu() {
