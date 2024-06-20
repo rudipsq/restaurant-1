@@ -7,6 +7,7 @@
 - change hamburger to corss when mobile menu is open?
 - speisen section: background, order, button larger?
 - speisen "show all" in swiper?
+- change/update meta tags and schema
 
 ## fixes
 
