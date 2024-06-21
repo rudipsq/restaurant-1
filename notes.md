@@ -2,17 +2,16 @@
 
 ## updates
 
-- footer fire
+- footer fire?
 - gutscheine update
-- change hamburger to corss when mobile menu is open?
 - speisen section: background, order, button larger?
-- speisen "show all" in swiper?
 - change/update meta tags and schema
 
 ## fixes
 
 - "enable js to use this site" message
 - minimalisierung
+- height fix of info section and overlay in speisen.html
 
 ## tests
 
