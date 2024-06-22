@@ -980,7 +980,6 @@ body:not(.mobile) .stTextWrapper a {
   justify-content: center;
 
   width: 100%;
-  height: 100%;
 }
 
 #inGrid {
@@ -1084,7 +1083,7 @@ body:not(.mobile) .stTextWrapper a {
     grid-template-rows: repeat(2, 1fr);
 
     width: calc(800px + calc(10% + 20px));
-    height: calc(100lvh - 320px);
+    min-height: calc(100lvh - 320px);
   }
 
   #inGridItem1 {

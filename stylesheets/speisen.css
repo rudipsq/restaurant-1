@@ -242,19 +242,17 @@
 #overlay-content {
   position: relative;
   background: var(--c-secondary);
-  /* padding: 20px; */
+
   border-radius: 20px;
   width: 450px;
   max-width: 90%;
   height: 520px;
-  max-height: 90%;
 
   background-image: url("../img/pic/main_background.webp");
-  background-size: cover;
   background-position-x: 30%;
   background-position-y: 20px;
 
-  overflow: hidden;
+  overflow-x: hidden;
 
   margin-top: 150lvh;
   transition: margin-top 0.25s ease;
@@ -262,6 +260,18 @@
 
 #overlay.active #overlay-content {
   margin-top: 0;
+}
+
+@media (max-height: 680px) {
+  #overlay-content {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-height: 600px) {
+  #overlay-content {
+    transform: scale(0.8);
+  }
 }
 
 @media (min-width: 761px) {
