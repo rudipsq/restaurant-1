@@ -11,7 +11,6 @@
 
 - "enable js to use this site" message
 - minimalisierung
-- height fix of info section and overlay in speisen.html
 
 ## tests
 
