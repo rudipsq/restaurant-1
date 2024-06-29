@@ -4,7 +4,7 @@
 
 - footer fire?
 - gutscheine update
-- speisen section: background, button larger?
+- speisen section: background?
 - change/update meta tags and schema
 
 ## fixes
