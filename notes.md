@@ -9,10 +9,10 @@
 
 ## fixes
 
-- "enable js to use this site" message
-- minimalisierung
+- kontak div text fix
 
-## tests
+## final
 
 - rechtschreibung kontrolle
 - logo/ img royalty kontrolle
+- minimalisierung
