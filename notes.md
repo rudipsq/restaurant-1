@@ -10,6 +10,7 @@
 ## fixes
 
 - kontak div text fix
+- better cacheing?
 
 ## final
 
