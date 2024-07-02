@@ -9,7 +9,7 @@
 
 ## fixes
 
-- kontak div text fix
+- kontakt div text fix
 - better cacheing?
 
 ## final
