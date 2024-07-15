@@ -975,7 +975,7 @@ body:not(.mobile) .stTextWrapper a {
 
 /* - - - - INFOS - - - - */
 #infos {
-  margin-bottom: 0;
+  padding-bottom: 20px;
   text-align: center;
 
   background: linear-gradient(to bottom, transparent 20%, rgba(0, 0, 0, 0.7));
@@ -1129,20 +1129,35 @@ body:not(.mobile) .stTextWrapper a {
 }
 
 /* - - - - Fire Test - - - - */
-.fire-container {
+/* .fire-container {
   width: 100%;
   position: absolute;
   bottom: -10px;
 
   display: flex;
   flex-direction: row;
-}
-
+} */
+/* 
 .fire-container video {
   width: 50%;
   height: 100%;
   object-fit: cover;
   mix-blend-mode: lighten;
+} */
+
+.fire-container {
+  width: 100%;
+  position: absolute;
+  bottom: -30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fire-container img {
+  mix-blend-mode: lighten;
+  justify-self: center;
 }
 
 /* - - - - - Headings - - - - -*/
