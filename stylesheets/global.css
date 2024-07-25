@@ -101,12 +101,14 @@ button:active:before {
 a {
   text-decoration: underline 1px;
   text-underline-offset: 2px;
+  text-decoration-color: #ffffffb0;
   color: white;
 }
 @media (hover: hover) {
   a:hover {
     text-decoration: underline 2px;
     text-underline-offset: 2px;
+    text-decoration-color: #ffffffb0;
   }
 }
 
