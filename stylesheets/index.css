@@ -1070,7 +1070,7 @@ body:not(.mobile) .stTextWrapper a {
   }
 
   .inGridItemDescription p {
-    padding: 0 5%;
+    padding: 0 24px;
     margin: 10px 0;
 
     font-size: medium;
@@ -1110,7 +1110,7 @@ body:not(.mobile) .stTextWrapper a {
   }
 
   .inGridItemDescription p {
-    padding: 0 10%;
+    padding: 0 15%;
     margin: 14px 0;
 
     font-size: large;

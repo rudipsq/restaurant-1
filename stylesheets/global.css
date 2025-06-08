@@ -786,7 +786,7 @@ div:has(> .cardBackgroundGradientNoHover) {
 .contentGrid {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
@@ -802,9 +802,8 @@ div:has(> .cardBackgroundGradientNoHover) {
 @media (max-width: 830px) {
   .contentGrid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
-
   .contentGridItem h1,
   .contentGridItem h2 {
     margin-top: 25px;

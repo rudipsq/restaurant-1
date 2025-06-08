@@ -12,6 +12,13 @@
   }
 }
 
+.contentGrid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
 .contentGrid h2 {
   font-size: xx-large;
   margin-bottom: 0;
@@ -47,5 +54,12 @@
 @media (max-width: 950px) {
   #gutscheinImg {
     display: none;
+  }
+}
+
+@media (max-width: 830px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
   }
 }

@@ -14,15 +14,15 @@
     },
     {
       "id": "etaly",
-      "name": "Etaly",
+      "name": "Eataly",
       "type": false,
       "description": "Tomatisierter Schmand, Zwiebel, Salami, Champignons, Goudakäse & frische Petersilie"
     },
     {
       "id": "champignons_league",
-      "name": "Champignons League",
+      "name": "Champignons Leek",
       "type": false,
-      "description": "Schmand, Zwiebel, Champignons, Goudakäse & Petersilie"
+      "description": "Schmand, Lauch, Champignons, Goudakäse & Petersilie"
     },
     {
       "id": "generation_lax",
@@ -76,7 +76,7 @@
       "id": "toskana",
       "name": "Toskana",
       "type": false,
-      "description": "Schmand, Zwiebel, Tomaten, Mozzarella, frischer Basilikum & Créme de Balsamico"
+      "description": "Schmand, Zwiebel, Tomaten, Mozzarella, Basilikum & Créme de Balsamico"
     },
     {
       "id": "knobinger",
@@ -116,7 +116,7 @@
     },
     {
       "id": "schokolinze",
-      "name": "Schokolinze",
+      "name": "Schokolinse",
       "type": true,
       "description": "Süßer Schmand, Smarties & Dessertsauce Schoko"
     },
